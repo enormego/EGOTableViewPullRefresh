@@ -1,6 +1,6 @@
 //
 //  EGORefreshTableHeaderView.h
-//  Peek
+//  Demo
 //
 //  Created by Devin Doty on 10/14/09October14.
 //  Copyright 2009 enormego. All rights reserved.

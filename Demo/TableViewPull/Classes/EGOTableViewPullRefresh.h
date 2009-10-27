@@ -15,6 +15,7 @@
 	
 	EGORefreshTableHeaderView *refreshHeaderView;
 	BOOL reloading;
+	BOOL checkForRefresh;
 }
 - (void)dataSourceDidFinishLoadingNewData;
 @end

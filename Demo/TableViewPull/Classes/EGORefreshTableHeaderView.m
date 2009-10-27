@@ -1,6 +1,6 @@
 //
 //  EGORefreshTableHeaderView.m
-//  Peek
+//  Demo
 //
 //  Created by Devin Doty on 10/14/09October14.
 //  Copyright 2009 enormego. All rights reserved.
@@ -83,15 +83,11 @@
 
 - (void)flipImageAnimated:(BOOL)animated{
 	
-	if (animated) {
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationDuration:.18];
-		[arrowImage layer].transform = isFlipped ? CATransform3DMakeRotation(M_PI, 0.0f, 0.0f, 1.0f) : CATransform3DMakeRotation(M_PI * 2, 0.0f, 0.0f, 1.0f);
-		[UIView commitAnimations];
-	} else {
-		[arrowImage layer].transform = isFlipped ? CATransform3DMakeRotation(M_PI, 0.0f, 0.0f, 1.0f) : CATransform3DMakeRotation(M_PI * 2, 0.0f, 0.0f, 1.0f);
-	}
-	
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:animated ? .18 : 0.0];
+	[arrowImage layer].transform = isFlipped ? CATransform3DMakeRotation(M_PI, 0.0f, 0.0f, 1.0f) : CATransform3DMakeRotation(M_PI * 2, 0.0f, 0.0f, 1.0f);
+	[UIView commitAnimations];
+
 	isFlipped = !isFlipped;
 }
 
@@ -102,6 +98,7 @@
 	[formatter setDateFormat:@"MM/dd/yyyy hh:mm:a"];
 	lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:[NSDate date]]];
 	[[NSUserDefaults standardUserDefaults] setObject:lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
 	[formatter release];
 }
 

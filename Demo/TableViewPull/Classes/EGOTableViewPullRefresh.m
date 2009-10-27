@@ -6,10 +6,6 @@
 //  Copyright 2009 enormego. All rights reserved.
 //
 
-//  Requires
-//  NSDateHelper
-//  QuartzCore.framework
-//  
 
 #import "EGOTableViewPullRefresh.h"
 #import "EGORefreshTableHeaderView.h"
@@ -31,19 +27,23 @@
 	return self;
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView;{
+	checkForRefresh = YES;  //  only check offset when dragging 
+} 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
-	if (refreshHeaderView.isFlipped && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f && !reloading) {
-		[refreshHeaderView flipImageAnimated:YES];
-		[refreshHeaderView setStatus:kPullToReloadStatus];
-	} else if (!refreshHeaderView.isFlipped && scrollView.contentOffset.y < -65.0f) {
-		[refreshHeaderView flipImageAnimated:YES];
-		[refreshHeaderView setStatus:kReleaseToReloadStatus];
+	if (checkForRefresh) {
+		if (refreshHeaderView.isFlipped && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f && !reloading) {
+			[refreshHeaderView flipImageAnimated:YES];
+			[refreshHeaderView setStatus:kPullToReloadStatus];
+		} else if (!refreshHeaderView.isFlipped && scrollView.contentOffset.y < -65.0f) {
+			[refreshHeaderView flipImageAnimated:YES];
+			[refreshHeaderView setStatus:kReleaseToReloadStatus];
+		}
 	}
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-
 	if (scrollView.contentOffset.y <= - 65.0f) {
 		if([self.dataSource respondsToSelector:@selector(reloadTableViewDataSource)]){
 			reloading = YES;
@@ -55,6 +55,7 @@
 			[UIView commitAnimations];
 		}
 	} 
+	checkForRefresh = NO;
 }
 
 - (void)dataSourceDidFinishLoadingNewData{

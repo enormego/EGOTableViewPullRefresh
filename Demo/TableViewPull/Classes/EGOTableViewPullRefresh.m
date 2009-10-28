@@ -51,7 +51,7 @@
 			[refreshHeaderView toggleActivityView];
 			[UIView beginAnimations:nil context:NULL];
 			[UIView setAnimationDuration:0.2];
-			self.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 40.0f, 0.0f);
+			self.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 00.0f, 0.0f);
 			[UIView commitAnimations];
 		}
 	} 
@@ -63,7 +63,7 @@
 	[refreshHeaderView flipImageAnimated:NO];
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-	[self setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 40.0f, 0.0f)];
+	[self setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 00.0f, 0.0f)];
 	[refreshHeaderView setStatus:kPullToReloadStatus];
 	[refreshHeaderView toggleActivityView];
 	[UIView commitAnimations];

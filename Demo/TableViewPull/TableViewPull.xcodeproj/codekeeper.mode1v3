@@ -216,7 +216,90 @@
 		</dict>
 	</array>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>3A451E5410D1755B00C10A50</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>EGORefreshTableHeaderView.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>3A451E5510D1755B00C10A50</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>EGORefreshTableHeaderView.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>3ABDA77C10D1862E003ABED5</string>
+						<key>history</key>
+						<array>
+							<string>3A451E9C10D176CB00C10A50</string>
+							<string>3A451F1910D181A300C10A50</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1310, 836}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>1796 21 1310 877 1680 -99 1680 1050 </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>3A451C2010D1570500C10A50</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>EGOTableViewPullRefresh.m</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>3A451C2110D1570500C10A50</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>EGOTableViewPullRefresh.m</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>3ABDA77D10D1862E003ABED5</string>
+						<key>history</key>
+						<array>
+							<string>3A451EBA10D1775100C10A50</string>
+							<string>3A451F1A10D181A300C10A50</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {1310, 836}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>1834 62 1310 877 1680 -99 1680 1050 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -248,8 +331,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -296,9 +377,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
-									<integer>5</integer>
-									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -322,7 +400,7 @@
 							<real>331</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>121 232 1283 793 0 0 1680 1028 </string>
+						<string>128 235 1283 793 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -333,12 +411,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>EGORefreshTableHeaderView.h</string>
+								<string>EGORefreshTableHeaderView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -346,22 +426,24 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>EGORefreshTableHeaderView.h</string>
+										<string>EGORefreshTableHeaderView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>3AC3B09210974574009D9249</string>
+										<string>3ABDA77A10D1862E003ABED5</string>
 										<key>history</key>
 										<array>
-											<string>3A2586091088EDA100126784</string>
-											<string>3A25860A1088EDA100126784</string>
-											<string>3A25860B1088EDA100126784</string>
-											<string>3A25860C1088EDA100126784</string>
-											<string>3AC3B0891097456F009D9249</string>
-											<string>3AC3B08B1097456F009D9249</string>
-											<string>3AC3B08C1097456F009D9249</string>
-											<string>3AC3B08D1097456F009D9249</string>
-											<string>3AC3B08E1097456F009D9249</string>
+											<string>3A451E9110D176B300C10A50</string>
+											<string>3ABDA76A10D18625003ABED5</string>
+											<string>3ABDA76C10D18625003ABED5</string>
+											<string>3ABDA76D10D18625003ABED5</string>
+											<string>3ABDA76E10D18625003ABED5</string>
+											<string>3ABDA76F10D18625003ABED5</string>
+											<string>3ABDA77010D18625003ABED5</string>
+											<string>3ABDA77110D18625003ABED5</string>
+											<string>3ABDA77210D18625003ABED5</string>
+											<string>3ABDA77710D1862E003ABED5</string>
+											<string>3ABDA77810D1862E003ABED5</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -373,14 +455,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {930, 558}}</string>
+								<string>{{0, 0}, {930, 548}}</string>
 								<key>RubberWindowFrame</key>
-								<string>121 232 1283 793 0 0 1680 1028 </string>
+								<string>128 235 1283 793 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>558pt</string>
+							<string>548pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -393,14 +475,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 563}, {930, 189}}</string>
+								<string>{{0, 553}, {930, 199}}</string>
 								<key>RubberWindowFrame</key>
-								<string>121 232 1283 793 0 0 1680 1028 </string>
+								<string>128 235 1283 793 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>189pt</string>
+							<string>199pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -419,9 +501,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>3AC3B0601097432F009D9249</string>
+				<string>3ABDA75A10D185DB003ABED5</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>3AC3B0611097432F009D9249</string>
+				<string>3ABDA75B10D185DB003ABED5</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -542,7 +624,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>278349172.110636</real>
+	<real>282166830.54056698</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -559,13 +641,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>3A2581631088BE7100126784</string>
-		<string>/Users/codekeeper/Desktop/enormego-EGOTableViewPullRefresh-516fbed-1/Demo/TableViewPull/TableViewPull.xcodeproj</string>
+		<string>3A451C2010D1570500C10A50</string>
+		<string>3A451E5410D1755B00C10A50</string>
+		<string>/Users/codekeeper/EGOTableViewPullRefresh/Demo/TableViewPull/TableViewPull.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>121 232 1283 793 0 0 1680 1028 </string>
+	<string>128 235 1283 793 0 0 1680 1028 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -644,7 +726,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>3A2581631088BE7100126784</string>
-				<string>3AC3B05B10974251009D9249</string>
+				<string>3ABDA75E10D185DB003ABED5</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -688,8 +770,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {316, 194}}</string>
-											<string>{{316, 0}, {378, 194}}</string>
+											<string>{{0, 0}, {316, 198}}</string>
+											<string>{{316, 0}, {378, 198}}</string>
 										</array>
 									</dict>
 									<key>VerticalSplitView</key>
@@ -704,8 +786,8 @@
 										<string>yes</string>
 										<key>sizes</key>
 										<array>
-											<string>{{0, 0}, {694, 194}}</string>
-											<string>{{0, 194}, {694, 187}}</string>
+											<string>{{0, 0}, {694, 198}}</string>
+											<string>{{0, 198}, {694, 183}}</string>
 										</array>
 									</dict>
 								</dict>
@@ -738,7 +820,7 @@
 										<real>148</real>
 									</array>
 									<key>Frame</key>
-									<string>{{316, 0}, {378, 194}}</string>
+									<string>{{316, 0}, {378, 198}}</string>
 									<key>RubberWindowFrame</key>
 									<string>886 411 694 422 0 0 1680 1028 </string>
 								</dict>
@@ -766,13 +848,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>3AC3B06C1097432F009D9249</string>
+				<string>3A451BE710D1541A00C10A50</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>3AC3B06D1097432F009D9249</string>
-				<string>3AC3B06E1097432F009D9249</string>
-				<string>3AC3B06F1097432F009D9249</string>
-				<string>3AC3B0701097432F009D9249</string>
-				<string>3AC3B0711097432F009D9249</string>
+				<string>3A451BE810D1541A00C10A50</string>
+				<string>3A451BE910D1541A00C10A50</string>
+				<string>3A451BEA10D1541A00C10A50</string>
+				<string>3A451BEB10D1541A00C10A50</string>
+				<string>3A451BEC10D1541A00C10A50</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -913,7 +995,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {650, 209}}</string>
 								<key>RubberWindowFrame</key>
-								<string>886 583 650 250 0 0 1680 1028 </string>
+								<string>0 680 650 250 0 0 1680 1028 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXDebugCLIModule</string>
@@ -936,13 +1018,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>3AC3B0721097432F009D9249</string>
+				<string>3A451BED10D1541A00C10A50</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.consoleV3</string>
 			<key>WindowString</key>
-			<string>886 583 650 250 0 0 1680 1028 </string>
+			<string>0 680 650 250 0 0 1680 1028 </string>
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>

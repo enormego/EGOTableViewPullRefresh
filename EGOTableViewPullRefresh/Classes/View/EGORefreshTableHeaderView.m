@@ -26,9 +26,6 @@
 
 #import "EGORefreshTableHeaderView.h"
 
-#define kReleaseToReloadStatus	0
-#define kPullToReloadStatus		1
-#define kLoadingStatus			2
 
 #define TEXT_COLOR	 [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0]
 #define BORDER_COLOR [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0]
@@ -36,7 +33,7 @@
 
 @implementation EGORefreshTableHeaderView
 
-@synthesize isFlipped;
+@synthesize state=_state;
 
 
 - (id)initWithFrame:(CGRect)frame {
@@ -69,7 +66,7 @@
 		statusLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		statusLabel.backgroundColor = [UIColor clearColor];
 		statusLabel.textAlignment = UITextAlignmentCenter;
-		[self setStatus:kPullToReloadStatus];
+		[self setState:EGOOPullRefreshNormal];
 		[self addSubview:statusLabel];
 		[statusLabel release];
 		
@@ -86,7 +83,6 @@
 		[self addSubview:activityView];
 		[activityView release];
 		
-		isFlipped = NO;
     }
     return self;
 }
@@ -101,26 +97,6 @@
 	CGContextStrokePath(context);
 }
 
-- (void)flipImageAnimated:(BOOL)animated{
-	
-	if (!animated) {
-		[CATransaction begin];
-		[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
-		arrowImage.transform = CATransform3DIdentity;
-		[CATransaction commit];
-	} else {
-		[CATransaction begin];
-		[CATransaction setAnimationDuration:animated ? .18 : 0.0];
-		
-		CATransform3D transform = isFlipped ? CATransform3DIdentity : CATransform3DMakeRotation((M_PI / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
-		arrowImage.transform = transform;
-		
-		[CATransaction commit];
-	}
-
-	isFlipped = !isFlipped;
-}
-
 - (void)setCurrentDate {
 	NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
 	[formatter setAMSymbol:@"AM"];
@@ -132,38 +108,51 @@
 	[formatter release];
 }
 
-- (void)setStatus:(int)status{
-	switch (status) {
-		case kReleaseToReloadStatus:
+- (void)setState:(EGOPullRefreshState)aState{
+	
+	switch (aState) {
+		case EGOOPullRefreshPulling:
+			
 			statusLabel.text = @"Release to refresh...";
+			[CATransaction begin];
+			[CATransaction setAnimationDuration:.18];
+			arrowImage.transform = CATransform3DMakeRotation((M_PI / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
+			[CATransaction commit];
+			
 			break;
-		case kPullToReloadStatus:
+		case EGOOPullRefreshNormal:
+			
+			if (_state == EGOOPullRefreshPulling) {
+				[CATransaction begin];
+				[CATransaction setAnimationDuration:.18];
+				arrowImage.transform = CATransform3DIdentity;
+				[CATransaction commit];
+			}
+			
 			statusLabel.text = @"Pull down to refresh...";
+			[activityView stopAnimating];
+			[CATransaction begin];
+			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
+			arrowImage.hidden = NO;
+			arrowImage.transform = CATransform3DIdentity;
+			[CATransaction commit];
+			
 			break;
-		case kLoadingStatus:
+		case EGOOPullRefreshLoading:
+			
 			statusLabel.text = @"Loading...";
+			[activityView startAnimating];
+			[CATransaction begin];
+			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
+			arrowImage.hidden = YES;
+			[CATransaction commit];
+			
 			break;
 		default:
 			break;
 	}
-}
-
-- (void)toggleActivityView{
 	
-	[CATransaction begin];
-    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; //  kill layers implicit fade animation
-	
-	if ([activityView isAnimating]) {
-		[activityView stopAnimating];
-		arrowImage.hidden = NO;
-		[self setStatus:kPullToReloadStatus];
-	} else {
-		[activityView startAnimating];
-		arrowImage.hidden = YES;
-		[self setStatus:kLoadingStatus];
-	}
-	
-	[CATransaction commit];
+	_state = aState;
 }
 
 - (void)dealloc {

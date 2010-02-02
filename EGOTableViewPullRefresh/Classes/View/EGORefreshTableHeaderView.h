@@ -27,6 +27,13 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+
+typedef enum{
+	EGOOPullRefreshPulling = 0,
+	EGOOPullRefreshNormal,
+	EGOOPullRefreshLoading,	
+} EGOPullRefreshState;
+
 @interface EGORefreshTableHeaderView : UIView {
 	
 	UILabel *lastUpdatedLabel;
@@ -34,15 +41,13 @@
 	CALayer *arrowImage;
 	UIActivityIndicatorView *activityView;
 	
-	BOOL isFlipped;
+	EGOPullRefreshState _state;
 
 }
 
-@property BOOL isFlipped;
+@property(nonatomic,assign) EGOPullRefreshState state;
 
-- (void)flipImageAnimated:(BOOL)animated;
 - (void)setCurrentDate;
-- (void)toggleActivityView;
-- (void)setStatus:(int)status;
+- (void)setState:(EGOPullRefreshState)aState;
 
 @end

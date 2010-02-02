@@ -27,11 +27,6 @@
 #import "RootViewController.h"
 #import "EGORefreshTableHeaderView.h"
 
-#define kReleaseToReloadStatus 0
-#define kPullToReloadStatus 1
-#define kLoadingStatus 2
-
-
 @interface RootViewController (Private)
 
 - (void)dataSourceDidFinishLoadingNewData;
@@ -194,12 +189,10 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
 	
 	if (scrollView.isDragging) {
-		if (refreshHeaderView.isFlipped && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f && !_reloading) {
-			[refreshHeaderView flipImageAnimated:YES];
-			[refreshHeaderView setStatus:kPullToReloadStatus];
-		} else if (!refreshHeaderView.isFlipped && scrollView.contentOffset.y < -65.0f && !_reloading) {
-			[refreshHeaderView flipImageAnimated:YES];
-			[refreshHeaderView setStatus:kReleaseToReloadStatus];
+		if (refreshHeaderView.state == EGOOPullRefreshPulling && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f && !_reloading) {
+			[refreshHeaderView setState:EGOOPullRefreshNormal];
+		} else if (refreshHeaderView.state == EGOOPullRefreshNormal && scrollView.contentOffset.y < -65.0f && !_reloading) {
+			[refreshHeaderView setState:EGOOPullRefreshPulling];
 		}
 	}
 }
@@ -209,7 +202,7 @@
 	if (scrollView.contentOffset.y <= - 65.0f && !_reloading) {
 			_reloading = YES;
 			[self reloadTableViewDataSource];
-			[refreshHeaderView toggleActivityView];
+			[refreshHeaderView setState:EGOOPullRefreshLoading];
 			[UIView beginAnimations:nil context:NULL];
 			[UIView setAnimationDuration:0.2];
 			self.tableView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
@@ -226,8 +219,7 @@
 	[self.tableView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
 	[UIView commitAnimations];
 	
-	[refreshHeaderView flipImageAnimated:NO]; //  reset view
-	[refreshHeaderView toggleActivityView];	//  reset view
+	[refreshHeaderView setState:EGOOPullRefreshNormal];
 	[refreshHeaderView setCurrentDate];  //  should check if data reload was successful 
 }
 

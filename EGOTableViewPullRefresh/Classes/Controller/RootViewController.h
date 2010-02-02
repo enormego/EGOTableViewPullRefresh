@@ -1,9 +1,9 @@
 //
-//  EGOTableViewPullRefresh.h
+//  RootViewController.h
 //  TableViewPull
 //
 //  Created by Devin Doty on 10/16/09October16.
-//  Copyright 2009 enormego. All rights reserved.
+//  Copyright enormego 2009. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,22 +24,17 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
-
 @class EGORefreshTableHeaderView;
-
-@interface EGOTableViewPullRefresh : UITableView <UITableViewDelegate>{
-	
+@interface RootViewController : UITableViewController  <UITableViewDelegate, UITableViewDataSource>{
 	EGORefreshTableHeaderView *refreshHeaderView;
-	BOOL reloading;  // should be pulled from datasource
-
+	
+	//  Reloading should really be your tableviews model class
+	//  Putting it here for demo purposes 
+	BOOL _reloading;
 }
-- (void)dataSourceDidFinishLoadingNewData;
-@end
 
-@protocol UITableViewReloadDataSource
+@property(assign,getter=isReloading) BOOL reloading;
+
 - (void)reloadTableViewDataSource;
+- (void)doneLoadingTableViewData;
 @end
-
-

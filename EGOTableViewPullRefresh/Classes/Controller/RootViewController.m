@@ -25,22 +25,35 @@
 //
 
 #import "RootViewController.h"
-#import "EGOTableViewPullRefresh.h"
+#import "EGORefreshTableHeaderView.h"
+
+#define kReleaseToReloadStatus 0
+#define kPullToReloadStatus 1
+#define kLoadingStatus 2
+
+
+@interface RootViewController (Private)
+
+- (void)dataSourceDidFinishLoadingNewData;
+
+@end
+
 
 @implementation RootViewController
+
+@synthesize reloading=_reloading;
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-	
-	egoTableView = [[EGOTableViewPullRefresh alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-	egoTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-	egoTableView.dataSource = self;
-	egoTableView.delegate = egoTableView;
-	[self.view addSubview:egoTableView];
+	if (refreshHeaderView == nil) {
+		refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, 320.0f, self.tableView.bounds.size.height)];
+		refreshHeaderView.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
+		[self.tableView addSubview:refreshHeaderView];
+		self.tableView.showsVerticalScrollIndicator = YES;
+		[refreshHeaderView release];
+	}
 }
 
 
@@ -81,8 +94,7 @@
 }
 
 - (void)viewDidUnload {
-	// Release anything that can be recreated in viewDidLoad or on demand.
-	// e.g. self.myOutlet = nil;
+	refreshHeaderView=nil;
 }
 
 
@@ -115,12 +127,15 @@
 }
 
 - (void)reloadTableViewDataSource{
+	//  should be calling your tableviews model to reload
+	//  put here just for demo
 	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
 }
 
 
 - (void)doneLoadingTableViewData{
-	[egoTableView dataSourceDidFinishLoadingNewData];
+	//  model should call this when its done loading
+	[self dataSourceDidFinishLoadingNewData];
 }
 
 
@@ -176,7 +191,51 @@
 */
 
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
+	
+	if (scrollView.isDragging) {
+		if (refreshHeaderView.isFlipped && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f && !_reloading) {
+			[refreshHeaderView flipImageAnimated:YES];
+			[refreshHeaderView setStatus:kPullToReloadStatus];
+		} else if (!refreshHeaderView.isFlipped && scrollView.contentOffset.y < -65.0f && !_reloading) {
+			[refreshHeaderView flipImageAnimated:YES];
+			[refreshHeaderView setStatus:kReleaseToReloadStatus];
+		}
+	}
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	if (scrollView.contentOffset.y <= - 65.0f && !_reloading) {
+			_reloading = YES;
+			[self reloadTableViewDataSource];
+			[refreshHeaderView toggleActivityView];
+			[UIView beginAnimations:nil context:NULL];
+			[UIView setAnimationDuration:0.2];
+			self.tableView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
+			[UIView commitAnimations];
+	}
+}
+
+- (void)dataSourceDidFinishLoadingNewData{
+	
+	_reloading = NO;
+	
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:.3];
+	[self.tableView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+	[UIView commitAnimations];
+	
+	[refreshHeaderView flipImageAnimated:NO]; //  reset view
+	[refreshHeaderView toggleActivityView];	//  reset view
+	[refreshHeaderView setCurrentDate];  //  should check if data reload was successful 
+}
+
+#pragma mark -
+#pragma mark Dealloc
+
 - (void)dealloc {
+	refreshHeaderView = nil;
     [super dealloc];
 }
 

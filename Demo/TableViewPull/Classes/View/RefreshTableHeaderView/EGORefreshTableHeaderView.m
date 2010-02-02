@@ -61,7 +61,7 @@
 			[self setCurrentDate];
 		}
 		
-		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, 320.0f, 20.0f)];
+		statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f)];
 		statusLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		statusLabel.font = [UIFont boldSystemFontOfSize:13.0f];
 		statusLabel.textColor = TEXT_COLOR;
@@ -104,15 +104,18 @@
 - (void)flipImageAnimated:(BOOL)animated{
 	
 	if (!animated) {
-		[arrowImage removeAllAnimations];
+		[CATransaction begin];
+		[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+		arrowImage.transform = CATransform3DIdentity;
+		[CATransaction commit];
 	} else {
-		CABasicAnimation *animation = [CABasicAnimation animation];
-		animation.fromValue = isFlipped ?  [NSValue valueWithCATransform3D:CATransform3DMakeRotation((M_PI / 180.0) * 179.9, 0.0f, 0.0f, 1.0f)] : [NSValue valueWithCATransform3D:CATransform3DIdentity];
-		animation.toValue = isFlipped ? [NSValue valueWithCATransform3D:CATransform3DIdentity] : [NSValue valueWithCATransform3D:CATransform3DMakeRotation((M_PI / 180.0) * 179.9, 0.0f, 0.0f, 1.0f)];
-		animation.duration = animated ? .18 : 0.0;
-		animation.removedOnCompletion = NO;
-		animation.fillMode = kCAFillModeForwards;
-		[arrowImage addAnimation:animation forKey:@"transform"];
+		[CATransaction begin];
+		[CATransaction setAnimationDuration:animated ? .18 : 0.0];
+		
+		CATransform3D transform = isFlipped ? CATransform3DIdentity : CATransform3DMakeRotation((M_PI / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
+		arrowImage.transform = transform;
+		
+		[CATransaction commit];
 	}
 
 	isFlipped = !isFlipped;

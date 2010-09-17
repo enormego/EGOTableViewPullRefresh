@@ -36,10 +36,10 @@ typedef enum{
 
 @interface EGORefreshTableHeaderView : UIView {
 	
-	UILabel *lastUpdatedLabel;
-	UILabel *statusLabel;
-	CALayer *arrowImage;
-	UIActivityIndicatorView *activityView;
+	UILabel *_lastUpdatedLabel;
+	UILabel *_statusLabel;
+	CALayer *_arrowImage;
+	UIActivityIndicatorView *_activityView;
 	
 	EGOPullRefreshState _state;
 

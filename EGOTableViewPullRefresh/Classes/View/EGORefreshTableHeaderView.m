@@ -41,6 +41,8 @@
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         
+		borderColor = [BORDER_COLOR retain];
+
 		lastUpdatedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 		lastUpdatedLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		lastUpdatedLabel.font = [UIFont systemFontOfSize:12.0f];
@@ -73,7 +75,7 @@
 		arrowImage = [[CALayer alloc] init];
 		arrowImage.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
 		arrowImage.contentsGravity = kCAGravityResizeAspect;
-		arrowImage.contents = (id)[UIImage imageNamed:@"blueArrow.png"].CGImage;
+		[self setArrowImageName:@"blueArrow.png"];
 		[[self layer] addSublayer:arrowImage];
 		[arrowImage release];
 		
@@ -90,7 +92,7 @@
 - (void)drawRect:(CGRect)rect{
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextDrawPath(context,  kCGPathFillStroke);
-	[BORDER_COLOR setStroke];
+	[borderColor setStroke];
 	CGContextBeginPath(context);
 	CGContextMoveToPoint(context, 0.0f, self.bounds.size.height - 1);
 	CGContextAddLineToPoint(context, self.bounds.size.width, self.bounds.size.height - 1);
@@ -101,7 +103,7 @@
 	NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
 	[formatter setAMSymbol:@"AM"];
 	[formatter setPMSymbol:@"PM"];
-	[formatter setDateFormat:@"MM/dd/yyyy hh:mm:a"];
+	[formatter setDateFormat:@"MM/dd/yyyy hh:mm a"];
 	lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:[NSDate date]]];
 	[[NSUserDefaults standardUserDefaults] setObject:lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
@@ -156,6 +158,9 @@
 }
 
 - (void)dealloc {
+	[borderColor release];
+
+	borderColor = nil;
 	activityView = nil;
 	statusLabel = nil;
 	arrowImage = nil;
@@ -163,5 +168,23 @@
     [super dealloc];
 }
 
+- (void)setArrowImageName:(NSString*)imageName {
+	arrowImage.contents = (id)[UIImage imageNamed:imageName].CGImage;
+}
+
+- (void)setBorderColor:(UIColor*)color {
+	[borderColor release];
+	borderColor = [color retain];
+}
+
+- (void)setTextColor:(UIColor*)color {
+	lastUpdatedLabel.textColor = color;
+	statusLabel.textColor = color;
+}
+
+- (void)setTextShadowColor:(UIColor*)color {
+	lastUpdatedLabel.shadowColor = color;
+	statusLabel.shadowColor = color;
+}
 
 @end

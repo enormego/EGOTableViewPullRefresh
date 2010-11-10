@@ -36,6 +36,7 @@ typedef enum{
 
 @interface EGORefreshTableHeaderView : UIView {
 	
+	UIColor *borderColor;
 	UILabel *lastUpdatedLabel;
 	UILabel *statusLabel;
 	CALayer *arrowImage;
@@ -49,5 +50,9 @@ typedef enum{
 
 - (void)setCurrentDate;
 - (void)setState:(EGOPullRefreshState)aState;
+- (void)setArrowImageName:(NSString*)imageName;
+- (void)setBorderColor:(UIColor*)color;
+- (void)setTextColor:(UIColor*)color;
+- (void)setTextShadowColor:(UIColor*)color;
 
 @end

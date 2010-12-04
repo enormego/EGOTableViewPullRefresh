@@ -1,0 +1,274 @@
+// !$*UTF8*$!
+{
+	03C70DBD12AACEC2004A91DA /* TableViewPull */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = TableViewPull;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	03C70DCC12AACEC3004A91DA /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	03C70DCD12AACEC3004A91DA /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	03C70E4912AAE3D0004A91DA /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'_reloading' undeclared (first use in this function)";
+		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 217;
+		rType = 1;
+	};
+	03C70E4A12AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
+		name = "EGORefreshTableHeaderView.m: 218";
+		rLen = 0;
+		rLoc = 7277;
+		rType = 0;
+		vrLen = 829;
+		vrLoc = 2031;
+	};
+	03C70E4D12AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D909C11188064002B6585 /* EGORefreshTableHeaderView.h */;
+		name = "EGORefreshTableHeaderView.h: 52";
+		rLen = 22;
+		rLoc = 1756;
+		rType = 0;
+		vrLen = 1628;
+		vrLoc = 687;
+	};
+	03C70E4E12AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
+		name = "EGORefreshTableHeaderView.m: 106";
+		rLen = 7;
+		rLoc = 3812;
+		rType = 0;
+		vrLen = 1268;
+		vrLoc = 3386;
+	};
+	03C70E4F12AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
+		name = "EGORefreshTableHeaderView.m: 92";
+		rLen = 0;
+		rLoc = 3688;
+		rType = 0;
+		vrLen = 1251;
+		vrLoc = 3407;
+	};
+	03C70E5212AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D90A6111881DE002B6585 /* RootViewController.h */;
+		name = "RootViewController.h: 28";
+		rLen = 0;
+		rLoc = 1279;
+		rType = 0;
+		vrLen = 1663;
+		vrLoc = 0;
+	};
+	03C70E5312AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */;
+		name = "RootViewController.m: 16";
+		rLen = 0;
+		rLoc = 744;
+		rType = 0;
+		vrLen = 1830;
+		vrLoc = 150;
+	};
+	03C70E5412AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */;
+		name = "RootViewController.m: 41";
+		rLen = 0;
+		rLoc = 1693;
+		rType = 0;
+		vrLen = 1369;
+		vrLoc = 689;
+	};
+	03C70E5712AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
+		name = "EGORefreshTableHeaderView.m: 106";
+		rLen = 0;
+		rLoc = 3812;
+		rType = 0;
+		vrLen = 1275;
+		vrLoc = 6834;
+	};
+	03C70E5812AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D909C11188064002B6585 /* EGORefreshTableHeaderView.h */;
+		rLen = 0;
+		rLoc = 9223372036854775812;
+		rType = 0;
+	};
+	03C70E5912AAE3D0004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D909C11188064002B6585 /* EGORefreshTableHeaderView.h */;
+		name = "EGORefreshTableHeaderView.h: 62";
+		rLen = 88;
+		rLoc = 2222;
+		rType = 0;
+		vrLen = 1840;
+		vrLoc = 470;
+	};
+	03C70E5A12AAE410004A91DA /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'_refreshHeaderView' undeclared (first use in this function)";
+		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 240;
+		rType = 1;
+	};
+	03C70E5B12AAE410004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
+		name = "EGORefreshTableHeaderView.m: 77";
+		rLen = 0;
+		rLoc = 3165;
+		rType = 0;
+		vrLen = 499;
+		vrLoc = 2887;
+	};
+	03C70E5C12AAE413004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
+		name = "EGORefreshTableHeaderView.m: 218";
+		rLen = 0;
+		rLoc = 7277;
+		rType = 0;
+		vrLen = 856;
+		vrLoc = 2031;
+	};
+	1D6058900D05DD3D006BFB54 /* TableViewPull */ = {
+		activeExec = 0;
+		executables = (
+			03C70DBD12AACEC2004A91DA /* TableViewPull */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 03C70DBD12AACEC2004A91DA /* TableViewPull */;
+		activeSDKPreference = iphonesimulator4.2;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* TableViewPull */;
+		codeSenseManager = 03C70DCD12AACEC3004A91DA /* Code sense */;
+		executables = (
+			03C70DBD12AACEC2004A91DA /* TableViewPull */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					341,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 313183938;
+			PBXWorkspaceStateSaveDate = 313183938;
+		};
+		perUserProjectItems = {
+			03C70E4912AAE3D0004A91DA /* XCBuildMessageTextBookmark */ = 03C70E4912AAE3D0004A91DA /* XCBuildMessageTextBookmark */;
+			03C70E4A12AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E4A12AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E4D12AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E4D12AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E4E12AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E4E12AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E4F12AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E4F12AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E5212AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5212AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E5312AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5312AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E5412AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5412AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E5712AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5712AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E5812AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5812AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E5912AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5912AAE3D0004A91DA /* PBXTextBookmark */;
+			03C70E5A12AAE410004A91DA /* XCBuildMessageTextBookmark */ = 03C70E5A12AAE410004A91DA /* XCBuildMessageTextBookmark */;
+			03C70E5B12AAE410004A91DA /* PBXTextBookmark */ = 03C70E5B12AAE410004A91DA /* PBXTextBookmark */;
+			03C70E5C12AAE413004A91DA /* PBXTextBookmark */ = 03C70E5C12AAE413004A91DA /* PBXTextBookmark */;
+		};
+		sourceControlManager = 03C70DCC12AACEC3004A91DA /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	3A3D909C11188064002B6585 /* EGORefreshTableHeaderView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 832}}";
+			sepNavSelRange = "{1626, 0}";
+			sepNavVisRange = "{470, 1845}";
+			sepNavWindowFrame = "{{107, 85}, {1345, 793}}";
+		};
+	};
+	3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{6140, 870}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 8239}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {929, 2834}}";
+			sepNavSelRange = "{6408, 0}";
+			sepNavVisRange = "{2031, 856}";
+			sepNavWindowFrame = "{{15, 80}, {1345, 793}}";
+		};
+	};
+	3A3D90A6111881DE002B6585 /* RootViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 617}}";
+			sepNavSelRange = "{1279, 0}";
+			sepNavVisRange = "{0, 1663}";
+		};
+	};
+	3A3D90A7111881DE002B6585 /* RootViewController.m */ = {
+		uiCtxt = {
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1330, 437}\";\n            s = 0;\n        },\n                {\n            r = \"{1863, 14}\";\n            s = 0;\n        },\n                {\n            r = \"{1999, 16}\";\n            s = 0;\n        },\n                {\n            r = \"{2108, 15}\";\n            s = 0;\n        },\n                {\n            r = \"{2230, 353}\";\n            s = 0;\n        },\n                {\n            r = \"{2678, 65}\";\n            s = 0;\n        },\n                {\n            r = \"{2850, 119}\";\n            s = 0;\n        },\n                {\n            r = \"{3005, 160}\";\n            s = 0;\n        },\n                {\n            r = \"{3282, 71}\";\n            s = 0;\n        },\n                {\n            r = \"{3448, 74}\";\n            s = 0;\n        },\n                {\n            r = \"{3673, 131}\";\n            s = 0;\n        },\n                {\n            r = \"{3889, 76}\";\n            s = 0;\n        },\n                {\n            r = \"{4055, 79}\";\n            s = 0;\n        },\n                {\n            r = \"{4218, 38}\";\n            s = 0;\n        },\n                {\n            r = \"{4282, 26}\";\n            s = 0;\n        },\n                {\n            r = \"{4328, 51}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 4389}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 1118}}";
+			sepNavSelRange = "{2448, 0}";
+			sepNavVisRange = "{1482, 1198}";
+			sepNavWindowFrame = "{{163, 85}, {1345, 793}}";
+		};
+	};
+}

@@ -25,88 +25,44 @@
 //
 
 #import "RootViewController.h"
-#import "EGORefreshTableHeaderView.h"
-
-@interface RootViewController (Private)
-
-- (void)dataSourceDidFinishLoadingNewData;
-
-@end
-
 
 @implementation RootViewController
 
-@synthesize reloading=_reloading;
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-	if (refreshHeaderView == nil) {
-		refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, 320.0f, self.tableView.bounds.size.height)];
-		refreshHeaderView.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
-		[self.tableView addSubview:refreshHeaderView];
-		self.tableView.showsVerticalScrollIndicator = YES;
-		[refreshHeaderView release];
+	
+	if (_refreshHeaderView == nil) {
+		
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, 320.0f, self.tableView.bounds.size.height)];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+		_refreshHeaderView = view;
+		[view release];
+		
 	}
+	
+	//  update the last update date
+	[view refreshLastUpdatedDate];
+
+	
 }
 
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
-}
-*/
-
-
- // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// Return YES for supported orientations.
 	return YES;
 }
- 
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-	refreshHeaderView=nil;
-}
 
 
-#pragma mark Table view methods
+#pragma mark -
+#pragma mark UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 10;
 }
 
-
-// Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 4;
 }
 
-
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *CellIdentifier = @"Cell";
@@ -121,113 +77,86 @@
     return cell;
 }
 
-- (void)reloadTableViewDataSource{
-	//  should be calling your tableviews model to reload
-	//  put here just for demo
-	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+	
+	return [NSString stringWithFormat:@"Section %i", section];
+	
 }
 
+
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource{
+	
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+	_reloading = YES;
+	
+}
 
 - (void)doneLoadingTableViewData{
+	
 	//  model should call this when its done loading
-	[self dataSourceDidFinishLoadingNewData];
+	_reloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+	
 }
 
 
-/*
-// Override to support row selection in the table view.
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    // Navigation logic may go here -- for example, create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController animated:YES];
-	// [anotherViewController release];
-}
-*/
-
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
 	
-	if (scrollView.isDragging) {
-		if (refreshHeaderView.state == EGOOPullRefreshPulling && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f && !_reloading) {
-			[refreshHeaderView setState:EGOOPullRefreshNormal];
-		} else if (refreshHeaderView.state == EGOOPullRefreshNormal && scrollView.contentOffset.y < -65.0f && !_reloading) {
-			[refreshHeaderView setState:EGOOPullRefreshPulling];
-		}
-	}
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+		
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 	
-	if (scrollView.contentOffset.y <= - 65.0f && !_reloading) {
-			_reloading = YES;
-			[self reloadTableViewDataSource];
-			[refreshHeaderView setState:EGOOPullRefreshLoading];
-			[UIView beginAnimations:nil context:NULL];
-			[UIView setAnimationDuration:0.2];
-			self.tableView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
-			[UIView commitAnimations];
-	}
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	
 }
 
-- (void)dataSourceDidFinishLoadingNewData{
-	
-	_reloading = NO;
-	
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:.3];
-	[self.tableView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
-	[UIView commitAnimations];
-	
-	[refreshHeaderView setState:EGOOPullRefreshNormal];
-	[refreshHeaderView setCurrentDate];  //  should check if data reload was successful 
-}
 
 #pragma mark -
-#pragma mark Dealloc
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+	
+	[self reloadTableViewDataSource];
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+	
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return _reloading; // should return if data source model is reloading
+	
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
+
+
+#pragma mark -
+#pragma mark Memory Management
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (void)viewDidUnload {
+	_refreshHeaderView=nil;
+}
 
 - (void)dealloc {
-	refreshHeaderView = nil;
+	
+	_refreshHeaderView = nil;
     [super dealloc];
 }
 

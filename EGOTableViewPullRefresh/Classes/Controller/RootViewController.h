@@ -24,16 +24,17 @@
 //  THE SOFTWARE.
 //
 
-@class EGORefreshTableHeaderView;
-@interface RootViewController : UITableViewController  <UITableViewDelegate, UITableViewDataSource>{
-	EGORefreshTableHeaderView *refreshHeaderView;
+
+#import "EGORefreshTableHeaderView.h"
+
+@interface RootViewController : UITableViewController  <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
 	
-	//  Reloading should really be your tableviews model class
+	EGORefreshTableHeaderView *_refreshHeaderView;
+	
+	//  Reloading var should really be your tableviews datasource
 	//  Putting it here for demo purposes 
 	BOOL _reloading;
 }
-
-@property(assign,getter=isReloading) BOOL reloading;
 
 - (void)reloadTableViewDataSource;
 - (void)doneLoadingTableViewData;

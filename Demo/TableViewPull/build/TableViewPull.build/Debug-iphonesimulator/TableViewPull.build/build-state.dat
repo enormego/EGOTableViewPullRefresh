@@ -72,11 +72,12 @@ N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Class
 c000000004CFAAA17000000000000067F
 t1291495959
 s1663
+i"EGORefreshTableHeaderView.h"
 
 N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Controller/RootViewController/RootViewController.m
-c000000004CFAAAF300000000000010E5
-t1291496179
-s4325
+c000000004CFD21CE0000000000001147
+t1291657678
+s4423
 i"RootViewController.h"
 
 N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.h
@@ -99,8 +100,8 @@ i<UIKit/UIKit.h>
 i<QuartzCore/QuartzCore.h>
 
 N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/View/RefreshTableHeaderView/EGORefreshTableHeaderView.m
-c000000004CFAAC48000000000000202F
-t1291496520
+c000000004CFAAC8C000000000000202F
+t1291496588
 s8239
 i"EGORefreshTableHeaderView.h"
 

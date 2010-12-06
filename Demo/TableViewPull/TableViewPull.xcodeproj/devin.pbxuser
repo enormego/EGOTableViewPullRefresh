@@ -1,5 +1,15 @@
 // !$*UTF8*$!
 {
+	034F3E8C12AD5954006D400D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */;
+		name = "RootViewController.m: 138";
+		rLen = 0;
+		rLoc = 4001;
+		rType = 0;
+		vrLen = 570;
+		vrLoc = 1395;
+	};
 	03C70DBD12AACEC2004A91DA /* TableViewPull */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -42,132 +52,7 @@
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};
-	03C70E4912AAE3D0004A91DA /* XCBuildMessageTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "'_reloading' undeclared (first use in this function)";
-		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
-		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 1;
-		rLoc = 217;
-		rType = 1;
-	};
-	03C70E4A12AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
-		name = "EGORefreshTableHeaderView.m: 218";
-		rLen = 0;
-		rLoc = 7277;
-		rType = 0;
-		vrLen = 829;
-		vrLoc = 2031;
-	};
-	03C70E4D12AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D909C11188064002B6585 /* EGORefreshTableHeaderView.h */;
-		name = "EGORefreshTableHeaderView.h: 52";
-		rLen = 22;
-		rLoc = 1756;
-		rType = 0;
-		vrLen = 1628;
-		vrLoc = 687;
-	};
-	03C70E4E12AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
-		name = "EGORefreshTableHeaderView.m: 106";
-		rLen = 7;
-		rLoc = 3812;
-		rType = 0;
-		vrLen = 1268;
-		vrLoc = 3386;
-	};
-	03C70E4F12AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
-		name = "EGORefreshTableHeaderView.m: 92";
-		rLen = 0;
-		rLoc = 3688;
-		rType = 0;
-		vrLen = 1251;
-		vrLoc = 3407;
-	};
-	03C70E5212AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D90A6111881DE002B6585 /* RootViewController.h */;
-		name = "RootViewController.h: 28";
-		rLen = 0;
-		rLoc = 1279;
-		rType = 0;
-		vrLen = 1663;
-		vrLoc = 0;
-	};
-	03C70E5312AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */;
-		name = "RootViewController.m: 16";
-		rLen = 0;
-		rLoc = 744;
-		rType = 0;
-		vrLen = 1830;
-		vrLoc = 150;
-	};
-	03C70E5412AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */;
-		name = "RootViewController.m: 41";
-		rLen = 0;
-		rLoc = 1693;
-		rType = 0;
-		vrLen = 1369;
-		vrLoc = 689;
-	};
-	03C70E5712AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
-		name = "EGORefreshTableHeaderView.m: 106";
-		rLen = 0;
-		rLoc = 3812;
-		rType = 0;
-		vrLen = 1275;
-		vrLoc = 6834;
-	};
-	03C70E5812AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D909C11188064002B6585 /* EGORefreshTableHeaderView.h */;
-		rLen = 0;
-		rLoc = 9223372036854775812;
-		rType = 0;
-	};
-	03C70E5912AAE3D0004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D909C11188064002B6585 /* EGORefreshTableHeaderView.h */;
-		name = "EGORefreshTableHeaderView.h: 62";
-		rLen = 88;
-		rLoc = 2222;
-		rType = 0;
-		vrLen = 1840;
-		vrLoc = 470;
-	};
-	03C70E5A12AAE410004A91DA /* XCBuildMessageTextBookmark */ = {
-		isa = PBXTextBookmark;
-		comments = "'_refreshHeaderView' undeclared (first use in this function)";
-		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
-		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 1;
-		rLoc = 240;
-		rType = 1;
-	};
-	03C70E5B12AAE410004A91DA /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
-		name = "EGORefreshTableHeaderView.m: 77";
-		rLen = 0;
-		rLoc = 3165;
-		rType = 0;
-		vrLen = 499;
-		vrLoc = 2887;
-	};
-	03C70E5C12AAE413004A91DA /* PBXTextBookmark */ = {
+	03C70E5F12AAE59E004A91DA /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */;
 		name = "EGORefreshTableHeaderView.m: 218";
@@ -176,6 +61,16 @@
 		rType = 0;
 		vrLen = 856;
 		vrLoc = 2031;
+	};
+	03C70E6112AAE59E004A91DA /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */;
+		name = "RootViewController.m: 138";
+		rLen = 0;
+		rLoc = 4001;
+		rType = 0;
+		vrLen = 1032;
+		vrLoc = 3227;
 	};
 	1D6058900D05DD3D006BFB54 /* TableViewPull */ = {
 		activeExec = 0;
@@ -200,7 +95,7 @@
 					20,
 					341,
 					20,
-					48.16259765625,
+					48,
 					43,
 					43,
 					20,
@@ -215,24 +110,13 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 313183938;
-			PBXWorkspaceStateSaveDate = 313183938;
+			PBXPerProjectTemplateStateSaveDate = 313350446;
+			PBXWorkspaceStateSaveDate = 313350446;
 		};
 		perUserProjectItems = {
-			03C70E4912AAE3D0004A91DA /* XCBuildMessageTextBookmark */ = 03C70E4912AAE3D0004A91DA /* XCBuildMessageTextBookmark */;
-			03C70E4A12AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E4A12AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E4D12AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E4D12AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E4E12AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E4E12AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E4F12AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E4F12AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E5212AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5212AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E5312AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5312AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E5412AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5412AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E5712AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5712AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E5812AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5812AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E5912AAE3D0004A91DA /* PBXTextBookmark */ = 03C70E5912AAE3D0004A91DA /* PBXTextBookmark */;
-			03C70E5A12AAE410004A91DA /* XCBuildMessageTextBookmark */ = 03C70E5A12AAE410004A91DA /* XCBuildMessageTextBookmark */;
-			03C70E5B12AAE410004A91DA /* PBXTextBookmark */ = 03C70E5B12AAE410004A91DA /* PBXTextBookmark */;
-			03C70E5C12AAE413004A91DA /* PBXTextBookmark */ = 03C70E5C12AAE413004A91DA /* PBXTextBookmark */;
+			034F3E8C12AD5954006D400D /* PBXTextBookmark */ = 034F3E8C12AD5954006D400D /* PBXTextBookmark */;
+			03C70E5F12AAE59E004A91DA /* PBXTextBookmark */ = 03C70E5F12AAE59E004A91DA /* PBXTextBookmark */;
+			03C70E6112AAE59E004A91DA /* PBXTextBookmark */ = 03C70E6112AAE59E004A91DA /* PBXTextBookmark */;
 		};
 		sourceControlManager = 03C70DCC12AACEC3004A91DA /* Source Control */;
 		userBuildSettings = {
@@ -249,9 +133,9 @@
 	3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */ = {
 		uiCtxt = {
 			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{6140, 870}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 8239}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {929, 2834}}";
-			sepNavSelRange = "{6408, 0}";
-			sepNavVisRange = "{2031, 856}";
+			sepNavIntBoundsRect = "{{0, 0}, {1286, 2730}}";
+			sepNavSelRange = "{2640, 0}";
+			sepNavVisRange = "{1416, 1934}";
 			sepNavWindowFrame = "{{15, 80}, {1345, 793}}";
 		};
 	};
@@ -264,11 +148,11 @@
 	};
 	3A3D90A7111881DE002B6585 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1330, 437}\";\n            s = 0;\n        },\n                {\n            r = \"{1863, 14}\";\n            s = 0;\n        },\n                {\n            r = \"{1999, 16}\";\n            s = 0;\n        },\n                {\n            r = \"{2108, 15}\";\n            s = 0;\n        },\n                {\n            r = \"{2230, 353}\";\n            s = 0;\n        },\n                {\n            r = \"{2678, 65}\";\n            s = 0;\n        },\n                {\n            r = \"{2850, 119}\";\n            s = 0;\n        },\n                {\n            r = \"{3005, 160}\";\n            s = 0;\n        },\n                {\n            r = \"{3282, 71}\";\n            s = 0;\n        },\n                {\n            r = \"{3448, 74}\";\n            s = 0;\n        },\n                {\n            r = \"{3673, 131}\";\n            s = 0;\n        },\n                {\n            r = \"{3889, 76}\";\n            s = 0;\n        },\n                {\n            r = \"{4055, 79}\";\n            s = 0;\n        },\n                {\n            r = \"{4218, 38}\";\n            s = 0;\n        },\n                {\n            r = \"{4282, 26}\";\n            s = 0;\n        },\n                {\n            r = \"{4328, 51}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 4389}\";\n    s = 0;\n}";
-			sepNavIntBoundsRect = "{{0, 0}, {1286, 1118}}";
-			sepNavSelRange = "{2448, 0}";
-			sepNavVisRange = "{1482, 1198}";
-			sepNavWindowFrame = "{{163, 85}, {1345, 793}}";
+			sepNavFolds = "{\n    c =     (\n                {\n            r = \"{1897, 14}\";\n            s = 0;\n        },\n                {\n            r = \"{2033, 16}\";\n            s = 0;\n        },\n                {\n            r = \"{2142, 15}\";\n            s = 0;\n        },\n                {\n            r = \"{2264, 353}\";\n            s = 0;\n        },\n                {\n            r = \"{2712, 65}\";\n            s = 0;\n        },\n                {\n            r = \"{2884, 119}\";\n            s = 0;\n        },\n                {\n            r = \"{3039, 160}\";\n            s = 0;\n        },\n                {\n            r = \"{3316, 71}\";\n            s = 0;\n        },\n                {\n            r = \"{3482, 74}\";\n            s = 0;\n        },\n                {\n            r = \"{3707, 131}\";\n            s = 0;\n        },\n                {\n            r = \"{3923, 76}\";\n            s = 0;\n        },\n                {\n            r = \"{4089, 79}\";\n            s = 0;\n        },\n                {\n            r = \"{4252, 38}\";\n            s = 0;\n        },\n                {\n            r = \"{4316, 26}\";\n            s = 0;\n        },\n                {\n            r = \"{4362, 51}\";\n            s = 0;\n        }\n    );\n    r = \"{0, 4423}\";\n    s = 0;\n}";
+			sepNavIntBoundsRect = "{{0, 0}, {1510, 1235}}";
+			sepNavSelRange = "{2918, 0}";
+			sepNavVisRange = "{1395, 557}";
+			sepNavWindowFrame = "{{95, 85}, {1345, 793}}";
 		};
 	};
 }

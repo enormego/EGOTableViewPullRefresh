@@ -26,10 +26,14 @@
 
 #import "RootViewController.h"
 #import "EGORefreshTableHeaderView.h"
+#import "EGORefreshTableFooterView.h"
 
 @interface RootViewController (Private)
 
 - (void)dataSourceDidFinishLoadingNewData;
+- (float)tableViewHeight;
+- (void)repositionRefreshHeaderView;
+- (float)endOfTableView:(UIScrollView *)scrollView;
 
 @end
 
@@ -41,6 +45,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _sampleData = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",nil];
 
 	if (refreshHeaderView == nil) {
 		refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, 320.0f, self.tableView.bounds.size.height)];
@@ -49,6 +55,14 @@
 		self.tableView.showsVerticalScrollIndicator = YES;
 		[refreshHeaderView release];
 	}
+    
+    if (refreshFooterView == nil) {
+        refreshFooterView = [[EGORefreshTableFooterView alloc] initWithFrame:CGRectMake(0.0f, [self tableViewHeight], 320.0f, 600.0f)];
+		refreshFooterView.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
+		[self.tableView addSubview:refreshFooterView];
+		self.tableView.showsVerticalScrollIndicator = YES;
+		[refreshFooterView release];
+    }
 }
 
 
@@ -102,7 +116,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return _sampleData.count;
 }
 
 
@@ -117,7 +131,7 @@
     }
     
 	// Configure the cell.
-
+    cell.textLabel.text = [_sampleData objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -146,28 +160,23 @@
 */
 
 
-/*
-// Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
 
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source.
+        [_sampleData removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self repositionRefreshHeaderView];
     }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    //else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
+    //}   
 }
-*/
 
 
 /*
@@ -194,19 +203,36 @@
 		} else if (refreshHeaderView.state == EGOOPullRefreshNormal && scrollView.contentOffset.y < -65.0f && !_reloading) {
 			[refreshHeaderView setState:EGOOPullRefreshPulling];
 		}
+        
+        float endOfTable = [self endOfTableView:scrollView];
+        if (refreshFooterView.state == EGOOPullRefreshPulling && endOfTable < 0.0f && endOfTable > -65.0f && !_reloading) {
+			[refreshFooterView setState:EGOOPullRefreshNormal];
+		} else if (refreshFooterView.state == EGOOPullRefreshNormal && endOfTable < -65.0f && !_reloading) {
+			[refreshFooterView setState:EGOOPullRefreshPulling];
+		}
 	}
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 	
 	if (scrollView.contentOffset.y <= - 65.0f && !_reloading) {
-			_reloading = YES;
-			[self reloadTableViewDataSource];
-			[refreshHeaderView setState:EGOOPullRefreshLoading];
-			[UIView beginAnimations:nil context:NULL];
-			[UIView setAnimationDuration:0.2];
-			self.tableView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
-			[UIView commitAnimations];
+        _reloading = YES;
+        [self reloadTableViewDataSource];
+        [refreshHeaderView setState:EGOOPullRefreshLoading];
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.2];
+        self.tableView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
+        [UIView commitAnimations];
+	}
+    
+    if ([self endOfTableView:scrollView] <= -65.0f && !_reloading) {
+        _reloading = YES;
+        [self reloadTableViewDataSource];
+        [refreshFooterView setState:EGOOPullRefreshLoading];
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:0.2];
+        self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 60.0f, 0.0f);
+        [UIView commitAnimations];
 	}
 }
 
@@ -219,8 +245,28 @@
 	[self.tableView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
 	[UIView commitAnimations];
 	
-	[refreshHeaderView setState:EGOOPullRefreshNormal];
-	[refreshHeaderView setCurrentDate];  //  should check if data reload was successful 
+    if ([refreshHeaderView state] != EGOOPullRefreshNormal) {
+        [refreshHeaderView setState:EGOOPullRefreshNormal];
+        [refreshHeaderView setCurrentDate];  //  should check if data reload was successful 
+    }
+    
+    if ([refreshFooterView state] != EGOOPullRefreshNormal) {
+        [refreshFooterView setState:EGOOPullRefreshNormal];
+        [refreshFooterView setCurrentDate];  //  should check if data reload was successful 
+    }
+}
+
+- (float)tableViewHeight {
+    // calculate height of table view (modify for multiple sections)
+    return self.tableView.rowHeight * [self tableView:self.tableView numberOfRowsInSection:0];
+}
+
+- (void)repositionRefreshHeaderView {
+    refreshFooterView.center = CGPointMake(160.0f, [self tableViewHeight] + 300.0f);
+}
+
+- (float)endOfTableView:(UIScrollView *)scrollView {
+    return [self tableViewHeight] - scrollView.bounds.size.height - scrollView.bounds.origin.y;
 }
 
 #pragma mark -
@@ -228,6 +274,7 @@
 
 - (void)dealloc {
 	refreshHeaderView = nil;
+    [_sampleData release];
     [super dealloc];
 }
 

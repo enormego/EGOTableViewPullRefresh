@@ -34,14 +34,18 @@
 @implementation EGORefreshTableHeaderView
 
 @synthesize state=_state;
-
+@synthesize releaseLabelText=_releaseLabelText;
+@synthesize pullingLabelText=_pullingLabelText;
+@synthesize loadingLabelText=_loadingLabelText;
 
 - (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+    if ((self = [super initWithFrame:frame])) {
 		
+        [self setup:frame];
+        
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	
-		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
+		UILabel *label = [[UILabel alloc] initWithFrame:_lastUpdatedLabelFrame];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = [UIFont systemFontOfSize:12.0f];
 		label.textColor = TEXT_COLOR;
@@ -53,13 +57,13 @@
 		_lastUpdatedLabel=label;
 		[label release];
 
-		if ([[NSUserDefaults standardUserDefaults] objectForKey:@"EGORefreshTableView_LastRefresh"]) {
-			_lastUpdatedLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"EGORefreshTableView_LastRefresh"];
+		if ([[NSUserDefaults standardUserDefaults] objectForKey:_userDefaultsKey]) {
+			_lastUpdatedLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:_userDefaultsKey];
 		} else {
 			[self setCurrentDate];
 		}
 		
-		label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f)];
+		label = [[UILabel alloc] initWithFrame:_statusLabelFrame];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = [UIFont boldSystemFontOfSize:13.0f];
 		label.textColor = TEXT_COLOR;
@@ -72,7 +76,7 @@
 		[label release];
 		
 		CALayer *layer = [[CALayer alloc] init];
-		layer.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
+		layer.frame = _arrowImageFrame;
 		layer.contentsGravity = kCAGravityResizeAspect;
 		layer.contents = (id)[UIImage imageNamed:@"blueArrow.png"].CGImage;
 		
@@ -87,7 +91,7 @@
 		[layer release];
 		
 		UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-		view.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
+		view.frame = _activityViewFrame;
 		[self addSubview:view];
 		_activityView = view;
 		[view release];
@@ -104,7 +108,7 @@
 	[formatter setPMSymbol:@"PM"];
 	[formatter setDateFormat:@"MM/dd/yyyy hh:mm:a"];
 	_lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:[NSDate date]]];
-	[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
+	[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:_userDefaultsKey];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 	[formatter release];
 }
@@ -114,10 +118,10 @@
 	switch (aState) {
 		case EGOOPullRefreshPulling:
 			
-			_statusLabel.text = NSLocalizedString(@"Release to refresh...", @"Release to refresh status");
+			_statusLabel.text = _releaseLabelText;
 			[CATransaction begin];
 			[CATransaction setAnimationDuration:FLIP_ANIMATION_DURATION];
-			_arrowImage.transform = CATransform3DMakeRotation((M_PI / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
+			_arrowImage.transform = _arrowPullingTransform;
 			[CATransaction commit];
 			
 			break;
@@ -130,18 +134,18 @@
 				[CATransaction commit];
 			}
 			
-			_statusLabel.text = NSLocalizedString(@"Pull down to refresh...", @"Pull down to refresh status");
+			_statusLabel.text = _pullingLabelText;
 			[_activityView stopAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
 			_arrowImage.hidden = NO;
-			_arrowImage.transform = CATransform3DIdentity;
+			_arrowImage.transform = _arrowNormalTransform;
 			[CATransaction commit];
 			
 			break;
 		case EGOOPullRefreshLoading:
 			
-			_statusLabel.text = NSLocalizedString(@"Loading...", @"Loading Status");
+			_statusLabel.text = _loadingLabelText;
 			[_activityView startAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
@@ -154,6 +158,22 @@
 	}
 	
 	_state = aState;
+}
+
+- (void)setup:(CGRect)frame {
+    _lastUpdatedLabelFrame = CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f);
+    _statusLabelFrame      = CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f);
+    _arrowImageFrame       = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
+    _activityViewFrame     = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
+    
+    _arrowPullingTransform = CATransform3DMakeRotation((M_PI / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
+    _arrowNormalTransform  = CATransform3DIdentity;
+    
+    _releaseLabelText = NSLocalizedString(@"Release to refresh...", @"Release to refresh status");
+    _pullingLabelText = NSLocalizedString(@"Pull down to refresh...", @"Pull down to refresh status");
+    _loadingLabelText = NSLocalizedString(@"Loading...", @"Loading Status");
+    
+    _userDefaultsKey = @"EGORefreshTableHeaderView_LastRefresh";
 }
 
 - (void)dealloc {

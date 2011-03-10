@@ -43,11 +43,29 @@ typedef enum{
 	
 	EGOPullRefreshState _state;
 
+@protected
+    CGRect _lastUpdatedLabelFrame;
+    CGRect _statusLabelFrame;
+    CGRect _arrowImageFrame;
+    CGRect _activityViewFrame;
+    
+    CATransform3D _arrowPullingTransform;
+    CATransform3D _arrowNormalTransform;
+    
+    NSString *_releaseLabelText;
+    NSString *_pullingLabelText;
+    NSString *_loadingLabelText;
+    
+    NSString *_userDefaultsKey;
 }
 
 @property(nonatomic,assign) EGOPullRefreshState state;
+@property(nonatomic,retain) NSString *releaseLabelText;
+@property(nonatomic,retain) NSString *pullingLabelText;
+@property(nonatomic,retain) NSString *loadingLabelText;
 
 - (void)setCurrentDate;
 - (void)setState:(EGOPullRefreshState)aState;
+- (void)setup:(CGRect)frame;
 
 @end

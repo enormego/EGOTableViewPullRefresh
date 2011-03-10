@@ -1,9 +1,9 @@
 //
-//  RootViewController.h
-//  TableViewPull
+//  EGORefreshTableFooterView.h
+//  Demo
 //
-//  Created by Devin Doty on 10/16/09October16.
-//  Copyright enormego 2009. All rights reserved.
+//  Created by Zbigniew Kominek on 3/10/11.
+//  Copyright 2011 Zbigniew Kominek. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,23 +24,12 @@
 //  THE SOFTWARE.
 //
 
-@class EGORefreshTableHeaderView;
-@class EGORefreshTableFooterView;
-@interface RootViewController : UITableViewController  <UITableViewDelegate, UITableViewDataSource>{
-	EGORefreshTableHeaderView *refreshHeaderView;
-    EGORefreshTableFooterView *refreshFooterView;
-	
-	//  Reloading should really be your tableviews model class
-	//  Putting it here for demo purposes 
-	BOOL _reloadingHeader;
-    BOOL _reloadingFooter;
-    
-    //  Sample data - do not include in your project
-    NSMutableArray *_sampleData;
+#import <Foundation/Foundation.h>
+#import "EGORefreshTableHeaderView.h"
+
+
+@interface EGORefreshTableFooterView : EGORefreshTableHeaderView {
+
 }
 
-@property(assign,getter=isReloading) BOOL reloading;
-
-- (void)reloadTableViewDataSource;
-- (void)doneLoadingTableViewData;
 @end

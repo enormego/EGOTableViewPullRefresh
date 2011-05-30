@@ -49,7 +49,16 @@ typedef enum{
 
 @property(nonatomic,assign) id <EGORefreshTableHeaderDelegate> delegate;
 
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
++ (NSString *)defaultArrowImageName;
++ (UIColor *)defaultTextColor;
++ (UIColor *)defaultShadowColor;
++ (UIColor *)defaultBackgroundColor;
+
+- (id)initWithFrame:(CGRect)frame
+     arrowImageName:(NSString *)arrow
+          textColor:(UIColor *)textColor
+        shadowColor:(UIColor *)shadowColor
+    backgroundColor:(UIColor *)backgroundColor;
 
 - (void)refreshLastUpdatedDate;
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;

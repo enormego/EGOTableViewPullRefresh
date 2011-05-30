@@ -27,7 +27,6 @@
 #import "EGORefreshTableHeaderView.h"
 
 
-#define TEXT_COLOR	 [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0]
 #define FLIP_ANIMATION_DURATION 0.18f
 
 
@@ -39,18 +38,23 @@
 
 @synthesize delegate=_delegate;
 
-
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor  {
+- (id)initWithFrame:(CGRect)frame
+     arrowImageName:(NSString *)arrow
+          textColor:(UIColor *)textColor
+        shadowColor:(UIColor *)shadowColor
+    backgroundColor:(UIColor *)backgroundColor {
     if (self = [super initWithFrame:frame]) {
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		self.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
+		self.backgroundColor = backgroundColor;
 
 		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = [UIFont systemFontOfSize:12.0f];
 		label.textColor = textColor;
-		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
+      if(shadowColor != nil) {
+        label.shadowColor = shadowColor;
+      }
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;
@@ -62,7 +66,9 @@
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = [UIFont boldSystemFontOfSize:13.0f];
 		label.textColor = textColor;
-		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
+      if(shadowColor != nil) {
+        label.shadowColor = shadowColor;
+      }
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		label.backgroundColor = [UIColor clearColor];
 		label.textAlignment = UITextAlignmentCenter;
@@ -100,7 +106,29 @@
 }
 
 - (id)initWithFrame:(CGRect)frame  {
-  return [self initWithFrame:frame arrowImageName:@"blueArrow.png" textColor:TEXT_COLOR];
+  return [self initWithFrame:frame
+              arrowImageName:[EGORefreshTableHeaderView defaultArrowImageName]
+                   textColor:[EGORefreshTableHeaderView defaultTextColor]
+                 shadowColor:[EGORefreshTableHeaderView defaultShadowColor]
+             backgroundColor:[EGORefreshTableHeaderView defaultBackgroundColor]];
+}
+
+#pragma mark - Getters
+
++ (NSString *)defaultArrowImageName {
+  return @"blueArrow.png";
+}
+
++ (UIColor *)defaultTextColor {
+  return [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0];
+}
+
++ (UIColor *)defaultShadowColor {
+  return [UIColor colorWithWhite:0.9f alpha:1.0f];
+}
+
++ (UIColor *)defaultBackgroundColor {
+  return [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0];
 }
 
 #pragma mark -

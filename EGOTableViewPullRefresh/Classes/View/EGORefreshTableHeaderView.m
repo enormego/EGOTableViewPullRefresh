@@ -110,6 +110,8 @@
 	
 	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) {
 		
+		NSString *label = NSLocalizedString(@"Last Updated", @"Last Updated label");
+
 		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
 		
 		[NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
@@ -117,7 +119,7 @@
 		[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 
-		_lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [dateFormatter stringFromDate:date]];
+		_lastUpdatedLabel.text = [NSString stringWithFormat:@"%@: %@", label, [dateFormatter stringFromDate:date]];
 		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		

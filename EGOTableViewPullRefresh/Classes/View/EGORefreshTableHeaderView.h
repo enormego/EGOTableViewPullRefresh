@@ -2,7 +2,7 @@
 //  EGORefreshTableHeaderView.h
 //  Demo
 //
-//  Created by Devin Doty on 10/14/09October14.
+//  Created by Devin Doty on 10/14/09
 //  Copyright 2009 enormego. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,39 +27,53 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-typedef enum{
-	EGOOPullRefreshPulling = 0,
-	EGOOPullRefreshNormal,
-	EGOOPullRefreshLoading,	
+
+typedef enum {
+    EGOOPullRefreshPulling,
+    EGOOPullRefreshNormal,
+    EGOOPullRefreshLoading,
 } EGOPullRefreshState;
 
+
 @protocol EGORefreshTableHeaderDelegate;
-@interface EGORefreshTableHeaderView : UIView {
-	
-	id _delegate;
-	EGOPullRefreshState _state;
 
-	UILabel *_lastUpdatedLabel;
-	UILabel *_statusLabel;
-	CALayer *_arrowImage;
-	UIActivityIndicatorView *_activityView;
-	
-
+@interface EGORefreshTableHeaderView : UIView
+{
+    id _delegate;
+    
+    EGOPullRefreshState _state;
+    
+    CALayer *_arrowImage;
+    
+    UILabel *_lastUpdatedLabel;
+    UILabel *_statusLabel;
+    
+    UIActivityIndicatorView *_activityView;
 }
 
 @property(nonatomic,assign) id <EGORefreshTableHeaderDelegate> delegate;
 
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
+@property (nonatomic, retain) UILabel *lastUpdatedLabel;
+@property (nonatomic, retain) UILabel *statusLabel;
 
-- (void)refreshLastUpdatedDate;
+- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
+- (id)initWithView:(UIView *)view andTableView:(UITableView *)tableView;
+
+- (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView;
-- (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
+- (void)refreshLastUpdatedDate;
 
 @end
+
+
 @protocol EGORefreshTableHeaderDelegate
+
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view;
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view;
+
 @optional
+
 - (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view;
+
 @end

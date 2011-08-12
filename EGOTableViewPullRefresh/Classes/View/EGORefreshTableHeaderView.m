@@ -42,12 +42,11 @@
 
 @synthesize delegate=_delegate;
 @synthesize lastUpdatedLabel=_lastUpdatedLabel;
+@synthesize objectKey=_objectKey;
 @synthesize statusLabel=_statusLabel;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor
 {
-    NSLog(@"initwframe called");
-    
     if ((self = [super initWithFrame:frame]))
     {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -102,9 +101,7 @@
         
         [self setState:EGOOPullRefreshNormal];
     }
-    
     return self;
-    
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -134,7 +131,18 @@
         [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
         
         _lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [dateFormatter stringFromDate:date]];
-        [[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
+        
+        NSString *forKey;
+        if (self.objectKey)
+        {
+            forKey = [forKey stringByAppendingFormat:@"EGORefreshTableView_LastRefresh_%@", self.objectKey];
+        }
+        else
+        {
+            forKey = @"EGORefreshTableView_LastRefresh";
+        }
+        
+        [[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:forKey];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else
@@ -265,6 +273,7 @@
     [_activityView release];
     [_arrowImage release];
     [_lastUpdatedLabel release];
+    [_objectKey release];
     [_statusLabel release];
     
     [super dealloc];

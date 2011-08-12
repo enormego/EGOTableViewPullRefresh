@@ -49,12 +49,16 @@ typedef enum {
     UILabel *_statusLabel;
     
     UIActivityIndicatorView *_activityView;
+    
+    NSString *_objectKey;
 }
 
-@property(nonatomic,assign) id <EGORefreshTableHeaderDelegate> delegate;
+@property(nonatomic, assign) id <EGORefreshTableHeaderDelegate> delegate;
 
 @property (nonatomic, retain) UILabel *lastUpdatedLabel;
 @property (nonatomic, retain) UILabel *statusLabel;
+
+@property (nonatomic, copy) NSString *objectKey;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
 - (id)initWithView:(UIView *)view andTableView:(UITableView *)tableView;

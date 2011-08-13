@@ -27,7 +27,6 @@
 #import "EGORefreshTableHeaderView.h"
 
 
-#define TEXT_COLOR [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0]
 #define FLIP_ANIMATION_DURATION 0.18f
 
 
@@ -46,21 +45,24 @@
 @synthesize lastUpdatedLabel=_lastUpdatedLabel;
 @synthesize objectKey=_objectKey;
 @synthesize statusLabel=_statusLabel;
+@synthesize style=_style;
 
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor
+- (id)initWithFrame:(CGRect)frame 
+     arrowImageName:(NSString *)arrow 
+          textColor:(UIColor *)textColor
+    backgroundColor:(UIColor *)backgroundColor
+      activityStyle:(UIActivityIndicatorViewStyle)activityStyle
 {
     if ((self = [super initWithFrame:frame]))
     {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        self.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
+        self.backgroundColor = backgroundColor;
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f,frame.size.height - 30.0f,
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f,
                                                                    self.frame.size.width, 20.0f)];
         label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         label.font = [UIFont systemFontOfSize:12.0f];
         label.textColor = textColor;
-        label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
-        label.shadowOffset = CGSizeMake(0.0f, 1.0f);
         label.backgroundColor = [UIColor clearColor];
         label.textAlignment = UITextAlignmentCenter;
         [self addSubview:label];
@@ -72,8 +74,6 @@
         label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         label.font = [UIFont boldSystemFontOfSize:13.0f];
         label.textColor = textColor;
-        label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
-        label.shadowOffset = CGSizeMake(0.0f, 1.0f);
         label.backgroundColor = [UIColor clearColor];
         label.textAlignment = UITextAlignmentCenter;
         [self addSubview:label];
@@ -95,7 +95,7 @@
         [[self layer] addSublayer:layer];
         self.arrowImage = layer;
         
-        UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:activityStyle];
         view.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
         [self addSubview:view];
         self.activityView = view;
@@ -108,14 +108,65 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
-    return [self initWithFrame:frame arrowImageName:@"blueArrow.png" textColor:TEXT_COLOR];
+    return [self initWithFrame:frame style:EGOStyleBlue];
 }
 
-- (id)initWithView:(UIView *)view andTableView:(UITableView *)tableView
+- (id)initWithView:(UIView *)view tableView:(UITableView *)tableView
 {
     CGRect defaultFrame = CGRectMake(0.0f, 0.0f - tableView.bounds.size.height,
                                      view.frame.size.width, tableView.bounds.size.height);
     return [self initWithFrame:defaultFrame];
+}
+
+- (id)initWithView:(UIView *)view tableView:(UITableView *)tableView style:(EGOStyle)style
+{
+    CGRect defaultFrame = CGRectMake(0.0f, 0.0f - tableView.bounds.size.height,
+                                     view.frame.size.width, tableView.bounds.size.height);
+    return [self initWithFrame:defaultFrame style:style];
+}
+
+- (id)initWithFrame:(CGRect)frame style:(EGOStyle)style
+{
+    UIColor *textColor;
+    UIColor *backgroundColor;
+    NSString *arrowImageName;
+    UIActivityIndicatorViewStyle activityStyle;
+    
+    switch (style)
+    {
+        case EGOStyleBlack:
+            backgroundColor = [UIColor blackColor];
+            textColor = [UIColor whiteColor];
+            arrowImageName = @"whiteArrow.png";
+            activityStyle = UIActivityIndicatorViewStyleWhite;
+            break;
+            
+        case EGOStyleWhite:
+            backgroundColor = [UIColor whiteColor];
+            textColor = [UIColor blackColor];
+            arrowImageName = @"blackArrow.png";
+            activityStyle = UIActivityIndicatorViewStyleGray;
+            break;
+            
+        case EGOStyleGrey:
+            backgroundColor = [UIColor whiteColor];
+            textColor = [UIColor grayColor];
+            arrowImageName = @"grayArrow.png";
+            activityStyle = UIActivityIndicatorViewStyleGray;
+            break;
+            
+        default:
+            backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
+            textColor = [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0];
+            arrowImageName = @"blueArrow.png";
+            activityStyle = UIActivityIndicatorViewStyleGray;
+    }
+    
+    return [self initWithFrame:frame 
+                arrowImageName:arrowImageName 
+                     textColor:textColor 
+               backgroundColor:backgroundColor 
+                 activityStyle:activityStyle];
 }
 
 

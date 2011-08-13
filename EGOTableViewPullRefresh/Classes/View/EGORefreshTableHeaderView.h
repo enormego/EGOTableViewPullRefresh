@@ -35,6 +35,14 @@ typedef enum {
 } EGOPullRefreshState;
 
 
+typedef enum {
+    EGOStyleBlue,
+    EGOStyleBlack,
+    EGOStyleWhite,
+    EGOStyleGrey,
+} EGOStyle;
+
+
 @protocol EGORefreshTableHeaderDelegate;
 
 @interface EGORefreshTableHeaderView : UIView
@@ -51,9 +59,11 @@ typedef enum {
     UIActivityIndicatorView *_activityView;
     
     NSString *_objectKey;
+    
+    EGOStyle _style;
 }
 
-@property(nonatomic, assign) id <EGORefreshTableHeaderDelegate> delegate;
+@property (nonatomic, assign) id <EGORefreshTableHeaderDelegate> delegate;
 
 @property (nonatomic, retain) UIActivityIndicatorView *activityView;
 @property (nonatomic, retain) CALayer *arrowImage;
@@ -62,12 +72,22 @@ typedef enum {
 
 @property (nonatomic, copy) NSString *objectKey;
 
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
-- (id)initWithView:(UIView *)view andTableView:(UITableView *)tableView;
+@property (assign) EGOStyle style;
+
+- (id)initWithFrame:(CGRect)frame style:(EGOStyle)style;
+- (id)initWithView:(UIView *)view tableView:(UITableView *)tableView;
+- (id)initWithView:(UIView *)view tableView:(UITableView *)tableView style:(EGOStyle)style;
+
+- (id)initWithFrame:(CGRect)frame 
+     arrowImageName:(NSString *)arrow 
+          textColor:(UIColor *)textColor 
+    backgroundColor:(UIColor *)backgroundColor
+      activityStyle:(UIActivityIndicatorViewStyle)activityStyle;
 
 - (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView;
+
 - (void)refreshLastUpdatedDate;
 
 @end

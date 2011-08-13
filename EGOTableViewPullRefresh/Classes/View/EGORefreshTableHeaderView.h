@@ -55,6 +55,8 @@ typedef enum {
 
 @property(nonatomic, assign) id <EGORefreshTableHeaderDelegate> delegate;
 
+@property (nonatomic, retain) UIActivityIndicatorView *activityView;
+@property (nonatomic, retain) CALayer *arrowImage;
 @property (nonatomic, retain) UILabel *lastUpdatedLabel;
 @property (nonatomic, retain) UILabel *statusLabel;
 

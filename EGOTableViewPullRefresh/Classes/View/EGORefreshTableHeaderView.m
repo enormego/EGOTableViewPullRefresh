@@ -40,6 +40,8 @@
 
 @implementation EGORefreshTableHeaderView
 
+@synthesize activityView=_activityView;
+@synthesize arrowImage=_arrowImage;
 @synthesize delegate=_delegate;
 @synthesize lastUpdatedLabel=_lastUpdatedLabel;
 @synthesize objectKey=_objectKey;
@@ -91,12 +93,12 @@
 #endif
         
         [[self layer] addSublayer:layer];
-        _arrowImage=layer;
+        self.arrowImage = layer;
         
         UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         view.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
         [self addSubview:view];
-        _activityView = view;
+        self.activityView = view;
         [view release];
         
         [self setState:EGOOPullRefreshNormal];
@@ -271,6 +273,7 @@
 - (void)dealloc
 {
     self.delegate = nil;
+    self.arrowImage = nil;
     
     [_activityView release];
     [_arrowImage release];

@@ -38,6 +38,7 @@
 @implementation EGORefreshTableHeaderView
 
 @synthesize delegate=_delegate;
+@synthesize dateFormatter = _dateFormatter;
 
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor  {
@@ -106,18 +107,29 @@
 #pragma mark -
 #pragma mark Setters
 
+
 - (void)refreshLastUpdatedDate {
 	
 	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) {
 		
 		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
 		
-		[NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
-		NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
-		[dateFormatter setDateStyle:NSDateFormatterShortStyle];
-		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-
-		_lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [dateFormatter stringFromDate:date]];
+        NSDateFormatter *dateFormatter;
+        
+        if(self.dateFormatter == nil)
+        {
+            [NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
+            dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+            [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+            [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+        }
+        else
+        {
+            dateFormatter = self.dateFormatter;
+        }
+		
+        NSString *strLastUpated = NSLocalizedString(@"Last Updated:", "Show the date of last updated");
+		_lastUpdatedLabel.text = [NSString stringWithFormat:@"%@ %@", strLastUpated, [dateFormatter stringFromDate:date]];
 		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		
@@ -256,6 +268,9 @@
 	_statusLabel = nil;
 	_arrowImage = nil;
 	_lastUpdatedLabel = nil;
+    
+    [_dateFormatter release];
+    
     [super dealloc];
 }
 

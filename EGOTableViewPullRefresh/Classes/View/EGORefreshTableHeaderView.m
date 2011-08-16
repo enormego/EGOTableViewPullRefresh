@@ -263,12 +263,13 @@
 
 - (void)dealloc {
 	
-	_delegate=nil;
+	
 	_activityView = nil;
 	_statusLabel = nil;
 	_arrowImage = nil;
 	_lastUpdatedLabel = nil;
     
+    [_delegate release];
     [_dateFormatter release];
     
     [super dealloc];

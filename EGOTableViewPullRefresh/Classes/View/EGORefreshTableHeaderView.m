@@ -268,8 +268,8 @@
 	_statusLabel = nil;
 	_arrowImage = nil;
 	_lastUpdatedLabel = nil;
+    _delegate = nil;
     
-    [_delegate release];
     [_dateFormatter release];
     
     [super dealloc];

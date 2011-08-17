@@ -48,7 +48,7 @@ typedef enum{
 
 }
 
-@property(nonatomic, retain) id <EGORefreshTableHeaderDelegate> delegate;
+@property(nonatomic, assign) id <EGORefreshTableHeaderDelegate> delegate;
 @property(nonatomic, retain) NSDateFormatter *dateFormatter;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;

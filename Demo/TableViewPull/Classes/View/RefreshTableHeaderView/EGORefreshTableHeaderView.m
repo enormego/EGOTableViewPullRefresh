@@ -38,10 +38,11 @@
 @implementation EGORefreshTableHeaderView
 
 @synthesize delegate=_delegate;
+@synthesize dateFormatter = _dateFormatter;
 
 
-- (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor  {
+    if((self = [super initWithFrame:frame])) {
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		self.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
@@ -49,7 +50,7 @@
 		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = [UIFont systemFontOfSize:12.0f];
-		label.textColor = TEXT_COLOR;
+		label.textColor = textColor;
 		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		label.backgroundColor = [UIColor clearColor];
@@ -61,7 +62,7 @@
 		label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = [UIFont boldSystemFontOfSize:13.0f];
-		label.textColor = TEXT_COLOR;
+		label.textColor = textColor;
 		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		label.backgroundColor = [UIColor clearColor];
@@ -73,7 +74,7 @@
 		CALayer *layer = [CALayer layer];
 		layer.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
 		layer.contentsGravity = kCAGravityResizeAspect;
-		layer.contents = (id)[UIImage imageNamed:@"blueArrow.png"].CGImage;
+		layer.contents = (id)[UIImage imageNamed:arrow].CGImage;
 		
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 		if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
@@ -99,9 +100,13 @@
 	
 }
 
+- (id)initWithFrame:(CGRect)frame  {
+  return [self initWithFrame:frame arrowImageName:@"blueArrow.png" textColor:TEXT_COLOR];
+}
 
 #pragma mark -
 #pragma mark Setters
+
 
 - (void)refreshLastUpdatedDate {
 	
@@ -109,14 +114,24 @@
 		
 		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
 		
-		NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-		[formatter setAMSymbol:@"AM"];
-		[formatter setPMSymbol:@"PM"];
-		[formatter setDateFormat:@"MM/dd/yyyy hh:mm:a"];
-		_lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [formatter stringFromDate:date]];
+        NSDateFormatter *dateFormatter;
+        
+        if(self.dateFormatter == nil)
+        {
+            [NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
+            dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+            [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+            [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+        }
+        else
+        {
+            dateFormatter = self.dateFormatter;
+        }
+		
+        NSString *strLastUpated = NSLocalizedString(@"Last Updated:", "Show the date of last updated");
+		_lastUpdatedLabel.text = [NSString stringWithFormat:@"%@ %@", strLastUpated, [dateFormatter stringFromDate:date]];
 		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
-		[formatter release];
 		
 	} else {
 		
@@ -248,11 +263,15 @@
 
 - (void)dealloc {
 	
-	_delegate=nil;
+	
 	_activityView = nil;
 	_statusLabel = nil;
 	_arrowImage = nil;
 	_lastUpdatedLabel = nil;
+    _delegate = nil;
+    
+    [_dateFormatter release];
+    
     [super dealloc];
 }
 

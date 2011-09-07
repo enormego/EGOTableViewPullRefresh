@@ -25,7 +25,6 @@
 //
 
 #import "TableViewPullAppDelegate.h"
-#import "RootViewController.h"
 
 
 @implementation TableViewPullAppDelegate

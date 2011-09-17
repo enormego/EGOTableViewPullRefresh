@@ -198,7 +198,6 @@
         }
         
         [[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:forKey];
-        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     else
     {

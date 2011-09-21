@@ -119,6 +119,12 @@
 	
 }
 
+-(void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    if (!_reloading) {
+        [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+    }
+}
+
 
 #pragma mark -
 #pragma mark EGORefreshTableHeaderDelegate Methods
@@ -126,7 +132,8 @@
 - (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
 	
 	[self reloadTableViewDataSource];
-	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+    [self doneLoadingTableViewData];
+	//[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
 	
 }
 

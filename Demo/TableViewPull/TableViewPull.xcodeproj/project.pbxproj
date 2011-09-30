@@ -12,15 +12,7 @@
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
-		2CCD9B571243CB9F006B1864 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD9B561243CB9F006B1864 /* grayArrow@2x.png */; };
-		2CCD9B5C1243CDC2006B1864 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD9B5A1243CDC2006B1864 /* blueArrow@2x.png */; };
-		2CCD9B5D1243CDC2006B1864 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD9B5B1243CDC2006B1864 /* blackArrow@2x.png */; };
-		2CCD9B5F1243CE1A006B1864 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD9B5E1243CE1A006B1864 /* grayArrow.png */; };
-		2CCD9B611243CE22006B1864 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD9B601243CE22006B1864 /* whiteArrow@2x.png */; };
 		3A25816E1088BEE600126784 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A25816D1088BEE600126784 /* QuartzCore.framework */; };
-		3A2585551088E97000126784 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2585521088E97000126784 /* blackArrow.png */; };
-		3A2585561088E97000126784 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2585531088E97000126784 /* blueArrow.png */; };
-		3A2585571088E97000126784 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A2585541088E97000126784 /* whiteArrow.png */; };
 		3A3D908E11187FE7002B6585 /* TableViewPullAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D908D11187FE7002B6585 /* TableViewPullAppDelegate.m */; };
 		3A3D90A8111881DE002B6585 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */; };
 		3A3D910311188495002B6585 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D910211188495002B6585 /* main.m */; };
@@ -51,15 +43,7 @@
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		2CCD9B561243CB9F006B1864 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
-		2CCD9B5A1243CDC2006B1864 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
-		2CCD9B5B1243CDC2006B1864 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
-		2CCD9B5E1243CE1A006B1864 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
-		2CCD9B601243CE22006B1864 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		3A25816D1088BEE600126784 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		3A2585521088E97000126784 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
-		3A2585531088E97000126784 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
-		3A2585541088E97000126784 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		3A3D908C11187FE7002B6585 /* TableViewPullAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewPullAppDelegate.h; sourceTree = "<group>"; };
 		3A3D908D11187FE7002B6585 /* TableViewPullAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewPullAppDelegate.m; sourceTree = "<group>"; };
 		3A3D90A6111881DE002B6585 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
@@ -120,14 +104,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2CCD9B5E1243CE1A006B1864 /* grayArrow.png */,
-				2CCD9B561243CB9F006B1864 /* grayArrow@2x.png */,
-				3A2585521088E97000126784 /* blackArrow.png */,
-				2CCD9B5B1243CDC2006B1864 /* blackArrow@2x.png */,
-				3A2585531088E97000126784 /* blueArrow.png */,
-				2CCD9B5A1243CDC2006B1864 /* blueArrow@2x.png */,
-				3A2585541088E97000126784 /* whiteArrow.png */,
-				2CCD9B601243CE22006B1864 /* whiteArrow@2x.png */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* TableViewPull-Info.plist */,
@@ -260,14 +236,6 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
-				3A2585551088E97000126784 /* blackArrow.png in Resources */,
-				3A2585561088E97000126784 /* blueArrow.png in Resources */,
-				3A2585571088E97000126784 /* whiteArrow.png in Resources */,
-				2CCD9B571243CB9F006B1864 /* grayArrow@2x.png in Resources */,
-				2CCD9B5C1243CDC2006B1864 /* blueArrow@2x.png in Resources */,
-				2CCD9B5D1243CDC2006B1864 /* blackArrow@2x.png in Resources */,
-				2CCD9B5F1243CE1A006B1864 /* grayArrow.png in Resources */,
-				2CCD9B611243CE22006B1864 /* whiteArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

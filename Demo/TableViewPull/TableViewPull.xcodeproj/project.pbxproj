@@ -336,7 +336,7 @@
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../../EGOTableViewPullRefresh/Classes/View";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.2;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -351,7 +351,7 @@
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../../EGOTableViewPullRefresh/Classes/View";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.2;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

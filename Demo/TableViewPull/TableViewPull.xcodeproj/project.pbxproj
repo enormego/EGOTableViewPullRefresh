@@ -17,6 +17,7 @@
 		3A3D90A8111881DE002B6585 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */; };
 		3A3D910311188495002B6585 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D910211188495002B6585 /* main.m */; };
 		5251067714360A3900680AB0 /* libEGOTableViewPullRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 525106571436087000680AB0 /* libEGOTableViewPullRefresh.a */; };
+		525108D61437CBCA00680AB0 /* EGOResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 525108D51437CBCA00680AB0 /* EGOResource.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		3A3D90C411188297002B6585 /* TableViewPull_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewPull_Prefix.pch; sourceTree = "<group>"; };
 		3A3D910211188495002B6585 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5251064F1436086F00680AB0 /* EGOTableViewPullRefresh.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EGOTableViewPullRefresh.xcodeproj; path = ../../EGOTableViewPullRefresh/EGOTableViewPullRefresh.xcodeproj; sourceTree = "<group>"; };
+		525108D51437CBCA00680AB0 /* EGOResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = EGOResource.bundle; path = ../../../EGOTableViewPullRefresh/EGOResource.bundle; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TableViewPull-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TableViewPull-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				525108D51437CBCA00680AB0 /* EGOResource.bundle */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* TableViewPull-Info.plist */,
@@ -236,6 +239,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
+				525108D61437CBCA00680AB0 /* EGOResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -181,9 +181,9 @@
 			productReference = 52510634143605AC00680AB0 /* libEGOTableViewPullRefresh.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		525108761437BBDB00680AB0 /* Resources */ = {
+		525108761437BBDB00680AB0 /* EGOResources */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 525108871437BBDB00680AB0 /* Build configuration list for PBXNativeTarget "Resources" */;
+			buildConfigurationList = 525108871437BBDB00680AB0 /* Build configuration list for PBXNativeTarget "EGOResources" */;
 			buildPhases = (
 				525108731437BBDB00680AB0 /* Sources */,
 				525108741437BBDB00680AB0 /* Frameworks */,
@@ -193,7 +193,7 @@
 			);
 			dependencies = (
 			);
-			name = Resources;
+			name = EGOResources;
 			productName = Resources;
 			productReference = 525108771437BBDB00680AB0 /* Resources.bundle */;
 			productType = "com.apple.product-type.bundle";
@@ -219,7 +219,7 @@
 			projectRoot = "";
 			targets = (
 				52510633143605AC00680AB0 /* EGOTableViewPullRefresh */,
-				525108761437BBDB00680AB0 /* Resources */,
+				525108761437BBDB00680AB0 /* EGOResources */,
 			);
 		};
 /* End PBXProject section */
@@ -264,7 +264,7 @@
 /* Begin PBXTargetDependency section */
 		525108921437BCB400680AB0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 525108761437BBDB00680AB0 /* Resources */;
+			target = 525108761437BBDB00680AB0 /* EGOResources */;
 			targetProxy = 525108911437BCB400680AB0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -420,7 +420,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		525108871437BBDB00680AB0 /* Build configuration list for PBXNativeTarget "Resources" */ = {
+		525108871437BBDB00680AB0 /* Build configuration list for PBXNativeTarget "EGOResources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				525108851437BBDB00680AB0 /* Debug */,

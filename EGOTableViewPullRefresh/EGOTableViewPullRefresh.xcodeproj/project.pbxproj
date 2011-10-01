@@ -10,6 +10,16 @@
 		52510638143605AC00680AB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52510637143605AC00680AB0 /* Foundation.framework */; };
 		5251064B1436061700680AB0 /* EGORefreshTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 525106491436061700680AB0 /* EGORefreshTableHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5251064C1436061700680AB0 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5251064A1436061700680AB0 /* EGORefreshTableHeaderView.m */; };
+		525108791437BBDB00680AB0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525108781437BBDB00680AB0 /* Cocoa.framework */; };
+		525108831437BBDB00680AB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 525108811437BBDB00680AB0 /* InfoPlist.strings */; };
+		525108891437BC3200680AB0 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5251079014379BB900680AB0 /* blackArrow.png */; };
+		5251088A1437BC3200680AB0 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5251079114379BB900680AB0 /* blackArrow@2x.png */; };
+		5251088B1437BC3200680AB0 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5251079214379BB900680AB0 /* blueArrow.png */; };
+		5251088C1437BC3200680AB0 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5251079314379BB900680AB0 /* blueArrow@2x.png */; };
+		5251088D1437BC3200680AB0 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5251079414379BB900680AB0 /* grayArrow.png */; };
+		5251088E1437BC3200680AB0 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5251079514379BB900680AB0 /* grayArrow@2x.png */; };
+		5251088F1437BC3200680AB0 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 5251079614379BB900680AB0 /* whiteArrow.png */; };
+		525108901437BC3200680AB0 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5251079714379BB900680AB0 /* whiteArrow@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,14 +27,22 @@
 		52510637143605AC00680AB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		525106491436061700680AB0 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGORefreshTableHeaderView.h; path = Classes/View/EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		5251064A1436061700680AB0 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGORefreshTableHeaderView.m; path = Classes/View/EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
-		5251079014379BB900680AB0 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blackArrow.png; path = Resources/blackArrow.png; sourceTree = "<group>"; };
-		5251079114379BB900680AB0 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blackArrow@2x.png"; path = "Resources/blackArrow@2x.png"; sourceTree = "<group>"; };
-		5251079214379BB900680AB0 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueArrow.png; path = Resources/blueArrow.png; sourceTree = "<group>"; };
-		5251079314379BB900680AB0 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueArrow@2x.png"; path = "Resources/blueArrow@2x.png"; sourceTree = "<group>"; };
-		5251079414379BB900680AB0 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grayArrow.png; path = Resources/grayArrow.png; sourceTree = "<group>"; };
-		5251079514379BB900680AB0 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "grayArrow@2x.png"; path = "Resources/grayArrow@2x.png"; sourceTree = "<group>"; };
-		5251079614379BB900680AB0 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = whiteArrow.png; path = Resources/whiteArrow.png; sourceTree = "<group>"; };
-		5251079714379BB900680AB0 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "whiteArrow@2x.png"; path = "Resources/whiteArrow@2x.png"; sourceTree = "<group>"; };
+		5251079014379BB900680AB0 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		5251079114379BB900680AB0 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		5251079214379BB900680AB0 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		5251079314379BB900680AB0 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		5251079414379BB900680AB0 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		5251079514379BB900680AB0 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		5251079614379BB900680AB0 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		5251079714379BB900680AB0 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		525108771437BBDB00680AB0 /* Resources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Resources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		525108781437BBDB00680AB0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		5251087B1437BBDB00680AB0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		5251087C1437BBDB00680AB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5251087D1437BBDB00680AB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		525108801437BBDB00680AB0 /* Resources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Resources-Info.plist"; sourceTree = "<group>"; };
+		525108821437BBDB00680AB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		525108841437BBDB00680AB0 /* Resources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Resources-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,14 +54,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		525108741437BBDB00680AB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				525108791437BBDB00680AB0 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		52510629143605AC00680AB0 = {
 			isa = PBXGroup;
 			children = (
-				5251068D14361A3100680AB0 /* Resources */,
 				52510647143605ED00680AB0 /* Classes */,
+				5251087E1437BBDB00680AB0 /* Resources */,
 				52510636143605AC00680AB0 /* Frameworks */,
 				52510635143605AC00680AB0 /* Products */,
 			);
@@ -53,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				52510634143605AC00680AB0 /* libEGOTableViewPullRefresh.a */,
+				525108771437BBDB00680AB0 /* Resources.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				52510637143605AC00680AB0 /* Foundation.framework */,
+				525108781437BBDB00680AB0 /* Cocoa.framework */,
+				5251087A1437BBDB00680AB0 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -74,7 +103,17 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		5251068D14361A3100680AB0 /* Resources */ = {
+		5251087A1437BBDB00680AB0 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5251087B1437BBDB00680AB0 /* AppKit.framework */,
+				5251087C1437BBDB00680AB0 /* CoreData.framework */,
+				5251087D1437BBDB00680AB0 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		5251087E1437BBDB00680AB0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				5251079014379BB900680AB0 /* blackArrow.png */,
@@ -85,8 +124,19 @@
 				5251079514379BB900680AB0 /* grayArrow@2x.png */,
 				5251079614379BB900680AB0 /* whiteArrow.png */,
 				5251079714379BB900680AB0 /* whiteArrow@2x.png */,
+				5251087F1437BBDB00680AB0 /* Supporting Files */,
 			);
-			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5251087F1437BBDB00680AB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				525108801437BBDB00680AB0 /* Resources-Info.plist */,
+				525108811437BBDB00680AB0 /* InfoPlist.strings */,
+				525108841437BBDB00680AB0 /* Resources-Prefix.pch */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +170,23 @@
 			productReference = 52510634143605AC00680AB0 /* libEGOTableViewPullRefresh.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		525108761437BBDB00680AB0 /* Resources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 525108871437BBDB00680AB0 /* Build configuration list for PBXNativeTarget "Resources" */;
+			buildPhases = (
+				525108731437BBDB00680AB0 /* Sources */,
+				525108741437BBDB00680AB0 /* Frameworks */,
+				525108751437BBDB00680AB0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Resources;
+			productName = Resources;
+			productReference = 525108771437BBDB00680AB0 /* Resources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -141,9 +208,29 @@
 			projectRoot = "";
 			targets = (
 				52510633143605AC00680AB0 /* EGOTableViewPullRefresh */,
+				525108761437BBDB00680AB0 /* Resources */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		525108751437BBDB00680AB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				525108831437BBDB00680AB0 /* InfoPlist.strings in Resources */,
+				525108891437BC3200680AB0 /* blackArrow.png in Resources */,
+				5251088A1437BC3200680AB0 /* blackArrow@2x.png in Resources */,
+				5251088B1437BC3200680AB0 /* blueArrow.png in Resources */,
+				5251088C1437BC3200680AB0 /* blueArrow@2x.png in Resources */,
+				5251088D1437BC3200680AB0 /* grayArrow.png in Resources */,
+				5251088E1437BC3200680AB0 /* grayArrow@2x.png in Resources */,
+				5251088F1437BC3200680AB0 /* whiteArrow.png in Resources */,
+				525108901437BC3200680AB0 /* whiteArrow@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		52510630143605AC00680AB0 /* Sources */ = {
@@ -154,7 +241,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		525108731437BBDB00680AB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		525108811437BBDB00680AB0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				525108821437BBDB00680AB0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5251063F143605AC00680AB0 /* Debug */ = {
@@ -229,6 +334,52 @@
 			};
 			name = Release;
 		};
+		525108851437BBDB00680AB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Resources/Resources-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "Resources/Resources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		525108861437BBDB00680AB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Resources/Resources-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "Resources/Resources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -249,6 +400,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		525108871437BBDB00680AB0 /* Build configuration list for PBXNativeTarget "Resources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				525108851437BBDB00680AB0 /* Debug */,
+				525108861437BBDB00680AB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

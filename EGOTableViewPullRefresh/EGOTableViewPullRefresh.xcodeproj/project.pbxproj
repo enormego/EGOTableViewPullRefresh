@@ -22,6 +22,16 @@
 		525108901437BC3200680AB0 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5251079714379BB900680AB0 /* whiteArrow@2x.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		525108911437BCB400680AB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5251062B143605AC00680AB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 525108761437BBDB00680AB0;
+			remoteInfo = Resources;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		52510634143605AC00680AB0 /* libEGOTableViewPullRefresh.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libEGOTableViewPullRefresh.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		52510637143605AC00680AB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -164,6 +174,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				525108921437BCB400680AB0 /* PBXTargetDependency */,
 			);
 			name = EGOTableViewPullRefresh;
 			productName = EGOTableViewPullRefresh;
@@ -249,6 +260,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		525108921437BCB400680AB0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 525108761437BBDB00680AB0 /* Resources */;
+			targetProxy = 525108911437BCB400680AB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		525108811437BBDB00680AB0 /* InfoPlist.strings */ = {

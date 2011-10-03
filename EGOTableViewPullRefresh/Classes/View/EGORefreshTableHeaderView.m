@@ -281,9 +281,9 @@
             [self setState:EGOOPullRefreshPulling];
         }
         
-        if (scrollView.contentInset.top != 0)
+        if (scrollView.contentInset.top != self.defaultInsets.top)
         {
-            scrollView.contentInset = UIEdgeInsetsZero;
+            scrollView.contentInset = self.defaultInsets;
         }
     }
 }

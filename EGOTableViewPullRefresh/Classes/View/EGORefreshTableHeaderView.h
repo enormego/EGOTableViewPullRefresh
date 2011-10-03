@@ -61,6 +61,8 @@ typedef enum {
     NSString *_objectKey;
     
     EGOStyle _style;
+    
+    UIEdgeInsets _defaultInsets;
 }
 
 @property (nonatomic, assign) id <EGORefreshTableHeaderDelegate> delegate;
@@ -73,6 +75,8 @@ typedef enum {
 @property (nonatomic, copy) NSString *objectKey;
 
 @property (assign) EGOStyle style;
+
+@property (assign) UIEdgeInsets defaultInsets;
 
 - (id)initWithFrame:(CGRect)frame style:(EGOStyle)style;
 - (id)initWithView:(UIView *)view tableView:(UITableView *)tableView;

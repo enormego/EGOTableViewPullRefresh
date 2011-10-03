@@ -41,6 +41,7 @@
 
 @synthesize activityView=_activityView;
 @synthesize arrowImage=_arrowImage;
+@synthesize defaultInsets=_defaultInsets;
 @synthesize delegate=_delegate;
 @synthesize lastUpdatedLabel=_lastUpdatedLabel;
 @synthesize objectKey=_objectKey;
@@ -257,7 +258,10 @@
     {
         CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
         offset = MIN(offset, 60);
-        scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0f, 0.0f, 0.0f);
+        scrollView.contentInset = UIEdgeInsetsMake(offset,
+                                                   self.defaultInsets.left,
+                                                   self.defaultInsets.bottom,
+                                                   self.defaultInsets.right);
     }
     else if (scrollView.isDragging)
     {
@@ -302,7 +306,10 @@
         [self setState:EGOOPullRefreshLoading];
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.2];
-        scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
+        scrollView.contentInset = UIEdgeInsetsMake(60.0f + self.defaultInsets.top, 
+                                                   self.defaultInsets.left, 
+                                                   self.defaultInsets.bottom, 
+                                                   self.defaultInsets.right);
         [UIView commitAnimations];
     }
     
@@ -312,7 +319,7 @@
 {
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:.3];
-    [scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+    [scrollView setContentInset:self.defaultInsets];
     [UIView commitAnimations];
     [self setState:EGOOPullRefreshNormal];
 }

@@ -47,7 +47,7 @@
     [super viewDidLoad];
     
     _sampleData = [[NSMutableArray alloc] initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",nil];
-
+    [self.tableView reloadData];
 	if (refreshHeaderView == nil) {
 		refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, 320.0f, self.tableView.bounds.size.height)];
 		refreshHeaderView.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
@@ -257,8 +257,9 @@
 }
 
 - (float)tableViewHeight {
-    // calculate height of table view (modify for multiple sections)
-    return self.tableView.rowHeight * [self tableView:self.tableView numberOfRowsInSection:0];
+	
+    // return height of table view
+    return [self.tableView contentSize].height;
 }
 
 - (void)repositionRefreshHeaderView {

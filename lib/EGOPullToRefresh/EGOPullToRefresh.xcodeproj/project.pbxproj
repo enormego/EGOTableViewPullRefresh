@@ -15,6 +15,37 @@
 		53FDDD7D14B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDD7214B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m */; };
 		53FDDD8014B6EC1000D3A9C8 /* EGOPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD7F14B6EC1000D3A9C8 /* EGOPullToRefresh.h */; };
 		53FDDD8214B6EC4F00D3A9C8 /* EGOPullRefreshState.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */; };
+		53FDDD8C14B6ED8500D3A9C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FDDD5014B6E59A00D3A9C8 /* Foundation.framework */; };
+		53FDDD9214B6ED8500D3A9C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD9014B6ED8500D3A9C8 /* InfoPlist.strings */; };
+		53FDDD9714B6EDB400D3A9C8 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDD7214B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m */; };
+		53FDDD9814B6EDBF00D3A9C8 /* EGOPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD7F14B6EC1000D3A9C8 /* EGOPullToRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53FDDD9914B6EDBF00D3A9C8 /* EGORefreshTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD7114B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53FDDD9A14B6EDBF00D3A9C8 /* EGOPullRefreshState.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		53FDDD9B14B6EDD100D3A9C8 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7414B6EB9E00D3A9C8 /* blackArrow.png */; };
+		53FDDD9C14B6EDD100D3A9C8 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7514B6EB9E00D3A9C8 /* blackArrow@2x.png */; };
+		53FDDD9D14B6EDD100D3A9C8 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7614B6EB9E00D3A9C8 /* blueArrow.png */; };
+		53FDDD9E14B6EDD100D3A9C8 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7714B6EB9E00D3A9C8 /* blueArrow@2x.png */; };
+		53FDDD9F14B6EDD100D3A9C8 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7814B6EB9E00D3A9C8 /* grayArrow.png */; };
+		53FDDDA014B6EDD100D3A9C8 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7914B6EB9E00D3A9C8 /* grayArrow@2x.png */; };
+		53FDDDA114B6EDD100D3A9C8 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7A14B6EB9E00D3A9C8 /* whiteArrow.png */; };
+		53FDDDA214B6EDD100D3A9C8 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7B14B6EB9E00D3A9C8 /* whiteArrow@2x.png */; };
+		53FDDDB314B6EE9700D3A9C8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDDB114B6EE9700D3A9C8 /* InfoPlist.strings */; };
+		53FDDDB814B6EEA600D3A9C8 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7414B6EB9E00D3A9C8 /* blackArrow.png */; };
+		53FDDDB914B6EEA600D3A9C8 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7514B6EB9E00D3A9C8 /* blackArrow@2x.png */; };
+		53FDDDBA14B6EEA600D3A9C8 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7614B6EB9E00D3A9C8 /* blueArrow.png */; };
+		53FDDDBB14B6EEA600D3A9C8 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7714B6EB9E00D3A9C8 /* blueArrow@2x.png */; };
+		53FDDDBC14B6EEA600D3A9C8 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7814B6EB9E00D3A9C8 /* grayArrow.png */; };
+		53FDDDBD14B6EEA600D3A9C8 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7914B6EB9E00D3A9C8 /* grayArrow@2x.png */; };
+		53FDDDBE14B6EEA600D3A9C8 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7A14B6EB9E00D3A9C8 /* whiteArrow.png */; };
+		53FDDDBF14B6EEA600D3A9C8 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDD7B14B6EB9E00D3A9C8 /* whiteArrow@2x.png */; };
+		53FDDDC214B6EF0900D3A9C8 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDD7214B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m */; };
+		53FDDDC414B6EF0900D3A9C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FDDD6F14B6E91300D3A9C8 /* CoreGraphics.framework */; };
+		53FDDDC514B6EF0900D3A9C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FDDD6D14B6E90C00D3A9C8 /* UIKit.framework */; };
+		53FDDDC614B6EF0900D3A9C8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FDDD6B14B6E90400D3A9C8 /* QuartzCore.framework */; };
+		53FDDDC714B6EF0900D3A9C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FDDD5014B6E59A00D3A9C8 /* Foundation.framework */; };
+		53FDDDC914B6EF0900D3A9C8 /* EGORefreshTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD7114B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h */; };
+		53FDDDCA14B6EF0900D3A9C8 /* EGOPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD7F14B6EC1000D3A9C8 /* EGOPullToRefresh.h */; };
+		53FDDDCB14B6EF0900D3A9C8 /* EGOPullRefreshState.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +67,15 @@
 		53FDDD7B14B6EB9E00D3A9C8 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		53FDDD7F14B6EC1000D3A9C8 /* EGOPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOPullToRefresh.h; sourceTree = "<group>"; };
 		53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOPullRefreshState.h; sourceTree = "<group>"; };
+		53FDDD8B14B6ED8400D3A9C8 /* EGOPullToRefreshFW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = EGOPullToRefreshFW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FDDD8F14B6ED8500D3A9C8 /* EGOPullToRefreshFW-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EGOPullToRefreshFW-Info.plist"; sourceTree = "<group>"; };
+		53FDDD9114B6ED8500D3A9C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		53FDDD9314B6ED8500D3A9C8 /* EGOPullToRefreshFW-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EGOPullToRefreshFW-Prefix.pch"; sourceTree = "<group>"; };
+		53FDDDA714B6EE9600D3A9C8 /* EGOPullToRefreshResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EGOPullToRefreshResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FDDDB014B6EE9700D3A9C8 /* EGOPullToRefreshResources-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EGOPullToRefreshResources-Info.plist"; sourceTree = "<group>"; };
+		53FDDDB214B6EE9700D3A9C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		53FDDDB414B6EE9700D3A9C8 /* EGOPullToRefreshResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EGOPullToRefreshResources-Prefix.pch"; sourceTree = "<group>"; };
+		53FDDDCF14B6EF0900D3A9C8 /* libEGOPullToRefresh-clang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libEGOPullToRefresh-clang.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +90,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53FDDD8514B6ED8400D3A9C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FDDD8C14B6ED8500D3A9C8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FDDDA414B6EE9600D3A9C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FDDDC314B6EF0900D3A9C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FDDDC414B6EF0900D3A9C8 /* CoreGraphics.framework in Frameworks */,
+				53FDDDC514B6EF0900D3A9C8 /* UIKit.framework in Frameworks */,
+				53FDDDC614B6EF0900D3A9C8 /* QuartzCore.framework in Frameworks */,
+				53FDDDC714B6EF0900D3A9C8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -60,6 +126,8 @@
 				53FDDD7E14B6EBA300D3A9C8 /* Classes */,
 				53FDDD7314B6EB9E00D3A9C8 /* Resources */,
 				53FDDD5314B6E59A00D3A9C8 /* Supporting Files */,
+				53FDDD8D14B6ED8500D3A9C8 /* EGOPullToRefreshFW */,
+				53FDDDAE14B6EE9700D3A9C8 /* EGOPullToRefreshResources */,
 				53FDDD4F14B6E59A00D3A9C8 /* Frameworks */,
 				53FDDD4E14B6E59A00D3A9C8 /* Products */,
 			);
@@ -69,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				53FDDD4D14B6E59A00D3A9C8 /* libEGOPullToRefresh.a */,
+				53FDDD8B14B6ED8400D3A9C8 /* EGOPullToRefreshFW.framework */,
+				53FDDDA714B6EE9600D3A9C8 /* EGOPullToRefreshResources.bundle */,
+				53FDDDCF14B6EF0900D3A9C8 /* libEGOPullToRefresh-clang.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +189,42 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		53FDDD8D14B6ED8500D3A9C8 /* EGOPullToRefreshFW */ = {
+			isa = PBXGroup;
+			children = (
+				53FDDD8E14B6ED8500D3A9C8 /* Supporting Files */,
+			);
+			path = EGOPullToRefreshFW;
+			sourceTree = "<group>";
+		};
+		53FDDD8E14B6ED8500D3A9C8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				53FDDD8F14B6ED8500D3A9C8 /* EGOPullToRefreshFW-Info.plist */,
+				53FDDD9014B6ED8500D3A9C8 /* InfoPlist.strings */,
+				53FDDD9314B6ED8500D3A9C8 /* EGOPullToRefreshFW-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		53FDDDAE14B6EE9700D3A9C8 /* EGOPullToRefreshResources */ = {
+			isa = PBXGroup;
+			children = (
+				53FDDDAF14B6EE9700D3A9C8 /* Supporting Files */,
+			);
+			path = EGOPullToRefreshResources;
+			sourceTree = "<group>";
+		};
+		53FDDDAF14B6EE9700D3A9C8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				53FDDDB014B6EE9700D3A9C8 /* EGOPullToRefreshResources-Info.plist */,
+				53FDDDB114B6EE9700D3A9C8 /* InfoPlist.strings */,
+				53FDDDB414B6EE9700D3A9C8 /* EGOPullToRefreshResources-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -128,6 +235,26 @@
 				53FDDD7C14B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h in Headers */,
 				53FDDD8014B6EC1000D3A9C8 /* EGOPullToRefresh.h in Headers */,
 				53FDDD8214B6EC4F00D3A9C8 /* EGOPullRefreshState.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FDDD8614B6ED8400D3A9C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FDDD9814B6EDBF00D3A9C8 /* EGOPullToRefresh.h in Headers */,
+				53FDDD9914B6EDBF00D3A9C8 /* EGORefreshTableHeaderView.h in Headers */,
+				53FDDD9A14B6EDBF00D3A9C8 /* EGOPullRefreshState.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FDDDC814B6EF0900D3A9C8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FDDDC914B6EF0900D3A9C8 /* EGORefreshTableHeaderView.h in Headers */,
+				53FDDDCA14B6EF0900D3A9C8 /* EGOPullToRefresh.h in Headers */,
+				53FDDDCB14B6EF0900D3A9C8 /* EGOPullRefreshState.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +276,61 @@
 			name = EGOPullToRefresh;
 			productName = EGOPullToRefresh;
 			productReference = 53FDDD4D14B6E59A00D3A9C8 /* libEGOPullToRefresh.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		53FDDD8A14B6ED8400D3A9C8 /* EGOPullToRefreshFW */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FDDD9414B6ED8500D3A9C8 /* Build configuration list for PBXNativeTarget "EGOPullToRefreshFW" */;
+			buildPhases = (
+				53FDDD8314B6ED8400D3A9C8 /* Framework begin */,
+				53FDDD8414B6ED8400D3A9C8 /* Sources */,
+				53FDDD8514B6ED8400D3A9C8 /* Frameworks */,
+				53FDDD8614B6ED8400D3A9C8 /* Headers */,
+				53FDDD8714B6ED8400D3A9C8 /* Resources */,
+				53FDDD8814B6ED8400D3A9C8 /* Framework restore headers */,
+				53FDDD8914B6ED8400D3A9C8 /* Framework end */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EGOPullToRefreshFW;
+			productName = EGOPullToRefreshFW;
+			productReference = 53FDDD8B14B6ED8400D3A9C8 /* EGOPullToRefreshFW.framework */;
+			productType = "com.apple.product-type.framework.static";
+		};
+		53FDDDA614B6EE9600D3A9C8 /* EGOPullToRefreshResources */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FDDDB514B6EE9700D3A9C8 /* Build configuration list for PBXNativeTarget "EGOPullToRefreshResources" */;
+			buildPhases = (
+				53FDDDA314B6EE9600D3A9C8 /* Sources */,
+				53FDDDA414B6EE9600D3A9C8 /* Frameworks */,
+				53FDDDA514B6EE9600D3A9C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EGOPullToRefreshResources;
+			productName = EGOPullToRefreshResources;
+			productReference = 53FDDDA714B6EE9600D3A9C8 /* EGOPullToRefreshResources.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		53FDDDC014B6EF0900D3A9C8 /* EGOPullToRefresh-clang */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53FDDDCC14B6EF0900D3A9C8 /* Build configuration list for PBXNativeTarget "EGOPullToRefresh-clang" */;
+			buildPhases = (
+				53FDDDC114B6EF0900D3A9C8 /* Sources */,
+				53FDDDC314B6EF0900D3A9C8 /* Frameworks */,
+				53FDDDC814B6EF0900D3A9C8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EGOPullToRefresh-clang";
+			productName = EGOPullToRefresh;
+			productReference = 53FDDDCF14B6EF0900D3A9C8 /* libEGOPullToRefresh-clang.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -173,9 +355,92 @@
 			projectRoot = "";
 			targets = (
 				53FDDD4C14B6E59A00D3A9C8 /* EGOPullToRefresh */,
+				53FDDDA614B6EE9600D3A9C8 /* EGOPullToRefreshResources */,
+				53FDDDC014B6EF0900D3A9C8 /* EGOPullToRefresh-clang */,
+				53FDDD8A14B6ED8400D3A9C8 /* EGOPullToRefreshFW */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53FDDD8714B6ED8400D3A9C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FDDD9B14B6EDD100D3A9C8 /* blackArrow.png in Resources */,
+				53FDDD9C14B6EDD100D3A9C8 /* blackArrow@2x.png in Resources */,
+				53FDDD9D14B6EDD100D3A9C8 /* blueArrow.png in Resources */,
+				53FDDD9E14B6EDD100D3A9C8 /* blueArrow@2x.png in Resources */,
+				53FDDD9F14B6EDD100D3A9C8 /* grayArrow.png in Resources */,
+				53FDDDA014B6EDD100D3A9C8 /* grayArrow@2x.png in Resources */,
+				53FDDDA114B6EDD100D3A9C8 /* whiteArrow.png in Resources */,
+				53FDDDA214B6EDD100D3A9C8 /* whiteArrow@2x.png in Resources */,
+				53FDDD9214B6ED8500D3A9C8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FDDDA514B6EE9600D3A9C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FDDDB814B6EEA600D3A9C8 /* blackArrow.png in Resources */,
+				53FDDDB914B6EEA600D3A9C8 /* blackArrow@2x.png in Resources */,
+				53FDDDBA14B6EEA600D3A9C8 /* blueArrow.png in Resources */,
+				53FDDDBB14B6EEA600D3A9C8 /* blueArrow@2x.png in Resources */,
+				53FDDDBC14B6EEA600D3A9C8 /* grayArrow.png in Resources */,
+				53FDDDBD14B6EEA600D3A9C8 /* grayArrow@2x.png in Resources */,
+				53FDDDBE14B6EEA600D3A9C8 /* whiteArrow.png in Resources */,
+				53FDDDBF14B6EEA600D3A9C8 /* whiteArrow@2x.png in Resources */,
+				53FDDDB314B6EE9700D3A9C8 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		53FDDD8314B6ED8400D3A9C8 /* Framework begin */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Framework begin";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n  ([[ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]] || \\\n    ([[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n     [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n     [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n    )\n  )\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n\nif [[ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]]\nthen\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    rm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nfi\n";
+		};
+		53FDDD8814B6ED8400D3A9C8 /* Framework restore headers */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Framework restore headers";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "INLINED_PYHON_SCRIPT=\"import sys; import os.path; headerPathFromFind = sys.argv[2]; srcRoot = sys.argv[1]; headerPathFromFindWithoutFilename = os.path.dirname( headerPathFromFind ); relatedPathForDirectory = os.path.relpath( headerPathFromFindWithoutFilename, srcRoot ); print( relatedPathForDirectory );\"\n\nHEADERS_ROOT=$SRCROOT/$PRODUCT_NAME\nFRAMEWORK_HEADERS_DIR=\"$BUILT_PRODUCTS_DIR/$WRAPPER_NAME/Headers\"\n\n## only header files expected at this point\nPUBLIC_HEADERS=$( ls -1 \"$FRAMEWORK_HEADERS_DIR\" )\n\n\nfor PUBLIC_HEADER in $PUBLIC_HEADERS; do\n\n   FIND_RESULT=$( find \"$HEADERS_ROOT\" -name \"$PUBLIC_HEADER\" )\n   RELATIVE_PATH=$( python -c \"$INLINED_PYHON_SCRIPT\" \"$HEADERS_ROOT\" \"$FIND_RESULT\" )\n\n   mkdir -p \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH\"\n   mv \"$FRAMEWORK_HEADERS_DIR/$PUBLIC_HEADER\" \"$FRAMEWORK_HEADERS_DIR/$RELATIVE_PATH/$PUBLIC_HEADER\"\ndone\n";
+		};
+		53FDDD8914B6ED8400D3A9C8 /* Framework end */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Framework end";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\nONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM:-$ONLY_ACTIVE_ARCH}\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" == \"YES\" ]\nthen\n    echo \"ONLY_ACTIVE_PLATFORM=${ONLY_ACTIVE_PLATFORM}: Skipping other platform build\"\nelse\n    # Make sure the other platform gets built\n    \n    echo \"Build other platform\"\n    \n    echo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n    \n    \n    # Build the fat static library binary\n    \n    echo \"Create universal static library\"\n    \n    echo \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n    \n    echo mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n    mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nfi\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\nif [ \"${ONLY_ACTIVE_PLATFORM}\" != \"YES\" ]\nthen\n    # Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n    \n    echo \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n    \n    echo rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    echo cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n    cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		53FDDD4914B6E59A00D3A9C8 /* Sources */ = {
@@ -186,7 +451,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		53FDDD8414B6ED8400D3A9C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FDDD9714B6EDB400D3A9C8 /* EGORefreshTableHeaderView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FDDDA314B6EE9600D3A9C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53FDDDC114B6EF0900D3A9C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53FDDDC214B6EF0900D3A9C8 /* EGORefreshTableHeaderView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		53FDDD9014B6ED8500D3A9C8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53FDDD9114B6ED8500D3A9C8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		53FDDDB114B6EE9700D3A9C8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53FDDDB214B6EE9700D3A9C8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		53FDDD5814B6E59A00D3A9C8 /* Debug */ = {
@@ -283,6 +590,106 @@
 			};
 			name = Release;
 		};
+		53FDDD9514B6ED8500D3A9C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EGOPullToRefreshFW/EGOPullToRefreshFW-Prefix.pch";
+				INFOPLIST_FILE = "EGOPullToRefreshFW/EGOPullToRefreshFW-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		53FDDD9614B6ED8500D3A9C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EGOPullToRefreshFW/EGOPullToRefreshFW-Prefix.pch";
+				INFOPLIST_FILE = "EGOPullToRefreshFW/EGOPullToRefreshFW-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		53FDDDB614B6EE9700D3A9C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EGOPullToRefreshResources/EGOPullToRefreshResources-Prefix.pch";
+				INFOPLIST_FILE = "EGOPullToRefreshResources/EGOPullToRefreshResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		53FDDDB714B6EE9700D3A9C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(DEVELOPER_FRAMEWORKS_DIR)\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EGOPullToRefreshResources/EGOPullToRefreshResources-Prefix.pch";
+				INFOPLIST_FILE = "EGOPullToRefreshResources/EGOPullToRefreshResources-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		53FDDDCD14B6EF0900D3A9C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/EGOPullToRefresh.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EGOPullToRefresh/EGOPullToRefresh-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "EGOPullToRefresh-clang";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		53FDDDCE14B6EF0900D3A9C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/EGOPullToRefresh.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EGOPullToRefresh/EGOPullToRefresh-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "EGOPullToRefresh-clang";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -300,6 +707,30 @@
 			buildConfigurations = (
 				53FDDD5B14B6E59A00D3A9C8 /* Debug */,
 				53FDDD5C14B6E59A00D3A9C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		53FDDD9414B6ED8500D3A9C8 /* Build configuration list for PBXNativeTarget "EGOPullToRefreshFW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FDDD9514B6ED8500D3A9C8 /* Debug */,
+				53FDDD9614B6ED8500D3A9C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		53FDDDB514B6EE9700D3A9C8 /* Build configuration list for PBXNativeTarget "EGOPullToRefreshResources" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FDDDB614B6EE9700D3A9C8 /* Debug */,
+				53FDDDB714B6EE9700D3A9C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		53FDDDCC14B6EF0900D3A9C8 /* Build configuration list for PBXNativeTarget "EGOPullToRefresh-clang" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FDDDCD14B6EF0900D3A9C8 /* Debug */,
+				53FDDDCE14B6EF0900D3A9C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

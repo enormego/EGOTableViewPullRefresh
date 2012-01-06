@@ -48,7 +48,7 @@
 		53FDDDCB14B6EF0900D3A9C8 /* EGOPullRefreshState.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */; };
 		53FDDDD114B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; };
 		53FDDDD214B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; };
-		53FDDDD314B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; };
+		53FDDDD314B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		53FDDDD514B6F31B00D3A9C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDDD414B6F31B00D3A9C8 /* Localizable.strings */; };
 		53FDDDD914B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD714B6F3BF00D3A9C8 /* EGOBundleController.h */; };
 		53FDDDDA14B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD714B6F3BF00D3A9C8 /* EGOBundleController.h */; };
@@ -56,6 +56,10 @@
 		53FDDDDC14B6F3BF00D3A9C8 /* EGOBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDDD814B6F3BF00D3A9C8 /* EGOBundleController.m */; };
 		53FDDDDD14B6F3BF00D3A9C8 /* EGOBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDDD814B6F3BF00D3A9C8 /* EGOBundleController.m */; };
 		53FDDDDE14B6F3BF00D3A9C8 /* EGOBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDDD814B6F3BF00D3A9C8 /* EGOBundleController.m */; };
+		53FDDDDF14B6F8B000D3A9C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDDD414B6F31B00D3A9C8 /* Localizable.strings */; };
+		53FDDDE114B6FE8100D3A9C8 /* EGOResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDE014B6FE8100D3A9C8 /* EGOResources.h */; };
+		53FDDDE214B6FE8100D3A9C8 /* EGOResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDE014B6FE8100D3A9C8 /* EGOResources.h */; };
+		53FDDDE314B6FE8100D3A9C8 /* EGOResources.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDE014B6FE8100D3A9C8 /* EGOResources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +94,7 @@
 		53FDDDD414B6F31B00D3A9C8 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		53FDDDD714B6F3BF00D3A9C8 /* EGOBundleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOBundleController.h; sourceTree = "<group>"; };
 		53FDDDD814B6F3BF00D3A9C8 /* EGOBundleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOBundleController.m; sourceTree = "<group>"; };
+		53FDDDE014B6FE8100D3A9C8 /* EGOResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOResources.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +207,7 @@
 				53FDDD7214B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m */,
 				53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */,
 				53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */,
+				53FDDDE014B6FE8100D3A9C8 /* EGOResources.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -263,6 +269,7 @@
 				53FDDD8214B6EC4F00D3A9C8 /* EGOPullRefreshState.h in Headers */,
 				53FDDDD114B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */,
 				53FDDDD914B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */,
+				53FDDDE114B6FE8100D3A9C8 /* EGOResources.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,8 +279,9 @@
 			files = (
 				53FDDD9814B6EDBF00D3A9C8 /* EGOPullToRefresh.h in Headers */,
 				53FDDD9914B6EDBF00D3A9C8 /* EGORefreshTableHeaderView.h in Headers */,
-				53FDDD9A14B6EDBF00D3A9C8 /* EGOPullRefreshState.h in Headers */,
 				53FDDDD314B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */,
+				53FDDDE314B6FE8100D3A9C8 /* EGOResources.h in Headers */,
+				53FDDD9A14B6EDBF00D3A9C8 /* EGOPullRefreshState.h in Headers */,
 				53FDDDDB14B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +295,7 @@
 				53FDDDCB14B6EF0900D3A9C8 /* EGOPullRefreshState.h in Headers */,
 				53FDDDD214B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */,
 				53FDDDDA14B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */,
+				53FDDDE214B6FE8100D3A9C8 /* EGOResources.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +434,7 @@
 				53FDDDBE14B6EEA600D3A9C8 /* whiteArrow.png in Resources */,
 				53FDDDBF14B6EEA600D3A9C8 /* whiteArrow@2x.png in Resources */,
 				53FDDDB314B6EE9700D3A9C8 /* InfoPlist.strings in Resources */,
+				53FDDDDF14B6F8B000D3A9C8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

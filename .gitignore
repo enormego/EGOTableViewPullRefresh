@@ -12,3 +12,5 @@ xcuserdata
 
 ## This is due to the NDA
 *.png
+
+.DS_Store

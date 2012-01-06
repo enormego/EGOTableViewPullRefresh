@@ -33,6 +33,7 @@
 
 
 @protocol EGORefreshTableHeaderDelegate;
+@protocol EGOResources;
 
 @interface EGORefreshTableHeaderView : UIView {
 	
@@ -43,13 +44,12 @@
 	UILabel *_statusLabel;
 	CALayer *_arrowImage;
 	UIActivityIndicatorView *_activityView;
-	
-
 }
 
 @property(nonatomic,assign) id <EGORefreshTableHeaderDelegate> delegate;
 
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
+- (id)initWithFrame:(CGRect)frame 
+          resources:( id< EGOResources > )resources;
 
 - (void)refreshLastUpdatedDate;
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;

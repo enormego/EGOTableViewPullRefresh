@@ -1,2 +1,5 @@
-
-
+"EGO_RELEASE_TO_REFRESH"   = "Release to refresh status"  ;
+"EGO_PULL_DOWN_TO_REFRESH" = "Pull down to refresh status";
+"EGO_LOADING"              = "Loading Status"             ;
+"EGO_LAST_UPDATED_FORMAT"  = "Last updated: %@"           ;
+"EGO_ARROW_NAME"           = "blueArrow"                  ;

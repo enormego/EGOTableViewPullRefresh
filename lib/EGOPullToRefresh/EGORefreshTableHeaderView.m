@@ -28,45 +28,52 @@
 
 #import "EGOBundleController.h"
 
-#define TEXT_COLOR	 [UIColor colorWithRed:87.f/255.f green:108.f/255.f blue:137.f/255.f alpha:1.f]
-#define FLIP_ANIMATION_DURATION 0.18f
-
+static const NSTimeInterval FLIP_ANIMATION_DURATION = 0.18;
+static NSString* const EGOUserDefaultsLastUpdateKey = @"EGORefreshTableView_LastRefresh";
 
 @interface EGORefreshTableHeaderView (Private)
+
+@property ( nonatomic, retain ) id< EGOResources > resources;
 - (void)setState:(EGOPullRefreshState)aState;
+
 @end
 
 @implementation EGORefreshTableHeaderView
 
-@synthesize delegate=_delegate;
+@synthesize delegate  = _delegate;
+@synthesize resources = _resources;
 
 #pragma mark -
 #pragma mark Dealloc
 //!! no need of dealloc 
 //!! ivars are released when subviews get removed
-/*
+
 -(void)dealloc 
 {
-//	[ _activityView      release ];
-//	[ _statusLabel       release ];
-//	[ _arrowImage        release ];
-//	[ _lastUpdatedLabel  release ];
+   //	[ _activityView      release ];
+   //	[ _statusLabel       release ];
+   //	[ _arrowImage        release ];
+   //	[ _lastUpdatedLabel  release ];
    
+   [ _resources release ];
    [ super dealloc ];
 }
-*/
+
+
 
 
 - (id)initWithFrame:(CGRect)frame 
-     arrowImageName:(NSString *)arrow 
-          textColor:(UIColor *)textColor 
+          resources:( id< EGOResources > )resources
 {
-    if((self = [super initWithFrame:frame])) 
-    {
+   if((self = [super initWithFrame:frame])) 
+   {
+      self.resources = resources;
+      UIImage* arrow = [ resources egoArrow ];
+      UIColor* textColor = [ resources textColor ];
 		
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		self.backgroundColor = [UIColor colorWithRed:226.f/255.f green:231.f/255.f blue:237.f/255.f alpha:1.f];
-
+      
 		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		label.font = [UIFont systemFontOfSize:12.0f];
@@ -94,7 +101,7 @@
 		CALayer *layer = [CALayer layer];
 		layer.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
 		layer.contentsGravity = kCAGravityResizeAspect;
-		layer.contents = (id)[UIImage imageNamed:arrow].CGImage;
+		layer.contents = (id)arrow.CGImage;
 		
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 		if ([[UIScreen mainScreen] respondsToSelector: @selector(scale)]) 
@@ -113,53 +120,60 @@
 		[view release];
 		
 		
-		[self setState:EGOOPullRefreshNormal];
+		[self setState: EGOOPullRefreshNormal];
 		
-    }
+   }
 	
-    return self;
+   return self;
 	
 }
 
 - (id)initWithFrame:(CGRect)frame 
 {
-  return [self initWithFrame: frame 
-              arrowImageName: @"blueArrow.png"
-                   textColor: TEXT_COLOR];
+   EGOBundleController* default_resources_ = [ [ EGOBundleController new ] autorelease ];
+   return [self initWithFrame: frame 
+                    resources: default_resources_ ];
 }
 
 #pragma mark -
 #pragma mark Setters
 
-- (void)refreshLastUpdatedDate {
-	
-	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) {
+- (void)refreshLastUpdatedDate
+{
+	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) 
+   {
 		
 		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
 		
+      //dodikk - TODO : customize date formatter
 		[NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
 		NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
 		[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
-
-		_lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [dateFormatter stringFromDate:date]];
-		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
+      
+      NSString* last_update_time_format_ = [ self.resources lastUpdateTimeFormate ];
+		_lastUpdatedLabel.text = [ NSString stringWithFormat: last_update_time_format_, [ dateFormatter stringFromDate:date ] ];
+      
+#ifdef ALLOW_USER_DEFAULTS
+		[[NSUserDefaults standardUserDefaults] setObject: _lastUpdatedLabel.text 
+                                                forKey: EGOUserDefaultsLastUpdateKey ];
 		[[NSUserDefaults standardUserDefaults] synchronize];
-		
-	} else {
-		
-		_lastUpdatedLabel.text = nil;
-		
+#endif
 	}
-
+   else 
+   {
+		_lastUpdatedLabel.text = nil;
+	}
 }
 
-- (void)setState:(EGOPullRefreshState)aState{
-	
-	switch (aState) {
+- (void)setState:(EGOPullRefreshState)aState
+{	
+	switch (aState) 
+   {
 		case EGOOPullRefreshPulling:
 			
-			_statusLabel.text = NSLocalizedString(@"Release to refresh...", @"Release to refresh status");
+			_statusLabel.text = [ self.resources egoLocalizedStringForKey: @"EGO_RELEASE_TO_REFRESH" ];
+
 			[CATransaction begin];
 			[CATransaction setAnimationDuration:FLIP_ANIMATION_DURATION];
 			_arrowImage.transform = CATransform3DMakeRotation( (CGFloat)M_PI, 0.f, 0.f, 1.f);
@@ -175,7 +189,7 @@
 				[CATransaction commit];
 			}
 			
-			_statusLabel.text = NSLocalizedString(@"Pull down to refresh...", @"Pull down to refresh status");
+			_statusLabel.text = [ self.resources egoLocalizedStringForKey: @"EGO_PULL_DOWN_TO_REFRESH" ];
 			[_activityView stopAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
@@ -188,7 +202,7 @@
 			break;
 		case EGOOPullRefreshLoading:
 			
-			_statusLabel.text = NSLocalizedString(@"Loading...", @"Loading Status");
+			_statusLabel.text = [ self.resources egoLocalizedStringForKey: @"EGO_LOADING" ];
 			[_activityView startAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
@@ -267,7 +281,7 @@
 	[UIView commitAnimations];
 	
 	[self setState:EGOOPullRefreshNormal];
-
+   
 }
 
 @end

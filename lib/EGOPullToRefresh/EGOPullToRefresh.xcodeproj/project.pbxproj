@@ -13,6 +13,8 @@
 		53FDDD7014B6E91300D3A9C8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FDDD6F14B6E91300D3A9C8 /* CoreGraphics.framework */; };
 		53FDDD7C14B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD7114B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h */; };
 		53FDDD7D14B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDD7214B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m */; };
+		53FDDD8014B6EC1000D3A9C8 /* EGOPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD7F14B6EC1000D3A9C8 /* EGOPullToRefresh.h */; };
+		53FDDD8214B6EC4F00D3A9C8 /* EGOPullRefreshState.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		53FDDD7914B6EB9E00D3A9C8 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
 		53FDDD7A14B6EB9E00D3A9C8 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
 		53FDDD7B14B6EB9E00D3A9C8 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		53FDDD7F14B6EC1000D3A9C8 /* EGOPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOPullToRefresh.h; sourceTree = "<group>"; };
+		53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOPullRefreshState.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 		53FDDD4214B6E59A00D3A9C8 = {
 			isa = PBXGroup;
 			children = (
+				53FDDD7F14B6EC1000D3A9C8 /* EGOPullToRefresh.h */,
 				53FDDD7E14B6EBA300D3A9C8 /* Classes */,
 				53FDDD7314B6EB9E00D3A9C8 /* Resources */,
 				53FDDD5314B6E59A00D3A9C8 /* Supporting Files */,
@@ -108,6 +113,7 @@
 			children = (
 				53FDDD7114B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h */,
 				53FDDD7214B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m */,
+				53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -120,6 +126,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				53FDDD7C14B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h in Headers */,
+				53FDDD8014B6EC1000D3A9C8 /* EGOPullToRefresh.h in Headers */,
+				53FDDD8214B6EC4F00D3A9C8 /* EGOPullRefreshState.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +218,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					.,
+					..,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				SDKROOT = iphoneos;
 			};
@@ -237,6 +249,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					.,
+					..,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

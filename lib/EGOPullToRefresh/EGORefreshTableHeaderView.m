@@ -26,12 +26,14 @@
 
 #import "EGORefreshTableHeaderView.h"
 
+#import "EGOResources.h"
 #import "EGOBundleController.h"
+#import "EGORefreshTableHeaderDelegate.h"
 
 static const NSTimeInterval FLIP_ANIMATION_DURATION = 0.18;
 static NSString* const EGOUserDefaultsLastUpdateKey = @"EGORefreshTableView_LastRefresh";
 
-@interface EGORefreshTableHeaderView (Private)
+@interface EGORefreshTableHeaderView ()
 
 @property ( nonatomic, retain ) id< EGOResources > resources;
 - (void)setState:(EGOPullRefreshState)aState;

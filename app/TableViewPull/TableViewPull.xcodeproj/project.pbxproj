@@ -16,6 +16,7 @@
 		3A3D908E11187FE7002B6585 /* TableViewPullAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D908D11187FE7002B6585 /* TableViewPullAppDelegate.m */; };
 		3A3D90A8111881DE002B6585 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */; };
 		3A3D910311188495002B6585 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D910211188495002B6585 /* main.m */; };
+		5342FA6414B713C40039D5D4 /* libEGOPullToRefresh.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53FDDDF414B70F2800D3A9C8 /* libEGOPullToRefresh.a */; };
 		53E0C07C14B71118008CBC85 /* EGOPullToRefreshResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDDF614B70F2800D3A9C8 /* EGOPullToRefreshResources.bundle */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5342FA6414B713C40039D5D4 /* libEGOPullToRefresh.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -101,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				3A3D90931118801F002B6585 /* Controller */,
-				3A3D909211188012002B6585 /* View */,
 				3A3D908411187FAD002B6585 /* Delegate */,
 			);
 			path = Classes;
@@ -165,13 +166,6 @@
 				3A3D908D11187FE7002B6585 /* TableViewPullAppDelegate.m */,
 			);
 			path = Delegate;
-			sourceTree = "<group>";
-		};
-		3A3D909211188012002B6585 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		3A3D90931118801F002B6585 /* Controller */ = {
@@ -367,6 +361,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				SDKROOT = iphoneos;
 			};
@@ -380,6 +375,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../lib;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				SDKROOT = iphoneos;
 			};

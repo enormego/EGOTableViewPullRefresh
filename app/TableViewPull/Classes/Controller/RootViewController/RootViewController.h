@@ -25,7 +25,7 @@
 //
 
 
-#import "EGORefreshTableHeaderView.h"
+#import <EGOPullToRefresh/EGOPullToRefresh.h>
 
 @interface RootViewController : UITableViewController  <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
 	

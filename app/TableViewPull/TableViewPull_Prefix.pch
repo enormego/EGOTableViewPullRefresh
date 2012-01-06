@@ -9,6 +9,8 @@
 
 
 #ifdef __OBJC__
+    #import <EGOPullToRefresh/EGOPullToRefresh.h>
+
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
 #endif

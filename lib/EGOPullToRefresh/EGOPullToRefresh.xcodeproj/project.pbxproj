@@ -755,6 +755,7 @@
 				53FDDD5C14B6E59A00D3A9C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53FDDD9414B6ED8500D3A9C8 /* Build configuration list for PBXNativeTarget "EGOPullToRefreshFW" */ = {
 			isa = XCConfigurationList;
@@ -763,6 +764,7 @@
 				53FDDD9614B6ED8500D3A9C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53FDDDB514B6EE9700D3A9C8 /* Build configuration list for PBXNativeTarget "EGOPullToRefreshResources" */ = {
 			isa = XCConfigurationList;
@@ -771,6 +773,7 @@
 				53FDDDB714B6EE9700D3A9C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53FDDDCC14B6EF0900D3A9C8 /* Build configuration list for PBXNativeTarget "EGOPullToRefresh-clang" */ = {
 			isa = XCConfigurationList;
@@ -779,6 +782,7 @@
 				53FDDDCE14B6EF0900D3A9C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

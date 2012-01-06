@@ -3,5 +3,6 @@
 
 #import <EGOPullToRefresh/EGOPullRefreshState.h>
 #import <EGOPullToRefresh/EGORefreshTableHeaderView.h>
+#import <EGOPullToRefresh/EGORefreshTableHeaderDelegate.h>
 
 #endif

@@ -46,6 +46,9 @@
 		53FDDDC914B6EF0900D3A9C8 /* EGORefreshTableHeaderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD7114B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h */; };
 		53FDDDCA14B6EF0900D3A9C8 /* EGOPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD7F14B6EC1000D3A9C8 /* EGOPullToRefresh.h */; };
 		53FDDDCB14B6EF0900D3A9C8 /* EGOPullRefreshState.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */; };
+		53FDDDD114B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; };
+		53FDDDD214B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; };
+		53FDDDD314B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,7 @@
 		53FDDDB214B6EE9700D3A9C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		53FDDDB414B6EE9700D3A9C8 /* EGOPullToRefreshResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EGOPullToRefreshResources-Prefix.pch"; sourceTree = "<group>"; };
 		53FDDDCF14B6EF0900D3A9C8 /* libEGOPullToRefresh-clang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libEGOPullToRefresh-clang.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 				53FDDD7114B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h */,
 				53FDDD7214B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m */,
 				53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */,
+				53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 				53FDDD7C14B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h in Headers */,
 				53FDDD8014B6EC1000D3A9C8 /* EGOPullToRefresh.h in Headers */,
 				53FDDD8214B6EC4F00D3A9C8 /* EGOPullRefreshState.h in Headers */,
+				53FDDDD114B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +251,7 @@
 				53FDDD9814B6EDBF00D3A9C8 /* EGOPullToRefresh.h in Headers */,
 				53FDDD9914B6EDBF00D3A9C8 /* EGORefreshTableHeaderView.h in Headers */,
 				53FDDD9A14B6EDBF00D3A9C8 /* EGOPullRefreshState.h in Headers */,
+				53FDDDD314B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +262,7 @@
 				53FDDDC914B6EF0900D3A9C8 /* EGORefreshTableHeaderView.h in Headers */,
 				53FDDDCA14B6EF0900D3A9C8 /* EGOPullToRefresh.h in Headers */,
 				53FDDDCB14B6EF0900D3A9C8 /* EGOPullRefreshState.h in Headers */,
+				53FDDDD214B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

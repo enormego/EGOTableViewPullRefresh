@@ -1,0 +1,14 @@
+.svn
+build
+svnignore.*
+*.svnignore
+*.DS_Store
+*.mode1v3
+*.pbxuser
+xcuserdata
+*.xcworkspace
+
+01.png
+
+## This is due to the NDA
+*.png

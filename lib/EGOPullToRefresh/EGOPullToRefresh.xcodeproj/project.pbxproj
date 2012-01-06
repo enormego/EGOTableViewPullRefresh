@@ -49,6 +49,13 @@
 		53FDDDD114B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; };
 		53FDDDD214B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; };
 		53FDDDD314B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */; };
+		53FDDDD514B6F31B00D3A9C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53FDDDD414B6F31B00D3A9C8 /* Localizable.strings */; };
+		53FDDDD914B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD714B6F3BF00D3A9C8 /* EGOBundleController.h */; };
+		53FDDDDA14B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD714B6F3BF00D3A9C8 /* EGOBundleController.h */; };
+		53FDDDDB14B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */ = {isa = PBXBuildFile; fileRef = 53FDDDD714B6F3BF00D3A9C8 /* EGOBundleController.h */; };
+		53FDDDDC14B6F3BF00D3A9C8 /* EGOBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDDD814B6F3BF00D3A9C8 /* EGOBundleController.m */; };
+		53FDDDDD14B6F3BF00D3A9C8 /* EGOBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDDD814B6F3BF00D3A9C8 /* EGOBundleController.m */; };
+		53FDDDDE14B6F3BF00D3A9C8 /* EGOBundleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FDDDD814B6F3BF00D3A9C8 /* EGOBundleController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +87,9 @@
 		53FDDDB414B6EE9700D3A9C8 /* EGOPullToRefreshResources-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EGOPullToRefreshResources-Prefix.pch"; sourceTree = "<group>"; };
 		53FDDDCF14B6EF0900D3A9C8 /* libEGOPullToRefresh-clang.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libEGOPullToRefresh-clang.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FDDDD014B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderDelegate.h; sourceTree = "<group>"; };
+		53FDDDD414B6F31B00D3A9C8 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		53FDDDD714B6F3BF00D3A9C8 /* EGOBundleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGOBundleController.h; sourceTree = "<group>"; };
+		53FDDDD814B6F3BF00D3A9C8 /* EGOBundleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGOBundleController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +181,7 @@
 		53FDDD7314B6EB9E00D3A9C8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				53FDDDD414B6F31B00D3A9C8 /* Localizable.strings */,
 				53FDDD7414B6EB9E00D3A9C8 /* blackArrow.png */,
 				53FDDD7514B6EB9E00D3A9C8 /* blackArrow@2x.png */,
 				53FDDD7614B6EB9E00D3A9C8 /* blueArrow.png */,
@@ -186,6 +197,7 @@
 		53FDDD7E14B6EBA300D3A9C8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				53FDDDD614B6F3A900D3A9C8 /* BundleController */,
 				53FDDD7114B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.h */,
 				53FDDD7214B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m */,
 				53FDDD8114B6EC4F00D3A9C8 /* EGOPullRefreshState.h */,
@@ -230,6 +242,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		53FDDDD614B6F3A900D3A9C8 /* BundleController */ = {
+			isa = PBXGroup;
+			children = (
+				53FDDDD714B6F3BF00D3A9C8 /* EGOBundleController.h */,
+				53FDDDD814B6F3BF00D3A9C8 /* EGOBundleController.m */,
+			);
+			path = BundleController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -241,6 +262,7 @@
 				53FDDD8014B6EC1000D3A9C8 /* EGOPullToRefresh.h in Headers */,
 				53FDDD8214B6EC4F00D3A9C8 /* EGOPullRefreshState.h in Headers */,
 				53FDDDD114B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */,
+				53FDDDD914B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +274,7 @@
 				53FDDD9914B6EDBF00D3A9C8 /* EGORefreshTableHeaderView.h in Headers */,
 				53FDDD9A14B6EDBF00D3A9C8 /* EGOPullRefreshState.h in Headers */,
 				53FDDDD314B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */,
+				53FDDDDB14B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +286,7 @@
 				53FDDDCA14B6EF0900D3A9C8 /* EGOPullToRefresh.h in Headers */,
 				53FDDDCB14B6EF0900D3A9C8 /* EGOPullRefreshState.h in Headers */,
 				53FDDDD214B6F1FC00D3A9C8 /* EGORefreshTableHeaderDelegate.h in Headers */,
+				53FDDDDA14B6F3BF00D3A9C8 /* EGOBundleController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +408,7 @@
 				53FDDDA114B6EDD100D3A9C8 /* whiteArrow.png in Resources */,
 				53FDDDA214B6EDD100D3A9C8 /* whiteArrow@2x.png in Resources */,
 				53FDDD9214B6ED8500D3A9C8 /* InfoPlist.strings in Resources */,
+				53FDDDD514B6F31B00D3A9C8 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53FDDD7D14B6EB9E00D3A9C8 /* EGORefreshTableHeaderView.m in Sources */,
+				53FDDDDC14B6F3BF00D3A9C8 /* EGOBundleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53FDDD9714B6EDB400D3A9C8 /* EGORefreshTableHeaderView.m in Sources */,
+				53FDDDDE14B6F3BF00D3A9C8 /* EGOBundleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53FDDDC214B6EF0900D3A9C8 /* EGORefreshTableHeaderView.m in Sources */,
+				53FDDDDD14B6F3BF00D3A9C8 /* EGOBundleController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

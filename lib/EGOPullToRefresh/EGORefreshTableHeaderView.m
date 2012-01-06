@@ -26,6 +26,7 @@
 
 #import "EGORefreshTableHeaderView.h"
 
+#import "EGOBundleController.h"
 
 #define TEXT_COLOR	 [UIColor colorWithRed:87.f/255.f green:108.f/255.f blue:137.f/255.f alpha:1.f]
 #define FLIP_ANIMATION_DURATION 0.18f
@@ -122,9 +123,9 @@
 
 - (id)initWithFrame:(CGRect)frame 
 {
-  return [self initWithFrame:frame 
-              arrowImageName:@"blueArrow.png"
-                   textColor:TEXT_COLOR];
+  return [self initWithFrame: frame 
+              arrowImageName: @"blueArrow.png"
+                   textColor: TEXT_COLOR];
 }
 
 #pragma mark -

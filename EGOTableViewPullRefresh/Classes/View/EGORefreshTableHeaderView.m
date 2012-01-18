@@ -295,14 +295,14 @@
     {
         _loading = [_delegate egoRefreshTableHeaderDataSourceIsLoading:self];
     }
-    
+        
     if (scrollView.contentOffset.y <= - 65.0f && !_loading)
     {
         if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDidTriggerRefresh:)])
         {
             [_delegate egoRefreshTableHeaderDidTriggerRefresh:self];
         }
-        
+                
         [self setState:EGOOPullRefreshLoading];
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationDuration:0.2];
@@ -310,6 +310,11 @@
                                                    self.defaultInsets.left, 
                                                    self.defaultInsets.bottom, 
                                                    self.defaultInsets.right);
+        if ([_delegate respondsToSelector:@selector(animationDidStop:finished:)])
+        {
+            [UIView setAnimationDelegate:_delegate];
+            [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:)];
+        }
         [UIView commitAnimations];
     }
     

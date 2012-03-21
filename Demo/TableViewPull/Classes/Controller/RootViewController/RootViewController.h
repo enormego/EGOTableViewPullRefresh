@@ -25,11 +25,11 @@
 //
 
 
-#import "EGORefreshTableHeaderView.h"
+#import "PullToRefreshTableView.h"
 
-@interface RootViewController : UITableViewController  <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>{
+@interface RootViewController : UITableViewController  <PullToRefreshTableDelegate, UITableViewDelegate, UITableViewDataSource>{
 	
-	EGORefreshTableHeaderView *_refreshHeaderView;
+	PullToRefreshTableView *_refreshHeaderView;
 	
 	//  Reloading var should really be your tableviews datasource
 	//  Putting it here for demo purposes 

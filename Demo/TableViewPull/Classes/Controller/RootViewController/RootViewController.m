@@ -34,15 +34,11 @@
 	if (_refreshHeaderView == nil) 
   {
     CGRect pullToRefreshRect = CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height);
-		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:pullToRefreshRect];
+		PullToRefreshTableView *view = [[PullToRefreshTableView alloc] initWithFrame:pullToRefreshRect];
 		view.delegate = self;
 		[self.tableView addSubview:view];
 		_refreshHeaderView = view;
 		[view release];
-//    CGRect pullToRefreshRect = CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height);
-//		_refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:pullToRefreshRect];
-//		_refreshHeaderView.delegate = self;
-//		self.tableView.tableHeaderView = [_refreshHeaderView autorelease];
 	}
 	
 	//  update the last update date
@@ -99,48 +95,45 @@
 	
 }
 
-- (void)doneLoadingTableViewData{
-	
+- (void)doneLoadingTableViewData
+{
 	//  model should call this when its done loading
 	_reloading = NO;
-	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
-	
+	[_refreshHeaderView pullToRefreshTableScrollViewDataSourceDidFinishedLoading:self.tableView];
 }
 
 
 #pragma mark -
 #pragma mark UIScrollViewDelegate Methods
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{	
-	
-	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
-		
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{	
+	[_refreshHeaderView pullToRefreshTableScrollViewDidScroll:scrollView];
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-	
-	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
-	
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+	[_refreshHeaderView pullToRefreshTableScrollViewDidEndDragging:scrollView];
 }
 
 
 #pragma mark -
-#pragma mark EGORefreshTableHeaderDelegate Methods
+#pragma mark PullToRefresh Delegate Methods
 
-- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+- (void)pullToRefreshTableHeaderDidTriggerRefresh:(PullToRefreshTableView *)view{
 	
 	[self reloadTableViewDataSource];
 	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
 	
 }
 
-- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+- (BOOL)pullToRefreshTableHeaderDataSourceIsLoading:(PullToRefreshTableView *)view{
 	
 	return _reloading; // should return if data source model is reloading
 	
 }
 
-- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+- (NSDate*)pullToRefreshTableHeaderDataSourceLastUpdated:(PullToRefreshTableView *)view{
 	
 	return [NSDate date]; // should return date data source was last changed
 	

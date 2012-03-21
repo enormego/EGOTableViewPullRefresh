@@ -31,14 +31,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	if (_refreshHeaderView == nil) {
-		
-		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+	if (_refreshHeaderView == nil) 
+  {
+    CGRect pullToRefreshRect = CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height);
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:pullToRefreshRect];
 		view.delegate = self;
 		[self.tableView addSubview:view];
 		_refreshHeaderView = view;
 		[view release];
-		
+//    CGRect pullToRefreshRect = CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height);
+//		_refreshHeaderView = [[EGORefreshTableHeaderView alloc] initWithFrame:pullToRefreshRect];
+//		_refreshHeaderView.delegate = self;
+//		self.tableView.tableHeaderView = [_refreshHeaderView autorelease];
 	}
 	
 	//  update the last update date

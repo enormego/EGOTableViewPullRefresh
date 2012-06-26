@@ -225,10 +225,9 @@
 		}
 		
 		[self setState:EGOOPullRefreshLoading];
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationDuration:0.2];
+    [UIView animateWithDuration:.2 animations:^{
 		scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
-		[UIView commitAnimations];
+    }];
 		
 	}
 	
@@ -236,10 +235,9 @@
 
 - (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView {	
 	
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:.3];
+    [UIView animateWithDuration:.3 animations:^{
 	[scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
-	[UIView commitAnimations];
+    }];
 	
 	[self setState:EGOOPullRefreshNormal];
 

@@ -1,0 +1,9 @@
+This is an implementation of "Pull-to-refresh" gesture.
+
+It requires iOS 3.0 and higher. ( IPHONEOS_DEPLOYMENT_TARGET = 3.0 )
+Memory management is done in pure reference counting (retain/release) style. No ARC extentions are used.
+
+The repositoy contains a library project that produces both a static library and a framework. It contains a demo project as well.
+
+License : BSD 
+

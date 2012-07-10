@@ -42,9 +42,10 @@
 @synthesize delegate=_delegate;
 
 
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor  {
-    if((self = [super initWithFrame:frame])) {
-		
+- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor
+{
+  if((self = [super initWithFrame:frame]))
+  {
 		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		self.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
 
@@ -95,10 +96,8 @@
 		
 		[self setState:PullToRefreshTableStateNormal];
 		
-    }
-	
-    return self;
-	
+  }
+  return self;
 }
 
 - (id)initWithFrame:(CGRect)frame  {
@@ -108,10 +107,10 @@
 #pragma mark -
 #pragma mark Setters
 
-- (void)refreshLastUpdatedDate {
-	
-	if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceLastUpdated:)]) {
-		
+- (void)refreshLastUpdatedDate 
+{	
+	if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceLastUpdated:)]) 
+  {	
 		NSDate *date = [_delegate pullToRefreshTableHeaderDataSourceLastUpdated:self];
 		
 		[NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
@@ -119,21 +118,22 @@
 		[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 
-		_lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [dateFormatter stringFromDate:date]];
+    NSString *lastUpdatedCaption = NSLocalizedString(@"Last updated: %@", @"Last updated caption");
+		_lastUpdatedLabel.text = [NSString stringWithFormat:lastUpdatedCaption, [date stringWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle]];
 		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"PullToRefreshTable_LastRefresh"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		
-	} else {
-		
-		_lastUpdatedLabel.text = nil;
-		
 	}
-
+  else
+  {
+		_lastUpdatedLabel.text = nil;
+	}
 }
 
-- (void)setState:(kPullToRefreshTableState)aState{
-	
-	switch (aState) {
+- (void)setState:(kPullToRefreshTableState)aState
+{
+	switch (aState) 
+  {
 		case PullToRefreshTableStatePulling:
 			
 			_statusLabel.text = NSLocalizedString(@"Release to refresh...", @"Release to refresh status");
@@ -165,7 +165,7 @@
 			break;
 		case PullToRefreshTableStateLoading:
 			
-			_statusLabel.text = NSLocalizedString(@"Loading...", @"Loading Status");
+			_statusLabel.text = NSLocalizedString(@"Loading...", @"Loading status");
 			[_activityView startAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
@@ -184,16 +184,17 @@
 #pragma mark -
 #pragma mark ScrollView Methods
 
-- (void)pullToRefreshTableScrollViewDidScroll:(UIScrollView *)scrollView {	
-	
-	if (_state == PullToRefreshTableStateLoading) {
-		
+- (void)pullToRefreshTableScrollViewDidScroll:(UIScrollView *)scrollView 
+{	
+	if (_state == PullToRefreshTableStateLoading)
+  {
 		CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
 		offset = MIN(offset, 60);
 		scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0f, 0.0f, 0.0f);
 		
-	} else if (scrollView.isDragging) {
-		
+	}
+  else if (scrollView.isDragging)
+  {
 		BOOL _loading = NO;
 		if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceIsLoading:)]) {
 			_loading = [_delegate pullToRefreshTableHeaderDataSourceIsLoading:self];
@@ -210,19 +211,20 @@
 		}
 		
 	}
-	
 }
 
-- (void)pullToRefreshTableScrollViewDidEndDragging:(UIScrollView *)scrollView {
-	
+- (void)pullToRefreshTableScrollViewDidEndDragging:(UIScrollView *)scrollView 
+{
 	BOOL _loading = NO;
-	if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceIsLoading:)]) {
+	if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceIsLoading:)]) 
+  {
 		_loading = [_delegate pullToRefreshTableHeaderDataSourceIsLoading:self];
 	}
 	
-	if (scrollView.contentOffset.y <= - 65.0f && !_loading) {
-		
-		if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDidTriggerRefresh:)]) {
+	if (scrollView.contentOffset.y <= - 65.0f && !_loading) 
+  {
+		if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDidTriggerRefresh:)])
+    {
 			[_delegate pullToRefreshTableHeaderDidTriggerRefresh:self];
 		}
 		
@@ -231,28 +233,24 @@
 		[UIView setAnimationDuration:0.2];
 		scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
 		[UIView commitAnimations];
-		
 	}
-	
 }
 
-- (void)pullToRefreshTableScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView {	
-	
+- (void)pullToRefreshTableScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView
+{	
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
 	[scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
 	[UIView commitAnimations];
 	
 	[self setState:PullToRefreshTableStateNormal];
-
 }
-
 
 #pragma mark -
 #pragma mark Dealloc
 
-- (void)dealloc {
-	
+- (void)dealloc
+{
 	_delegate=nil;
 	_activityView = nil;
 	_statusLabel = nil;

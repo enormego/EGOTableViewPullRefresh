@@ -48,6 +48,7 @@ typedef enum{
 }
 
 @property(nonatomic,assign) id <PullToRefreshTableDelegate> delegate;
+
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
 - (void)refreshLastUpdatedDate;
 - (void)pullToRefreshTableScrollViewDidScroll:(UIScrollView *)scrollView;

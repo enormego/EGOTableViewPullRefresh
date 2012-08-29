@@ -38,25 +38,27 @@ typedef enum{
 @protocol PullToRefreshTableDelegate;
 @interface PullToRefreshTableView : UIView 
 {
-	id _delegate;
 	kPullToRefreshTableState _state;
-
-	UILabel *_lastUpdatedLabel;
-	UILabel *_statusLabel;
-	CALayer *_arrowImage;
-	UIActivityIndicatorView *_activityView;
 }
 
-@property(nonatomic,assign) id <PullToRefreshTableDelegate> delegate;
+/** public label properties */
+@property(nonatomic,strong) UIColor *arrowColor;
+@property(nonatomic,strong) NSString *arrowImageName;
+@property(nonatomic,strong) UIColor *textColor;
+@property(nonatomic,strong) UIColor *shadowColor;
+@property(nonatomic) CGSize shadowOffset;
+@property(nonatomic) CGFloat animationDuration;
 
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
+@property (nonatomic,assign) id <PullToRefreshTableDelegate> delegate;
+
+- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)aTextColor;
 - (void)refreshLastUpdatedDate;
 - (void)pullToRefreshTableScrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)pullToRefreshTableScrollViewDidEndDragging:(UIScrollView *)scrollView;
 - (void)pullToRefreshTableScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
 @end
 
-@protocol PullToRefreshTableDelegate
+@protocol PullToRefreshTableDelegate <NSObject>
 - (void)pullToRefreshTableHeaderDidTriggerRefresh:(PullToRefreshTableView*)view;
 - (BOOL)pullToRefreshTableHeaderDataSourceIsLoading:(PullToRefreshTableView*)view;
 @optional

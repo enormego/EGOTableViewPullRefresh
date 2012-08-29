@@ -28,71 +28,70 @@
 
 #import "PullToRefreshTableView.h"
 
+#define PTR_TEXT_COLOR	 [UIColor colorWithRed:87.0f/255.0f green:108.0f/255.0f blue:137.0f/255.0f alpha:1.0f]
+#define PTR_SHADOW_COLOR [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.2f]
+#define PTR_ARROW_COLOR  [UIColor blueColor]
+#define PTR_FLIP_ANIMATION_DURATION 0.18f
 
-#define TEXT_COLOR	 [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0]
-#define FLIP_ANIMATION_DURATION 0.18f
-
-
-@interface PullToRefreshTableView (Private)
+@interface PullToRefreshTableView ()
 - (void)setState:(kPullToRefreshTableState)aState;
+@property (nonatomic,strong) UILabel *lastUpdatedLabel;
+@property (nonatomic,strong) UILabel *statusLabel;
+@property (nonatomic,strong) CALayer *arrowImage;
+@property (nonatomic,strong) UIActivityIndicatorView *activityView;
+
 @end
 
 @implementation PullToRefreshTableView
-
+@synthesize arrowColor=_arrowColor, textColor=_textColor, shadowColor=_shadowColor, shadowOffset=_shadowOffset;
+@synthesize animationDuration=_animationDuration, activityView=_activityView, arrowImageName=_arrowImageName, arrowImage=_arrowImage;
+@synthesize lastUpdatedLabel=_lastUpdatedLabel, statusLabel=_statusLabel;
 @synthesize delegate=_delegate;
 
+#pragma mark - Init/ Dealloc
 
-- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor
+- (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)aTextColor
 {
   if((self = [super initWithFrame:frame]))
   {
-		self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    // use passed in textcolor passed in
+    _textColor = aTextColor;
+    _arrowImageName = arrow;
+    
+    // set defaults
+    _animationDuration = PTR_FLIP_ANIMATION_DURATION;
+    _arrowColor = PTR_ARROW_COLOR;
+    _shadowColor = PTR_SHADOW_COLOR;
+    _shadowOffset = CGSizeMake(0.0f, 1.0f);
+    
+		self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleRightMargin;
+    self.autoresizesSubviews = YES;
 		self.backgroundColor = [UIColor colorWithRed:226.0/255.0 green:231.0/255.0 blue:237.0/255.0 alpha:1.0];
 
-		UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
-		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		label.font = [UIFont systemFontOfSize:12.0f];
-		label.textColor = textColor;
-		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
-		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
-		label.backgroundColor = [UIColor clearColor];
-		label.textAlignment = UITextAlignmentCenter;
-		[self addSubview:label];
-		_lastUpdatedLabel=label;
-		[label release];
+		_lastUpdatedLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 30.0f, self.frame.size.width, 20.0f)];
+		_lastUpdatedLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+		_lastUpdatedLabel.font = [UIFont systemFontOfSize:12.0f];
+		_lastUpdatedLabel.backgroundColor = [UIColor clearColor];
+		_lastUpdatedLabel.textAlignment = UITextAlignmentCenter;
 		
-		label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f)];
-		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		label.font = [UIFont boldSystemFontOfSize:13.0f];
-		label.textColor = textColor;
-		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
-		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
-		label.backgroundColor = [UIColor clearColor];
-		label.textAlignment = UITextAlignmentCenter;
-		[self addSubview:label];
-		_statusLabel=label;
-		[label release];
+		_statusLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f)];
+		_statusLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+		_statusLabel.font = [UIFont boldSystemFontOfSize:13.0f];
+		_statusLabel.backgroundColor = [UIColor clearColor];
+		_statusLabel.textAlignment = UITextAlignmentCenter;
+
+    [self _commonLabelSetup]; // apply the styles
+    
+    // add to view
+		[self addSubview:_lastUpdatedLabel];
+		[self addSubview:_statusLabel];
 		
-		CALayer *layer = [CALayer layer];
-		layer.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
-		layer.contentsGravity = kCAGravityResizeAspect;
-		layer.contents = (id)[UIImage imageNamed:arrow].CGImage;
-		
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
-		if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
-			layer.contentsScale = [[UIScreen mainScreen] scale];
-		}
-#endif
-		
-		[[self layer] addSublayer:layer];
-		_arrowImage=layer;
+		[self _arrowLayerSetup];
 		
 		UIActivityIndicatorView *view = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 		view.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
 		[self addSubview:view];
 		_activityView = view;
-		[view release];
-		
 		
 		[self setState:PullToRefreshTableStateNormal];
 		
@@ -100,26 +99,121 @@
   return self;
 }
 
-- (id)initWithFrame:(CGRect)frame  {
-  return [self initWithFrame:frame arrowImageName:@"blueArrow.png" textColor:TEXT_COLOR];
+- (id)initWithFrame:(CGRect)frame
+{
+  return [self initWithFrame:frame arrowImageName:@"blueArrow.png" textColor:PTR_TEXT_COLOR];
 }
 
-#pragma mark -
-#pragma mark Setters
+- (void)dealloc
+{
+	self.delegate=nil;
+	_activityView = nil;
+	_statusLabel = nil;
+	_arrowImage = nil;
+	_lastUpdatedLabel = nil;
+}
+
+#pragma mark - Private Methods
+
+-(void)_commonLabelSetup
+{
+  self.lastUpdatedLabel.textColor = self.textColor;
+  self.lastUpdatedLabel.shadowColor = self.shadowColor;
+  self.lastUpdatedLabel.shadowOffset = self.shadowOffset;
+
+  self.statusLabel.textColor = self.textColor;
+  self.statusLabel.shadowColor = self.shadowColor;
+  self.statusLabel.shadowOffset = self.shadowOffset;
+}
+
+-(void)_arrowLayerSetup
+{
+  CALayer *layer = [CALayer layer];
+  layer.frame = CGRectMake(25.0f, self.frame.size.height - 65.0f, 30.0f, 55.0f);
+  layer.contentsGravity = kCAGravityResizeAspect;
+  
+  layer.contents = (id)[self _maskArrowWithImageNamed:_arrowImageName].CGImage;
+  
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+  if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+    layer.contentsScale = [[UIScreen mainScreen] scale];
+  }
+#endif
+  if(_arrowImage)
+  {
+    // remove if already set before
+    [_arrowImage removeFromSuperlayer];
+  }
+  _arrowImage = layer;
+  [[self layer] addSublayer:_arrowImage];
+}
+
+-(UIImage*)_maskArrowWithImageNamed:(NSString*)imageName
+{
+  UIImage * image = [UIImage imageNamed:imageName];
+  CGFloat width = image.size.width;
+  CGFloat height = image.size.height;
+  
+  // Code gracefully borrowed from:
+  // https://gist.github.com/1102091
+  // ==============================
+  
+  CGRect rect = CGRectMake(0.0f, 0.0f, width, height);
+  UIGraphicsBeginImageContextWithOptions(rect.size, NO, image.scale);
+  CGContextRef c = UIGraphicsGetCurrentContext();
+  if (c)
+  {
+    [image drawInRect:rect];
+    CGContextSetFillColorWithColor(c, self.arrowColor.CGColor);
+    CGContextSetBlendMode(c, kCGBlendModeSourceAtop);
+    CGContextFillRect(c, rect);
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+  }
+  return image;
+}
+
+#pragma mark - Custom Setters
+
+-(void)setArrowColor:(UIColor *)arrowColor
+{
+  _arrowColor = arrowColor;
+  [self _arrowLayerSetup];
+}
+
+-(void)setTextColor:(UIColor *)textColor
+{
+  _textColor = textColor;
+  [self _commonLabelSetup];
+}
+
+-(void)setShadowColor:(UIColor *)shadowColor
+{
+  _shadowColor = shadowColor;
+  [self _commonLabelSetup];
+}
+
+-(void)setShadowOffset:(CGSize)shadowOffset
+{
+  _shadowOffset = shadowOffset;
+  [self _commonLabelSetup];
+}
+
+#pragma mark - Setters
 
 - (void)refreshLastUpdatedDate 
 {	
-	if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceLastUpdated:)]) 
+	if ([self.delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceLastUpdated:)]) 
   {	
-		NSDate *date = [_delegate pullToRefreshTableHeaderDataSourceLastUpdated:self];
+		NSDate *date = [self.delegate pullToRefreshTableHeaderDataSourceLastUpdated:self];
 		
 		[NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
-		NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 		[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 
     NSString *lastUpdatedCaption = NSLocalizedString(@"Last updated: %@", @"Last updated caption");
-		_lastUpdatedLabel.text = [NSString stringWithFormat:lastUpdatedCaption, [date stringWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle]];
+		self.lastUpdatedLabel.text = [NSString stringWithFormat:lastUpdatedCaption, [date stringWithDateStyle:NSDateFormatterMediumStyle timeStyle:NSDateFormatterNoStyle]];
 		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"PullToRefreshTable_LastRefresh"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		
@@ -138,7 +232,7 @@
 			
 			_statusLabel.text = NSLocalizedString(@"Release to refresh...", @"Release to refresh status");
 			[CATransaction begin];
-			[CATransaction setAnimationDuration:FLIP_ANIMATION_DURATION];
+			[CATransaction setAnimationDuration:self.animationDuration];
 			_arrowImage.transform = CATransform3DMakeRotation((M_PI / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
 			[CATransaction commit];
 			
@@ -147,7 +241,7 @@
 			
 			if (_state == PullToRefreshTableStatePulling) {
 				[CATransaction begin];
-				[CATransaction setAnimationDuration:FLIP_ANIMATION_DURATION];
+				[CATransaction setAnimationDuration:self.animationDuration];
 				_arrowImage.transform = CATransform3DIdentity;
 				[CATransaction commit];
 			}
@@ -181,8 +275,7 @@
 }
 
 
-#pragma mark -
-#pragma mark ScrollView Methods
+#pragma mark - ScrollView Methods
 
 - (void)pullToRefreshTableScrollViewDidScroll:(UIScrollView *)scrollView 
 {	
@@ -196,8 +289,8 @@
   else if (scrollView.isDragging)
   {
 		BOOL _loading = NO;
-		if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceIsLoading:)]) {
-			_loading = [_delegate pullToRefreshTableHeaderDataSourceIsLoading:self];
+		if ([self.delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceIsLoading:)]) {
+			_loading = [self.delegate pullToRefreshTableHeaderDataSourceIsLoading:self];
 		}
 		
 		if (_state == PullToRefreshTableStatePulling && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f && !_loading) {
@@ -216,16 +309,16 @@
 - (void)pullToRefreshTableScrollViewDidEndDragging:(UIScrollView *)scrollView 
 {
 	BOOL _loading = NO;
-	if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceIsLoading:)]) 
+	if ([self.delegate respondsToSelector:@selector(pullToRefreshTableHeaderDataSourceIsLoading:)]) 
   {
-		_loading = [_delegate pullToRefreshTableHeaderDataSourceIsLoading:self];
+		_loading = [self.delegate pullToRefreshTableHeaderDataSourceIsLoading:self];
 	}
 	
 	if (scrollView.contentOffset.y <= - 65.0f && !_loading) 
   {
-		if ([_delegate respondsToSelector:@selector(pullToRefreshTableHeaderDidTriggerRefresh:)])
+		if ([self.delegate respondsToSelector:@selector(pullToRefreshTableHeaderDidTriggerRefresh:)])
     {
-			[_delegate pullToRefreshTableHeaderDidTriggerRefresh:self];
+			[self.delegate pullToRefreshTableHeaderDidTriggerRefresh:self];
 		}
 		
 		[self setState:PullToRefreshTableStateLoading];
@@ -245,19 +338,5 @@
 	
 	[self setState:PullToRefreshTableStateNormal];
 }
-
-#pragma mark -
-#pragma mark Dealloc
-
-- (void)dealloc
-{
-	_delegate=nil;
-	_activityView = nil;
-	_statusLabel = nil;
-	_arrowImage = nil;
-	_lastUpdatedLabel = nil;
-    [super dealloc];
-}
-
 
 @end

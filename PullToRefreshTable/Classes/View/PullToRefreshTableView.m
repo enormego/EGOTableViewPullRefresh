@@ -30,7 +30,7 @@
 
 #define PTR_TEXT_COLOR	 [UIColor colorWithRed:87.0f/255.0f green:108.0f/255.0f blue:137.0f/255.0f alpha:1.0f]
 #define PTR_SHADOW_COLOR [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.2f]
-#define PTR_ARROW_COLOR  [UIColor blueColor]
+#define PTR_ARROW_COLOR  [UIColor blackColor]
 #define PTR_FLIP_ANIMATION_DURATION 0.18f
 
 @interface PullToRefreshTableView ()

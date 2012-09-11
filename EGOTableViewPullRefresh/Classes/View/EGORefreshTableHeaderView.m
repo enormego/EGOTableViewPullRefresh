@@ -38,7 +38,7 @@
 @implementation EGORefreshTableHeaderView
 
 @synthesize delegate=_delegate;
-
+@synthesize defaultOffset=_defaultOffset;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor  {
     if((self = [super initWithFrame:frame])) {
@@ -215,7 +215,7 @@
 			[self setState:EGOOPullRefreshPulling];
 		}
 		
-		[self setContentOffset: 0 forScrollView: scrollView];
+		[self setContentOffset:self.defaultOffset forScrollView: scrollView];
 	}
 	
 }
@@ -247,7 +247,7 @@
 	
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-	[self setContentOffset: 0.0f forScrollView: scrollView];
+	[self setContentOffset:self.defaultOffset forScrollView: scrollView];
 	[UIView commitAnimations];
 	
 	[self setState:EGOOPullRefreshNormal];

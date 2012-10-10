@@ -90,7 +90,6 @@
 		_activityView = view;
 		[view release];
 		
-		
 		[self setState:EGOOPullRefreshNormal];
 		
     }
@@ -107,7 +106,11 @@
 #pragma mark Setters
 
 - (void)refreshLastUpdatedDate {
-	
+	if (_state == EGOOPullRefreshStreaming) {
+        _lastUpdatedLabel.text = nil;
+        return;
+    }
+    
 	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) {
 		
 		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
@@ -171,11 +174,22 @@
 			[CATransaction commit];
 			
 			break;
+        case EGOOPullRefreshStreaming:
+            
+            _statusLabel.text = NSLocalizedString(@"Streaming...", @"Streaming status");
+            [_activityView startAnimating];
+			[CATransaction begin];
+			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+			_arrowImage.hidden = YES;
+			[CATransaction commit];
+            
+            break;
 		default:
 			break;
 	}
 	
 	_state = aState;
+    [self refreshLastUpdatedDate];
 }
 
 
@@ -214,11 +228,15 @@
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView {
 	
 	BOOL _loading = NO;
+    BOOL _streaming = NO;
 	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceIsLoading:)]) {
 		_loading = [_delegate egoRefreshTableHeaderDataSourceIsLoading:self];
 	}
+    if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceIsStreaming:)]) {
+		_streaming = [_delegate egoRefreshTableHeaderDataSourceIsStreaming:self];
+	}
 	
-	if (scrollView.contentOffset.y <= - 65.0f && !_loading) {
+	if (scrollView.contentOffset.y <= - 65.0f && !_loading && !_streaming) {
 		
 		if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDidTriggerRefresh:)]) {
 			[_delegate egoRefreshTableHeaderDidTriggerRefresh:self];
@@ -235,14 +253,36 @@
 }
 
 - (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView {	
-	
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:.3];
-	[scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
-	[UIView commitAnimations];
-	
-	[self setState:EGOOPullRefreshNormal];
+	if (_state == EGOOPullRefreshLoading) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:.3];
+        [scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+        [UIView commitAnimations];
+    }
+    
+    [self setState:EGOOPullRefreshNormal];
+}
 
+- (void)egoRefreshScrollViewDataSourceDidBeginStreaming:(UIScrollView *)scrollView {
+    if (_state == EGOOPullRefreshLoading) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:.3];
+        [scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+        [UIView commitAnimations];
+    }
+    
+    [self setState:EGOOPullRefreshStreaming];
+}
+
+- (void)egoRefreshScrollViewDataSourceDidEndStreaming:(UIScrollView *)scrollView {
+    if (_state == EGOOPullRefreshLoading) {
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:.3];
+        [scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+        [UIView commitAnimations];
+    }
+    
+    [self setState:EGOOPullRefreshNormal];
 }
 
 

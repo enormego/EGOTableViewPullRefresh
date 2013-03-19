@@ -25,6 +25,7 @@
 		3A3D909E11188064002B6585 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D909D11188064002B6585 /* EGORefreshTableHeaderView.m */; };
 		3A3D90A8111881DE002B6585 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D90A7111881DE002B6585 /* RootViewController.m */; };
 		3A3D910311188495002B6585 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3D910211188495002B6585 /* main.m */; };
+		6D36F59716F8701D00D0C917 /* EGORefreshLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D36F59916F8701D00D0C917 /* EGORefreshLocalizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		3A3D90A7111881DE002B6585 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		3A3D90C411188297002B6585 /* TableViewPull_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewPull_Prefix.pch; sourceTree = "<group>"; };
 		3A3D910211188495002B6585 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6D36F59816F8701D00D0C917 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/EGORefreshLocalizable.strings; sourceTree = "<group>"; };
+		6D36F59B16F870EA00D0C917 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EGORefreshLocalizable.strings; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* TableViewPull-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TableViewPull-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +106,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6D36F59916F8701D00D0C917 /* EGORefreshLocalizable.strings */,
 				2CCD9B5E1243CE1A006B1864 /* grayArrow.png */,
 				2CCD9B561243CB9F006B1864 /* grayArrow@2x.png */,
 				3A2585521088E97000126784 /* blackArrow.png */,
@@ -240,6 +244,7 @@
 				2CCD9B5D1243CDC2006B1864 /* blackArrow@2x.png in Resources */,
 				2CCD9B5F1243CE1A006B1864 /* grayArrow.png in Resources */,
 				2CCD9B611243CE22006B1864 /* whiteArrow@2x.png in Resources */,
+				6D36F59716F8701D00D0C917 /* EGORefreshLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +263,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6D36F59916F8701D00D0C917 /* EGORefreshLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D36F59816F8701D00D0C917 /* de */,
+				6D36F59B16F870EA00D0C917 /* en */,
+			);
+			name = EGORefreshLocalizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {

@@ -1,0 +1,10 @@
+/* 
+  LocalizedString.strings
+
+  Created by Marius Landwehr on 19.03.13.
+
+*/
+"Release to refresh..." = "Zum Aktualisieren loslassen…";
+"Pull down to refresh..." = "Zum Aktualisieren herunterziehen…";
+"Loading..." = "Lädt…";
+"Last Updated:" = "Zuletzt aktualisiert:";

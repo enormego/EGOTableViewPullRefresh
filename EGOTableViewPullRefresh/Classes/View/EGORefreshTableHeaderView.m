@@ -114,7 +114,7 @@
 		[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 
-        NSString *lastUpdate = NSLocalizedStringFromTable(@"Last Updated:", @"EGORefreshLocalizable", nil);
+        NSString *lastUpdate = NSLocalizedStringFromTableInBundle(@"Last Updated:", @"EGORefreshLocalizable", EGORefreshTableHeaderViewBundle(), nil);
 		_lastUpdatedLabel.text = [NSString stringWithFormat:@"%@ %@", lastUpdate, [dateFormatter stringFromDate:date]];
 
 		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
@@ -133,7 +133,7 @@
 	switch (aState) {
 		case EGOOPullRefreshPulling:
 			
-			_statusLabel.text = NSLocalizedStringFromTable(@"Release to refresh...", @"EGORefreshLocalizable", @"Release to refresh status");
+			_statusLabel.text = NSLocalizedStringFromTableInBundle(@"Release to refresh...", @"EGORefreshLocalizable", EGORefreshTableHeaderViewBundle(), @"Release to refresh status");
 			[CATransaction begin];
 			[CATransaction setAnimationDuration:FLIP_ANIMATION_DURATION];
 			_arrowImage.transform = CATransform3DMakeRotation((M_PI / 180.0) * 180.0f, 0.0f, 0.0f, 1.0f);
@@ -149,7 +149,7 @@
 				[CATransaction commit];
 			}
 			
-			_statusLabel.text = NSLocalizedStringFromTable(@"Pull down to refresh...", @"EGORefreshLocalizable", @"Pull down to refresh status");
+			_statusLabel.text = NSLocalizedStringFromTableInBundle(@"Pull down to refresh...", @"EGORefreshLocalizable", EGORefreshTableHeaderViewBundle(), @"Pull down to refresh status");
 			[_activityView stopAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
@@ -162,7 +162,7 @@
 			break;
 		case EGOOPullRefreshLoading:
 			
-			_statusLabel.text = NSLocalizedStringFromTable(@"Loading...", @"EGORefreshLocalizable", @"Loading Status");
+			_statusLabel.text = NSLocalizedStringFromTableInBundle(@"Loading...", @"EGORefreshLocalizable", EGORefreshTableHeaderViewBundle(), @"Loading Status");
 			[_activityView startAnimating];
 			[CATransaction begin];
 			[CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions]; 
@@ -242,6 +242,16 @@
 	
 	[self setState:EGOOPullRefreshNormal];
 
+}
+
+NSBundle *EGORefreshTableHeaderViewBundle(void) {
+    static NSBundle* bundle = nil;
+    if (!bundle) {
+        NSString* path = [[[NSBundle mainBundle] resourcePath]
+                          stringByAppendingPathComponent:@"EgoTableViewResources.bundle"];
+        bundle = [[NSBundle bundleWithPath:path] retain];
+    }
+    return bundle;
 }
 
 

@@ -1,454 +1,0 @@
-TTableViewPull
-v7
-r0
-t313189327.667451
-cCheck dependencies
-cProcessInfoPlistFile "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/Info.plist" Resources/TableViewPull-Info.plist
-cCompileXIB "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/MainWindow.xib"
-cCompileXIB "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/RootViewController.xib"
-cCpResource build/Debug-iphonesimulator/TableViewPull.app/blackArrow.png Resources/blackArrow.png
-cCpResource build/Debug-iphonesimulator/TableViewPull.app/blueArrow.png Resources/blueArrow.png
-cCpResource build/Debug-iphonesimulator/TableViewPull.app/whiteArrow.png Resources/whiteArrow.png
-cCpResource build/Debug-iphonesimulator/TableViewPull.app/grayArrow@2x.png Resources/grayArrow@2x.png
-cCpResource build/Debug-iphonesimulator/TableViewPull.app/blueArrow@2x.png Resources/blueArrow@2x.png
-cCpResource build/Debug-iphonesimulator/TableViewPull.app/blackArrow@2x.png Resources/blackArrow@2x.png
-cCpResource build/Debug-iphonesimulator/TableViewPull.app/grayArrow.png Resources/grayArrow.png
-cCpResource build/Debug-iphonesimulator/TableViewPull.app/whiteArrow@2x.png Resources/whiteArrow@2x.png
-cProcessPCH /var/folders/EN/ENmrDakkEzOaao7-bah5i++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TableViewPull_Prefix-gpqoidesfvvamccijytcwdnrcugh/TableViewPull_Prefix.pch.gch TableViewPull_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/TableViewPullAppDelegate.o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/EGORefreshTableHeaderView.o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/View/RefreshTableHeaderView/EGORefreshTableHeaderView.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/RootViewController.o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Controller/RootViewController/RootViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/main.o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull" normal i386
-cGenerateDSYMFile "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app.dSYM" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull"
-cTouch "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
-c000000004CCF6EED0000000000000110
-t1288662765
-s272
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004CC12246000000000029B310
-t1287725638
-s2732816
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004CC1226D000000000029D5D0
-t1287725677
-s2741712
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004CC1225F0000000000001466
-t1287725663
-s5222
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.h
-c000000004CC1233C00000000000000C4
-t1287725884
-s196
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/QuartzCore.framework/QuartzCore
-c000000004CC12431000000000015CDB0
-t1287726129
-s1428912
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004CC1281F0000000000000AA1
-t1287727135
-s2721
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004CC12883000000000074D7B0
-t1287727235
-s7657392
-
-N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/Availability.h
-c000000004CB3FA080000000000001ADD
-t1286863368
-s6877
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Controller/RootViewController/RootViewController.h
-c000000004CFAAA17000000000000067F
-t1291495959
-s1663
-i"EGORefreshTableHeaderView.h"
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Controller/RootViewController/RootViewController.m
-c000000004CFD21CE0000000000001147
-t1291657678
-s4423
-i"RootViewController.h"
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.h
-c000000004CFA9738000000000000060D
-t1291491128
-s1549
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.m
-c000000004CFA9738000000000000078F
-t1291491128
-s1935
-i"TableViewPullAppDelegate.h"
-i"RootViewController.h"
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/View/RefreshTableHeaderView/EGORefreshTableHeaderView.h
-c000000004CFAAC49000000000000090B
-t1291496521
-s2315
-i<UIKit/UIKit.h>
-i<QuartzCore/QuartzCore.h>
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/View/RefreshTableHeaderView/EGORefreshTableHeaderView.m
-c000000004CFAAC8C000000000000202F
-t1291496588
-s8239
-i"EGORefreshTableHeaderView.h"
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/MainWindow.xib
-c000000004CFA97380000000000002C79
-t1291491128
-s11385
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/RootViewController.xib
-c000000004CFA973800000000000043CB
-t1291491128
-s17355
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blackArrow.png
-c000000004CFA973800000000000010DC
-t1291491128
-s4316
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blackArrow@2x.png
-c000000004CFA97380000000000000650
-t1291491128
-s1616
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blueArrow.png
-c000000004CFA9738000000000000118C
-t1291491128
-s4492
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blueArrow@2x.png
-c000000004CFA973800000000000005F9
-t1291491128
-s1529
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/grayArrow.png
-c000000004CFA9738000000000000077A
-t1291491128
-s1914
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/grayArrow@2x.png
-c000000004CFA9738000000000000083D
-t1291491128
-s2109
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/whiteArrow.png
-c000000004CFA97380000000000001054
-t1291491128
-s4180
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/whiteArrow@2x.png
-c000000004CFA97380000000000000621
-t1291491128
-s1569
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/TableViewPull_Prefix.pch
-c000000004CFA9738000000000000014C
-t1291491128
-s332
-i<Availability.h>
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app
-t1291496522
-s510
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app.dSYM
-t1291496522
-s102
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/Info.plist
-t1291491156
-s620
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/MainWindow.nib
-t1291491157
-s2431
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/PkgInfo
-t1291491156
-s8
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/RootViewController.nib
-t1291491157
-s1404
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull
-t1291496522
-s36620
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/blackArrow.png
-t1291491157
-s4316
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/blackArrow@2x.png
-t1291491157
-s1616
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/blueArrow.png
-t1291491157
-s4492
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/blueArrow@2x.png
-t1291491157
-s1529
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/grayArrow.png
-t1291491157
-s1914
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/grayArrow@2x.png
-t1291491157
-s2109
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/whiteArrow.png
-t1291491157
-s4180
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/whiteArrow@2x.png
-t1291491157
-s1569
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/EGORefreshTableHeaderView.o
-t1291496522
-s63480
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/RootViewController.o
-t1291496522
-s56844
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/TableViewPull.LinkFileList
-c000000004CFA975400000000000002DB
-t1291491156
-s731
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/TableViewPullAppDelegate.o
-t1291495962
-s51536
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/main.o
-t1291491158
-s6372
-
-N/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/main.m
-c000000004CFA97380000000000000177
-t1291491128
-s375
-i<UIKit/UIKit.h>
-
-N/var/folders/EN/ENmrDakkEzOaao7-bah5i++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TableViewPull_Prefix-gpqoidesfvvamccijytcwdnrcugh/TableViewPull_Prefix.pch.gch
-t1291491157
-s15477968
-
-NResources/TableViewPull-Info.plist
-c000000004CFA9738000000000000038D
-t1291491128
-s909
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies313189327#313189327#0(0"0(0#1#0"8619736448#0"0#
-
-CCompileC build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/EGORefreshTableHeaderView.o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/View/RefreshTableHeaderView/EGORefreshTableHeaderView.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s313189321.955770
-e313189322.143199
-r1
-xCompileC
-xbuild/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/EGORefreshTableHeaderView.o
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/View/RefreshTableHeaderView/EGORefreshTableHeaderView.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@145"Compile /Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/View/RefreshTableHeaderView/EGORefreshTableHeaderView.m313189321#313189322#0(0"0(0#0#137"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/View/RefreshTableHeaderView/EGORefreshTableHeaderView.m8617245664#2519"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-generated-files.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-own-target-headers.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-all-target-headers.hmap" -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-project-headers.hmap" "-F/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/include" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources/i386" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources" -include /var/folders/EN/ENmrDakkEzOaao7-bah5i++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TableViewPull_Prefix-gpqoidesfvvamccijytcwdnrcugh/TableViewPull_Prefix.pch -c "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/View/RefreshTableHeaderView/EGORefreshTableHeaderView.m" -o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/EGORefreshTableHeaderView.o"0#
-
-CCompileC build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/RootViewController.o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Controller/RootViewController/RootViewController.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s313189321.968038
-e313189322.139104
-r1
-xCompileC
-xbuild/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/RootViewController.o
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Controller/RootViewController/RootViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@140"Compile /Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Controller/RootViewController/RootViewController.m313189321#313189322#0(0"0(0#0#132"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Controller/RootViewController/RootViewController.m8619714944#2507"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-generated-files.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-own-target-headers.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-all-target-headers.hmap" -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-project-headers.hmap" "-F/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/include" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources/i386" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources" -include /var/folders/EN/ENmrDakkEzOaao7-bah5i++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TableViewPull_Prefix-gpqoidesfvvamccijytcwdnrcugh/TableViewPull_Prefix.pch -c "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Controller/RootViewController/RootViewController.m" -o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/RootViewController.o"0#
-
-CCompileC build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/TableViewPullAppDelegate.o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s313188762.491527
-e313188762.634118
-r1
-xCompileC
-xbuild/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/TableViewPullAppDelegate.o
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@125"Compile /Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.m313188762#313188762#0(0"0(0#0#117"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.m8618952384#2498"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-generated-files.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-own-target-headers.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-all-target-headers.hmap" -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-project-headers.hmap" "-F/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/include" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources/i386" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources" -include /var/folders/EN/ENmrDakkEzOaao7-bah5i++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TableViewPull_Prefix-gpqoidesfvvamccijytcwdnrcugh/TableViewPull_Prefix.pch -c "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.m" -o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/TableViewPullAppDelegate.o"0#
-
-CCompileC build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/main.o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/main.m" normal i386 objective-c com.apple.compilers.gcc.4_2
-s313183958.155561
-e313183958.215211
-r1
-xCompileC
-xbuild/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/main.o
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@88"Compile /Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/main.m313183958#313183958#0(0"0(0#0#80"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/main.m8602489728#2441"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-generated-files.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-own-target-headers.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-all-target-headers.hmap" -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-project-headers.hmap" "-F/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/include" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources/i386" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources" -include /var/folders/EN/ENmrDakkEzOaao7-bah5i++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TableViewPull_Prefix-gpqoidesfvvamccijytcwdnrcugh/TableViewPull_Prefix.pch -c "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/main.m" -o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/main.o"0#
-
-CCompileXIB "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/MainWindow.xib"
-s313183956.798000
-e313183957.316027
-r1
-xCompileXIB
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/MainWindow.xib
-lSLF07#2@35"CompileXIB Resources/MainWindow.xib313183956#313183957#0(0"0(0#0#98"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/MainWindow.xib8605216096#697"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/MainWindow.nib" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/MainWindow.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCompileXIB "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/RootViewController.xib"
-s313183956.798874
-e313183957.310697
-r1
-xCompileXIB
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/RootViewController.xib
-lSLF07#2@43"CompileXIB Resources/RootViewController.xib313183956#313183957#0(0"0(0#0#106"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/RootViewController.xib8602325312#713"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 3.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/RootViewController.nib" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/RootViewController.xib" --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk0#
-
-CCpResource build/Debug-iphonesimulator/TableViewPull.app/blackArrow.png Resources/blackArrow.png
-s313183957.310791
-e313183957.318459
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/TableViewPull.app/blackArrow.png
-xResources/blackArrow.png
-lSLF07#2@29"Copy Resources/blackArrow.png313183957#313183957#0(0"0(0#0#98"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blackArrow.png8600899296#599"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blackArrow.png" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"0#
-
-CCpResource build/Debug-iphonesimulator/TableViewPull.app/blackArrow@2x.png Resources/blackArrow@2x.png
-s313183957.313998
-e313183957.324988
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/TableViewPull.app/blackArrow@2x.png
-xResources/blackArrow@2x.png
-lSLF07#2@32"Copy Resources/blackArrow@2x.png313183957#313183957#0(0"0(0#0#101"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blackArrow@2x.png8605445824#602"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blackArrow@2x.png" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"0#
-
-CCpResource build/Debug-iphonesimulator/TableViewPull.app/blueArrow.png Resources/blueArrow.png
-s313183957.311571
-e313183957.320406
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/TableViewPull.app/blueArrow.png
-xResources/blueArrow.png
-lSLF07#2@28"Copy Resources/blueArrow.png313183957#313183957#0(0"0(0#0#97"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blueArrow.png8600139104#598"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blueArrow.png" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"0#
-
-CCpResource build/Debug-iphonesimulator/TableViewPull.app/blueArrow@2x.png Resources/blueArrow@2x.png
-s313183957.313394
-e313183957.328928
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/TableViewPull.app/blueArrow@2x.png
-xResources/blueArrow@2x.png
-lSLF07#2@31"Copy Resources/blueArrow@2x.png313183957#313183957#0(0"0(0#0#100"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blueArrow@2x.png8601935360#601"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/blueArrow@2x.png" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"0#
-
-CCpResource build/Debug-iphonesimulator/TableViewPull.app/grayArrow.png Resources/grayArrow.png
-s313183957.314614
-e313183957.331451
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/TableViewPull.app/grayArrow.png
-xResources/grayArrow.png
-lSLF07#2@28"Copy Resources/grayArrow.png313183957#313183957#0(0"0(0#0#97"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/grayArrow.png8604814656#598"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/grayArrow.png" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"0#
-
-CCpResource build/Debug-iphonesimulator/TableViewPull.app/grayArrow@2x.png Resources/grayArrow@2x.png
-s313183957.312782
-e313183957.323348
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/TableViewPull.app/grayArrow@2x.png
-xResources/grayArrow@2x.png
-lSLF07#2@31"Copy Resources/grayArrow@2x.png313183957#313183957#0(0"0(0#0#100"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/grayArrow@2x.png8605007520#601"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/grayArrow@2x.png" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"0#
-
-CCpResource build/Debug-iphonesimulator/TableViewPull.app/whiteArrow.png Resources/whiteArrow.png
-s313183957.312171
-e313183957.333372
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/TableViewPull.app/whiteArrow.png
-xResources/whiteArrow.png
-lSLF07#2@29"Copy Resources/whiteArrow.png313183957#313183957#0(0"0(0#0#98"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/whiteArrow.png8601697248#599"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/whiteArrow.png" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"0#
-
-CCpResource build/Debug-iphonesimulator/TableViewPull.app/whiteArrow@2x.png Resources/whiteArrow@2x.png
-s313183957.315211
-e313183957.330603
-r1
-xCpResource
-xbuild/Debug-iphonesimulator/TableViewPull.app/whiteArrow@2x.png
-xResources/whiteArrow@2x.png
-lSLF07#2@32"Copy Resources/whiteArrow@2x.png313183957#313183957#0(0"0(0#0#101"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/whiteArrow@2x.png8602169984#602"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/whiteArrow@2x.png" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"0#
-
-CGenerateDSYMFile "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app.dSYM" "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull"
-s313189322.174633
-e313189322.207147
-r1
-xGenerateDSYMFile
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app.dSYM
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull
-lSLF07#2@127"GenerateDSYMFile build/Debug-iphonesimulator/TableViewPull.app.dSYM build/Debug-iphonesimulator/TableViewPull.app/TableViewPull313189322#313189322#0(0"0(0#0#133"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull8606248320#512"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull" -o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app.dSYM"0#
-
-CLd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull" normal i386
-s313189322.143287
-e313189322.174533
-r1
-xLd
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull
-xnormal
-xi386
-lSLF07#2@138"Link /Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull313189322#313189322#0(0"0(0#0#0"8618191936#1137"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk "-L/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator" "-F/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator" -filelist "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/Objects-normal/i386/TableViewPull.LinkFileList" -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework QuartzCore -o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/TableViewPull"0#
-
-CProcessInfoPlistFile "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/Info.plist" Resources/TableViewPull-Info.plist
-s313183956.779170
-e313183956.797901
-r1
-xProcessInfoPlistFile
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/Info.plist
-xResources/TableViewPull-Info.plist
-lSLF07#2@42"Process Resources/TableViewPull-Info.plist313183956#313183956#0(0"0(0#0#108"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/Resources/TableViewPull-Info.plist7301017159001470976#618"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility Resources/TableViewPull-Info.plist -genpkginfo "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/PkgInfo" -expandbuildsettings -format binary -platform iphonesimulator -o "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app/Info.plist"0#
-
-CProcessPCH /var/folders/EN/ENmrDakkEzOaao7-bah5i++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TableViewPull_Prefix-gpqoidesfvvamccijytcwdnrcugh/TableViewPull_Prefix.pch.gch TableViewPull_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s313183957.333506
-e313183957.999384
-r1
-xProcessPCH
-x/var/folders/EN/ENmrDakkEzOaao7-bah5i++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TableViewPull_Prefix-gpqoidesfvvamccijytcwdnrcugh/TableViewPull_Prefix.pch.gch
-xTableViewPull_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@35"Precompile TableViewPull_Prefix.pch313183957#313183957#0(0"0(0#0#98"/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/TableViewPull_Prefix.pch8602003584#2290"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-generated-files.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-own-target-headers.hmap" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-all-target-headers.hmap" -iquote "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/TableViewPull-project-headers.hmap" "-F/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/include" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources/i386" "-I/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/TableViewPull.build/Debug-iphonesimulator/TableViewPull.build/DerivedSources" -c "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/TableViewPull_Prefix.pch" -o /var/folders/EN/ENmrDakkEzOaao7-bah5i++++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/TableViewPull_Prefix-gpqoidesfvvamccijytcwdnrcugh/TableViewPull_Prefix.pch.gch0#
-
-CTouch "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"
-s313189322.207246
-e313189322.211411
-r1
-xTouch
-x/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app
-lSLF07#2@125"Touch /Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app313189322#313189322#0(0"0(0#0#0"8622280608#358"    cd "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull"    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c "/Users/devin/Documents/iOS Dev/EGOTableViewPullRefresh/Demo/TableViewPull/build/Debug-iphonesimulator/TableViewPull.app"0#
-

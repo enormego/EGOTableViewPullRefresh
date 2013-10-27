@@ -27,8 +27,14 @@
 #import "EGORefreshTableHeaderView.h"
 
 
+#define HEADER_HEIGHT 60.0f
 #define TEXT_COLOR	 [UIColor colorWithRed:87.0/255.0 green:108.0/255.0 blue:137.0/255.0 alpha:1.0]
 #define FLIP_ANIMATION_DURATION 0.18f
+
+static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topInset) {
+    baseInsets.top = topInset;
+    return baseInsets;
+}
 
 
 @interface EGORefreshTableHeaderView (Private)
@@ -53,10 +59,9 @@
 		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		label.backgroundColor = [UIColor clearColor];
-		label.textAlignment = UITextAlignmentCenter;
+		label.textAlignment = NSTextAlignmentCenter;
 		[self addSubview:label];
 		_lastUpdatedLabel=label;
-		[label release];
 		
 		label = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, frame.size.height - 48.0f, self.frame.size.width, 20.0f)];
 		label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -65,10 +70,9 @@
 		label.shadowColor = [UIColor colorWithWhite:0.9f alpha:1.0f];
 		label.shadowOffset = CGSizeMake(0.0f, 1.0f);
 		label.backgroundColor = [UIColor clearColor];
-		label.textAlignment = UITextAlignmentCenter;
+		label.textAlignment = NSTextAlignmentCenter;
 		[self addSubview:label];
 		_statusLabel=label;
-		[label release];
 		
 		CALayer *layer = [CALayer layer];
 		layer.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);
@@ -88,7 +92,6 @@
 		view.frame = CGRectMake(25.0f, frame.size.height - 38.0f, 20.0f, 20.0f);
 		[self addSubview:view];
 		_activityView = view;
-		[view release];
 		
 		
 		[self setState:EGOOPullRefreshNormal];
@@ -113,13 +116,11 @@
 		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
 		
 		[NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
-		NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 		[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 
 		_lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [dateFormatter stringFromDate:date]];
-		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
-		[[NSUserDefaults standardUserDefaults] synchronize];
 		
 	} else {
 		
@@ -182,13 +183,13 @@
 #pragma mark -
 #pragma mark ScrollView Methods
 
-- (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView {	
+- (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView {
 	
 	if (_state == EGOOPullRefreshLoading) {
 		
 		CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
-		offset = MIN(offset, 60);
-		scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0f, 0.0f, 0.0f);
+		offset = MIN(offset, HEADER_HEIGHT);
+		scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, offset + _topLayoutOffset);
 		
 	} else if (scrollView.isDragging) {
 		
@@ -197,14 +198,17 @@
 			_loading = [_delegate egoRefreshTableHeaderDataSourceIsLoading:self];
 		}
 		
-		if (_state == EGOOPullRefreshPulling && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f && !_loading) {
+		if (_state == EGOOPullRefreshPulling
+            && -self.triggeredOffset < scrollView.contentOffset.y && scrollView.contentOffset.y < -_topLayoutOffset
+            && !_loading) {
 			[self setState:EGOOPullRefreshNormal];
-		} else if (_state == EGOOPullRefreshNormal && scrollView.contentOffset.y < -65.0f && !_loading) {
+            
+		} else if (_state == EGOOPullRefreshNormal && scrollView.contentOffset.y < -self.triggeredOffset && !_loading) {
 			[self setState:EGOOPullRefreshPulling];
 		}
 		
-		if (scrollView.contentInset.top != 0) {
-			scrollView.contentInset = UIEdgeInsetsZero;
+		if (scrollView.contentInset.top != _topLayoutOffset) {
+			scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, _topLayoutOffset);
 		}
 		
 	}
@@ -212,37 +216,43 @@
 }
 
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView {
-	
+
 	BOOL _loading = NO;
 	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceIsLoading:)]) {
 		_loading = [_delegate egoRefreshTableHeaderDataSourceIsLoading:self];
 	}
 	
-	if (scrollView.contentOffset.y <= - 65.0f && !_loading) {
+	if (scrollView.contentOffset.y <= - self.triggeredOffset && !_loading) {
 		
 		if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDidTriggerRefresh:)]) {
 			[_delegate egoRefreshTableHeaderDidTriggerRefresh:self];
 		}
 		
 		[self setState:EGOOPullRefreshLoading];
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationDuration:0.2];
-		scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
-		[UIView commitAnimations];
+
+        [UIView animateWithDuration:0.2 animations:^{
+            scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, HEADER_HEIGHT + _topLayoutOffset);
+        }];
 		
 	}
 	
 }
 
 - (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView {	
-	
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:.3];
-	[scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
-	[UIView commitAnimations];
-	
-	[self setState:EGOOPullRefreshNormal];
 
+    [self setState:EGOOPullRefreshNormal];
+
+    [UIView animateWithDuration:0.3 animations:^{
+        scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, _topLayoutOffset);
+    }];
+}
+
+
+#pragma mark -
+#pragma mark Layout
+
+- (CGFloat)triggeredOffset {
+    return _topLayoutOffset + 65.0f;
 }
 
 
@@ -256,7 +266,6 @@
 	_statusLabel = nil;
 	_arrowImage = nil;
 	_lastUpdatedLabel = nil;
-    [super dealloc];
 }
 
 

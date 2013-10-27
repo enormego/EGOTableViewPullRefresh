@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42AF2782181CD9D500A3E682 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AF2781181CD9D500A3E682 /* Foundation.framework */; };
+		42AF2784181CD9D500A3E682 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AF2783181CD9D500A3E682 /* CoreGraphics.framework */; };
+		42AF2786181CD9D500A3E682 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AF2785181CD9D500A3E682 /* UIKit.framework */; };
+		42AF278C181CD9D500A3E682 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 42AF278A181CD9D500A3E682 /* InfoPlist.strings */; };
+		42AF278E181CD9D500A3E682 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF278D181CD9D500A3E682 /* main.m */; };
+		42AF2792181CD9D500A3E682 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF2791181CD9D500A3E682 /* AppDelegate.m */; };
+		42AF2794181CD9D500A3E682 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AF2793181CD9D500A3E682 /* Images.xcassets */; };
+		42AF27B2181CDA6D00A3E682 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF27B1181CDA6D00A3E682 /* RootViewController.m */; };
+		42AF27C2181CDAC000A3E682 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF27B8181CDAC000A3E682 /* EGORefreshTableHeaderView.m */; };
+		42AF27C3181CDAC000A3E682 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27BA181CDAC000A3E682 /* blackArrow.png */; };
+		42AF27C4181CDAC000A3E682 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27BB181CDAC000A3E682 /* blackArrow@2x.png */; };
+		42AF27C5181CDAC000A3E682 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27BC181CDAC000A3E682 /* blueArrow.png */; };
+		42AF27C6181CDAC000A3E682 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27BD181CDAC000A3E682 /* blueArrow@2x.png */; };
+		42AF27C7181CDAC000A3E682 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27BE181CDAC000A3E682 /* grayArrow.png */; };
+		42AF27C8181CDAC000A3E682 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27BF181CDAC000A3E682 /* grayArrow@2x.png */; };
+		42AF27C9181CDAC000A3E682 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27C0181CDAC000A3E682 /* whiteArrow.png */; };
+		42AF27CA181CDAC000A3E682 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27C1181CDAC000A3E682 /* whiteArrow@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		42AF277E181CD9D500A3E682 /* EGOTableViewPullRefreshDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EGOTableViewPullRefreshDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42AF2781181CD9D500A3E682 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		42AF2783181CD9D500A3E682 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		42AF2785181CD9D500A3E682 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		42AF2789181CD9D500A3E682 /* EGOTableViewPullRefreshDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EGOTableViewPullRefreshDemo-Info.plist"; sourceTree = "<group>"; };
+		42AF278B181CD9D500A3E682 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		42AF278D181CD9D500A3E682 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42AF278F181CD9D500A3E682 /* EGOTableViewPullRefreshDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EGOTableViewPullRefreshDemo-Prefix.pch"; sourceTree = "<group>"; };
+		42AF2790181CD9D500A3E682 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		42AF2791181CD9D500A3E682 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42AF2793181CD9D500A3E682 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		42AF279A181CD9D500A3E682 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		42AF27B0181CDA6D00A3E682 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		42AF27B1181CDA6D00A3E682 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		42AF27B7181CDAC000A3E682 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		42AF27B8181CDAC000A3E682 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		42AF27BA181CDAC000A3E682 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		42AF27BB181CDAC000A3E682 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		42AF27BC181CDAC000A3E682 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		42AF27BD181CDAC000A3E682 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		42AF27BE181CDAC000A3E682 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		42AF27BF181CDAC000A3E682 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		42AF27C0181CDAC000A3E682 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		42AF27C1181CDAC000A3E682 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42AF277B181CD9D500A3E682 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42AF2784181CD9D500A3E682 /* CoreGraphics.framework in Frameworks */,
+				42AF2786181CD9D500A3E682 /* UIKit.framework in Frameworks */,
+				42AF2782181CD9D500A3E682 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42AF2775181CD9D500A3E682 = {
+			isa = PBXGroup;
+			children = (
+				42AF2787181CD9D500A3E682 /* EGOTableViewPullRefreshDemo */,
+				42AF2780181CD9D500A3E682 /* Frameworks */,
+				42AF277F181CD9D500A3E682 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42AF277F181CD9D500A3E682 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42AF277E181CD9D500A3E682 /* EGOTableViewPullRefreshDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42AF2780181CD9D500A3E682 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42AF2781181CD9D500A3E682 /* Foundation.framework */,
+				42AF2783181CD9D500A3E682 /* CoreGraphics.framework */,
+				42AF2785181CD9D500A3E682 /* UIKit.framework */,
+				42AF279A181CD9D500A3E682 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42AF2787181CD9D500A3E682 /* EGOTableViewPullRefreshDemo */ = {
+			isa = PBXGroup;
+			children = (
+				42AF27B4181CDAC000A3E682 /* EGOTableViewPullRefresh */,
+				42AF27B3181CDA7300A3E682 /* Controller */,
+				42AF2790181CD9D500A3E682 /* AppDelegate.h */,
+				42AF2791181CD9D500A3E682 /* AppDelegate.m */,
+				42AF2793181CD9D500A3E682 /* Images.xcassets */,
+				42AF2788181CD9D500A3E682 /* Supporting Files */,
+			);
+			path = EGOTableViewPullRefreshDemo;
+			sourceTree = "<group>";
+		};
+		42AF2788181CD9D500A3E682 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				42AF2789181CD9D500A3E682 /* EGOTableViewPullRefreshDemo-Info.plist */,
+				42AF278A181CD9D500A3E682 /* InfoPlist.strings */,
+				42AF278D181CD9D500A3E682 /* main.m */,
+				42AF278F181CD9D500A3E682 /* EGOTableViewPullRefreshDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42AF27B3181CDA7300A3E682 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				42AF27B0181CDA6D00A3E682 /* RootViewController.h */,
+				42AF27B1181CDA6D00A3E682 /* RootViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		42AF27B4181CDAC000A3E682 /* EGOTableViewPullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				42AF27B5181CDAC000A3E682 /* Classes */,
+				42AF27B9181CDAC000A3E682 /* Resources */,
+			);
+			name = EGOTableViewPullRefresh;
+			path = ../EGOTableViewPullRefresh;
+			sourceTree = "<group>";
+		};
+		42AF27B5181CDAC000A3E682 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				42AF27B6181CDAC000A3E682 /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		42AF27B6181CDAC000A3E682 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				42AF27B7181CDAC000A3E682 /* EGORefreshTableHeaderView.h */,
+				42AF27B8181CDAC000A3E682 /* EGORefreshTableHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		42AF27B9181CDAC000A3E682 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42AF27BA181CDAC000A3E682 /* blackArrow.png */,
+				42AF27BB181CDAC000A3E682 /* blackArrow@2x.png */,
+				42AF27BC181CDAC000A3E682 /* blueArrow.png */,
+				42AF27BD181CDAC000A3E682 /* blueArrow@2x.png */,
+				42AF27BE181CDAC000A3E682 /* grayArrow.png */,
+				42AF27BF181CDAC000A3E682 /* grayArrow@2x.png */,
+				42AF27C0181CDAC000A3E682 /* whiteArrow.png */,
+				42AF27C1181CDAC000A3E682 /* whiteArrow@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42AF277D181CD9D500A3E682 /* EGOTableViewPullRefreshDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42AF27AA181CD9D500A3E682 /* Build configuration list for PBXNativeTarget "EGOTableViewPullRefreshDemo" */;
+			buildPhases = (
+				42AF277A181CD9D500A3E682 /* Sources */,
+				42AF277B181CD9D500A3E682 /* Frameworks */,
+				42AF277C181CD9D500A3E682 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EGOTableViewPullRefreshDemo;
+			productName = EGOTableViewPullRefreshDemo;
+			productReference = 42AF277E181CD9D500A3E682 /* EGOTableViewPullRefreshDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42AF2776181CD9D500A3E682 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "The Neet House";
+			};
+			buildConfigurationList = 42AF2779181CD9D500A3E682 /* Build configuration list for PBXProject "EGOTableViewPullRefreshDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 42AF2775181CD9D500A3E682;
+			productRefGroup = 42AF277F181CD9D500A3E682 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42AF277D181CD9D500A3E682 /* EGOTableViewPullRefreshDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42AF277C181CD9D500A3E682 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42AF27C6181CDAC000A3E682 /* blueArrow@2x.png in Resources */,
+				42AF278C181CD9D500A3E682 /* InfoPlist.strings in Resources */,
+				42AF27CA181CDAC000A3E682 /* whiteArrow@2x.png in Resources */,
+				42AF27C3181CDAC000A3E682 /* blackArrow.png in Resources */,
+				42AF27C8181CDAC000A3E682 /* grayArrow@2x.png in Resources */,
+				42AF27C5181CDAC000A3E682 /* blueArrow.png in Resources */,
+				42AF27C4181CDAC000A3E682 /* blackArrow@2x.png in Resources */,
+				42AF27C7181CDAC000A3E682 /* grayArrow.png in Resources */,
+				42AF27C9181CDAC000A3E682 /* whiteArrow.png in Resources */,
+				42AF2794181CD9D500A3E682 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42AF277A181CD9D500A3E682 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42AF27C2181CDAC000A3E682 /* EGORefreshTableHeaderView.m in Sources */,
+				42AF2792181CD9D500A3E682 /* AppDelegate.m in Sources */,
+				42AF278E181CD9D500A3E682 /* main.m in Sources */,
+				42AF27B2181CDA6D00A3E682 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		42AF278A181CD9D500A3E682 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42AF278B181CD9D500A3E682 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42AF27A8181CD9D500A3E682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		42AF27A9181CD9D500A3E682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42AF27AB181CD9D500A3E682 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EGOTableViewPullRefreshDemo/EGOTableViewPullRefreshDemo-Prefix.pch";
+				INFOPLIST_FILE = "EGOTableViewPullRefreshDemo/EGOTableViewPullRefreshDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		42AF27AC181CD9D500A3E682 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "EGOTableViewPullRefreshDemo/EGOTableViewPullRefreshDemo-Prefix.pch";
+				INFOPLIST_FILE = "EGOTableViewPullRefreshDemo/EGOTableViewPullRefreshDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42AF2779181CD9D500A3E682 /* Build configuration list for PBXProject "EGOTableViewPullRefreshDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42AF27A8181CD9D500A3E682 /* Debug */,
+				42AF27A9181CD9D500A3E682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42AF27AA181CD9D500A3E682 /* Build configuration list for PBXNativeTarget "EGOTableViewPullRefreshDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42AF27AB181CD9D500A3E682 /* Debug */,
+				42AF27AC181CD9D500A3E682 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42AF2776181CD9D500A3E682 /* Project object */;
+}

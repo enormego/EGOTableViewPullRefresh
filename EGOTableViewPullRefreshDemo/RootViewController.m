@@ -28,7 +28,7 @@
 
 @implementation RootViewController {
 	
-	EGORefreshTableHeaderView *_refreshHeaderView;
+	NEETRefreshTableHeaderView *_refreshHeaderView;
 	
 	//  Reloading var should really be your tableviews datasource
 	//  Putting it here for demo purposes
@@ -39,7 +39,7 @@
     [super viewDidLoad];
     
 	if (_refreshHeaderView == nil) {
-		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		NEETRefreshTableHeaderView *view = [[NEETRefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
 		view.delegate = self;
 		[self.tableView addSubview:view];
 		_refreshHeaderView = view;
@@ -114,7 +114,7 @@
 	
 	//  model should call this when its done loading
 	_reloading = NO;
-	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+	[_refreshHeaderView neetRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
 	
 }
 
@@ -124,34 +124,34 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+	[_refreshHeaderView neetRefreshScrollViewDidScroll:scrollView];
 		
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 	
-	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	[_refreshHeaderView neetRefreshScrollViewDidEndDragging:scrollView];
 	
 }
 
 
 #pragma mark -
-#pragma mark EGORefreshTableHeaderDelegate Methods
+#pragma mark NEETRefreshTableHeaderDelegate Methods
 
-- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+- (void)neetRefreshTableHeaderDidTriggerRefresh:(NEETRefreshTableHeaderView*)view{
 	
 	[self reloadTableViewDataSource];
 	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
 	
 }
 
-- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+- (BOOL)neetRefreshTableHeaderDataSourceIsLoading:(NEETRefreshTableHeaderView*)view{
 	
 	return _reloading; // should return if data source model is reloading
 	
 }
 
-- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+- (NSDate*)neetRefreshTableHeaderDataSourceLastUpdated:(NEETRefreshTableHeaderView*)view{
 	
 	return [NSDate date]; // should return date data source was last changed
 	

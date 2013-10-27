@@ -25,9 +25,9 @@
 //
 
 
-#import "EGORefreshTableHeaderView.h"
+#import "NEETRefreshTableHeaderView.h"
 
-@interface RootViewController : UITableViewController  <EGORefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface RootViewController : UITableViewController  <NEETRefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>
 
 - (void)reloadTableViewDataSource;
 - (void)doneLoadingTableViewData;

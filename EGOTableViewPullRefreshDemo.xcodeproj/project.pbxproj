@@ -15,7 +15,7 @@
 		42AF2792181CD9D500A3E682 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF2791181CD9D500A3E682 /* AppDelegate.m */; };
 		42AF2794181CD9D500A3E682 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AF2793181CD9D500A3E682 /* Images.xcassets */; };
 		42AF27B2181CDA6D00A3E682 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF27B1181CDA6D00A3E682 /* RootViewController.m */; };
-		42AF27C2181CDAC000A3E682 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF27B8181CDAC000A3E682 /* EGORefreshTableHeaderView.m */; };
+		42AF27C2181CDAC000A3E682 /* NEETRefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42AF27B8181CDAC000A3E682 /* NEETRefreshTableHeaderView.m */; };
 		42AF27C3181CDAC000A3E682 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27BA181CDAC000A3E682 /* blackArrow.png */; };
 		42AF27C4181CDAC000A3E682 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27BB181CDAC000A3E682 /* blackArrow@2x.png */; };
 		42AF27C5181CDAC000A3E682 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AF27BC181CDAC000A3E682 /* blueArrow.png */; };
@@ -33,16 +33,16 @@
 		42AF2785181CD9D500A3E682 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42AF2789181CD9D500A3E682 /* EGOTableViewPullRefreshDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EGOTableViewPullRefreshDemo-Info.plist"; sourceTree = "<group>"; };
 		42AF278B181CD9D500A3E682 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		42AF278D181CD9D500A3E682 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		42AF278D181CD9D500A3E682 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		42AF278F181CD9D500A3E682 /* EGOTableViewPullRefreshDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EGOTableViewPullRefreshDemo-Prefix.pch"; sourceTree = "<group>"; };
-		42AF2790181CD9D500A3E682 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		42AF2791181CD9D500A3E682 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		42AF2790181CD9D500A3E682 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		42AF2791181CD9D500A3E682 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		42AF2793181CD9D500A3E682 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42AF279A181CD9D500A3E682 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		42AF27B0181CDA6D00A3E682 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		42AF27B1181CDA6D00A3E682 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		42AF27B7181CDAC000A3E682 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
-		42AF27B8181CDAC000A3E682 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		42AF27B0181CDA6D00A3E682 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RootViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		42AF27B1181CDA6D00A3E682 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RootViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		42AF27B7181CDAC000A3E682 /* NEETRefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = NEETRefreshTableHeaderView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		42AF27B8181CDAC000A3E682 /* NEETRefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = NEETRefreshTableHeaderView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		42AF27BA181CDAC000A3E682 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
 		42AF27BB181CDAC000A3E682 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
 		42AF27BC181CDAC000A3E682 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
@@ -149,8 +149,8 @@
 		42AF27B6181CDAC000A3E682 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				42AF27B7181CDAC000A3E682 /* EGORefreshTableHeaderView.h */,
-				42AF27B8181CDAC000A3E682 /* EGORefreshTableHeaderView.m */,
+				42AF27B7181CDAC000A3E682 /* NEETRefreshTableHeaderView.h */,
+				42AF27B8181CDAC000A3E682 /* NEETRefreshTableHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42AF27C2181CDAC000A3E682 /* EGORefreshTableHeaderView.m in Sources */,
+				42AF27C2181CDAC000A3E682 /* NEETRefreshTableHeaderView.m in Sources */,
 				42AF2792181CD9D500A3E682 /* AppDelegate.m in Sources */,
 				42AF278E181CD9D500A3E682 /* main.m in Sources */,
 				42AF27B2181CDA6D00A3E682 /* RootViewController.m in Sources */,

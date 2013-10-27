@@ -1,6 +1,9 @@
 //
-//  EGORefreshTableHeaderView.m
-//  Demo
+//  NEETRefreshTableHeaderView.m
+//  NEETRefreshTableHeaderView
+//
+//  Modified by mtmta on 2013/10/27.
+//  Copyright (c) 2013年 The Neet House. All rights reserved.
 //
 //  Created by Devin Doty on 10/14/09October14.
 //  Copyright 2009 enormego. All rights reserved.
@@ -24,7 +27,7 @@
 //  THE SOFTWARE.
 //
 
-#import "EGORefreshTableHeaderView.h"
+#import "NEETRefreshTableHeaderView.h"
 
 
 #define HEADER_HEIGHT 60.0f
@@ -37,11 +40,11 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 }
 
 
-@interface EGORefreshTableHeaderView (Private)
-- (void)setState:(EGOPullRefreshState)aState;
+@interface NEETRefreshTableHeaderView (Private)
+- (void)setState:(NEETPullRefreshState)aState;
 @end
 
-@implementation EGORefreshTableHeaderView
+@implementation NEETRefreshTableHeaderView
 
 @synthesize delegate=_delegate;
 
@@ -95,7 +98,7 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 		
         self.alpha = 0;
 		
-		[self setState:EGOOPullRefreshNormal];
+		[self setState:NEETPullRefreshNormal];
 		
     }
 	
@@ -112,9 +115,9 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 
 - (void)refreshLastUpdatedDate {
 	
-	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) {
+	if ([_delegate respondsToSelector:@selector(neetRefreshTableHeaderDataSourceLastUpdated:)]) {
 		
-		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
+		NSDate *date = [_delegate neetRefreshTableHeaderDataSourceLastUpdated:self];
 		
 		[NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
 		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -131,10 +134,10 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 
 }
 
-- (void)setState:(EGOPullRefreshState)aState{
+- (void)setState:(NEETPullRefreshState)aState{
 	
 	switch (aState) {
-		case EGOOPullRefreshPulling:
+		case NEETPullRefreshPulling:
 			
 			_statusLabel.text = NSLocalizedString(@"Release to refresh...", @"Release to refresh status");
 			[CATransaction begin];
@@ -143,9 +146,9 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 			[CATransaction commit];
 			
 			break;
-		case EGOOPullRefreshNormal:
+		case NEETPullRefreshNormal:
 			
-			if (_state == EGOOPullRefreshPulling) {
+			if (_state == NEETPullRefreshPulling) {
 				[CATransaction begin];
 				[CATransaction setAnimationDuration:FLIP_ANIMATION_DURATION];
 				_arrowImage.transform = CATransform3DIdentity;
@@ -163,7 +166,7 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 			[self refreshLastUpdatedDate];
 			
 			break;
-		case EGOOPullRefreshLoading:
+		case NEETPullRefreshLoading:
 			
 			_statusLabel.text = NSLocalizedString(@"Loading...", @"Loading Status");
 			[_activityView startAnimating];
@@ -184,9 +187,9 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 #pragma mark -
 #pragma mark ScrollView Methods
 
-- (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView {
+- (void)neetRefreshScrollViewDidScroll:(UIScrollView *)scrollView {
 	
-	if (_state == EGOOPullRefreshLoading) {
+	if (_state == NEETPullRefreshLoading) {
 		
 		CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
 		offset = MIN(offset, HEADER_HEIGHT);
@@ -195,17 +198,17 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 	} else if (scrollView.isDragging) {
 		
 		BOOL _loading = NO;
-		if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceIsLoading:)]) {
-			_loading = [_delegate egoRefreshTableHeaderDataSourceIsLoading:self];
+		if ([_delegate respondsToSelector:@selector(neetRefreshTableHeaderDataSourceIsLoading:)]) {
+			_loading = [_delegate neetRefreshTableHeaderDataSourceIsLoading:self];
 		}
 		
-		if (_state == EGOOPullRefreshPulling
+		if (_state == NEETPullRefreshPulling
             && -self.triggeredOffset < scrollView.contentOffset.y && scrollView.contentOffset.y < -_topLayoutOffset
             && !_loading) {
-			[self setState:EGOOPullRefreshNormal];
+			[self setState:NEETPullRefreshNormal];
             
-		} else if (_state == EGOOPullRefreshNormal && scrollView.contentOffset.y < -self.triggeredOffset && !_loading) {
-			[self setState:EGOOPullRefreshPulling];
+		} else if (_state == NEETPullRefreshNormal && scrollView.contentOffset.y < -self.triggeredOffset && !_loading) {
+			[self setState:NEETPullRefreshPulling];
 		}
 		
 		if (scrollView.contentInset.top != _topLayoutOffset) {
@@ -217,20 +220,20 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
     [self updateTransparencyWithScrollView:scrollView];
 }
 
-- (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView {
+- (void)neetRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView {
 
 	BOOL _loading = NO;
-	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceIsLoading:)]) {
-		_loading = [_delegate egoRefreshTableHeaderDataSourceIsLoading:self];
+	if ([_delegate respondsToSelector:@selector(neetRefreshTableHeaderDataSourceIsLoading:)]) {
+		_loading = [_delegate neetRefreshTableHeaderDataSourceIsLoading:self];
 	}
 	
 	if (scrollView.contentOffset.y <= - self.triggeredOffset && !_loading) {
 		
-		if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDidTriggerRefresh:)]) {
-			[_delegate egoRefreshTableHeaderDidTriggerRefresh:self];
+		if ([_delegate respondsToSelector:@selector(neetRefreshTableHeaderDidTriggerRefresh:)]) {
+			[_delegate neetRefreshTableHeaderDidTriggerRefresh:self];
 		}
 		
-		[self setState:EGOOPullRefreshLoading];
+		[self setState:NEETPullRefreshLoading];
 
         [UIView animateWithDuration:0.2 animations:^{
             scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, HEADER_HEIGHT + _topLayoutOffset);
@@ -240,9 +243,9 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 	
 }
 
-- (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView {	
+- (void)neetRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView {	
 
-    [self setState:EGOOPullRefreshNormal];
+    [self setState:NEETPullRefreshNormal];
 
     [UIView animateWithDuration:0.3 animations:^{
         scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, _topLayoutOffset);

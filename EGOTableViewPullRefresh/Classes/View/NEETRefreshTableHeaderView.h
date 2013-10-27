@@ -1,6 +1,9 @@
 //
-//  EGORefreshTableHeaderView.h
-//  Demo
+//  NEETRefreshTableHeaderView.h
+//  NEETRefreshTableHeaderView
+//
+//  Modified by mtmta on 2013/10/27.
+//  Copyright (c) 2013年 The Neet House. All rights reserved.
 //
 //  Created by Devin Doty on 10/14/09October14.
 //  Copyright 2009 enormego. All rights reserved.
@@ -28,16 +31,16 @@
 #import <QuartzCore/QuartzCore.h>
 
 typedef enum{
-	EGOOPullRefreshPulling = 0,
-	EGOOPullRefreshNormal,
-	EGOOPullRefreshLoading,	
-} EGOPullRefreshState;
+	NEETPullRefreshPulling = 0,
+	NEETPullRefreshNormal,
+	NEETPullRefreshLoading,	
+} NEETPullRefreshState;
 
-@protocol EGORefreshTableHeaderDelegate;
+@protocol NEETRefreshTableHeaderDelegate;
 
-@interface EGORefreshTableHeaderView : UIView {
+@interface NEETRefreshTableHeaderView : UIView {
 	
-	EGOPullRefreshState _state;
+	NEETPullRefreshState _state;
 
 	UILabel *_lastUpdatedLabel;
 	UILabel *_statusLabel;
@@ -46,21 +49,21 @@ typedef enum{
     CGFloat _topLayoutOffset;
 }
 
-@property(nonatomic,weak) id <EGORefreshTableHeaderDelegate, NSObject> delegate;
+@property(nonatomic,weak) id <NEETRefreshTableHeaderDelegate, NSObject> delegate;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
 
 - (void)refreshLastUpdatedDate;
-- (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
-- (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView;
-- (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
+- (void)neetRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
+- (void)neetRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView;
+- (void)neetRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
 
 - (void)setTopLayoutOffset:(CGFloat)topLayoutOffset scrollView:(UIScrollView *)scrollView;
 
 @end
-@protocol EGORefreshTableHeaderDelegate
-- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view;
-- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view;
+@protocol NEETRefreshTableHeaderDelegate
+- (void)neetRefreshTableHeaderDidTriggerRefresh:(NEETRefreshTableHeaderView*)view;
+- (BOOL)neetRefreshTableHeaderDataSourceIsLoading:(NEETRefreshTableHeaderView*)view;
 @optional
-- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view;
+- (NSDate*)neetRefreshTableHeaderDataSourceLastUpdated:(NEETRefreshTableHeaderView*)view;
 @end

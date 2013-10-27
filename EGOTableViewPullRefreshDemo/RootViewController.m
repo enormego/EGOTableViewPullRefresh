@@ -54,7 +54,7 @@
 - (void)viewDidLayoutSubviews {
     
     if ([self respondsToSelector:@selector(topLayoutGuide)]) {
-        _refreshHeaderView.topLayoutOffset = self.topLayoutGuide.length;
+        [_refreshHeaderView setTopLayoutOffset:self.topLayoutGuide.length scrollView:self.tableView];
     }
 
     [super viewDidLayoutSubviews];

@@ -93,6 +93,7 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 		[self addSubview:view];
 		_activityView = view;
 		
+        self.alpha = 0;
 		
 		[self setState:EGOOPullRefreshNormal];
 		
@@ -213,6 +214,7 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 		
 	}
 	
+    [self updateTransparencyWithScrollView:scrollView];
 }
 
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView {
@@ -249,10 +251,38 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 
 
 #pragma mark -
+#pragma mark Visibility
+
+- (void)updateTransparencyWithScrollView:(UIScrollView *)scrollView {
+    
+    CGFloat visibleHeight =  - scrollView.contentOffset.y - _topLayoutOffset;
+    CGFloat alpha = 0;
+    
+    if (0 < visibleHeight) {
+        // visible
+        // alpha becomes 1.0 when visibleHeight equals 10 points
+        alpha = visibleHeight / 10.0f;
+        alpha = MIN(alpha, 1.0f);
+    }
+    
+    if (self.alpha != alpha) {
+        [UIView animateWithDuration:0.01 animations:^{
+            self.alpha = alpha;
+        }];
+    }
+}
+
+#pragma mark -
 #pragma mark Layout
 
 - (CGFloat)triggeredOffset {
     return _topLayoutOffset + 65.0f;
+}
+
+- (void)setTopLayoutOffset:(CGFloat)topLayoutOffset scrollView:(UIScrollView *)scrollView {
+    _topLayoutOffset = topLayoutOffset;
+    
+    [self updateTransparencyWithScrollView:scrollView];
 }
 
 

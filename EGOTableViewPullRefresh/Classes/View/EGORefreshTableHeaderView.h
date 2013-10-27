@@ -43,11 +43,10 @@ typedef enum{
 	UILabel *_statusLabel;
 	CALayer *_arrowImage;
 	UIActivityIndicatorView *_activityView;
+    CGFloat _topLayoutOffset;
 }
 
 @property(nonatomic,weak) id <EGORefreshTableHeaderDelegate, NSObject> delegate;
-
-@property(nonatomic) CGFloat topLayoutOffset;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
 
@@ -55,6 +54,8 @@ typedef enum{
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
+
+- (void)setTopLayoutOffset:(CGFloat)topLayoutOffset scrollView:(UIScrollView *)scrollView;
 
 @end
 @protocol EGORefreshTableHeaderDelegate

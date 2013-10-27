@@ -1,8 +1,8 @@
 //
 //  main.m
-//  NEETTableViewPullRefreshDemo
+//  Example
 //
-//  Created by mtmta on 2013/10/27.
+//  Created by daichi on 2013/10/27.
 //  Copyright (c) 2013年 The Neet House. All rights reserved.
 //
 

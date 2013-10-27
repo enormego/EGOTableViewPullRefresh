@@ -24,10 +24,10 @@
 //  THE SOFTWARE.
 //
 
+#import <UIKit/UIKit.h>
+#import "NEETPullRefreshTableHeaderView.h"
 
-#import "NEETRefreshTableHeaderView.h"
-
-@interface RootViewController : UITableViewController  <NEETRefreshTableHeaderDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface RootViewController : UITableViewController  <UITableViewDelegate, UITableViewDataSource>
 
 - (void)reloadTableViewDataSource;
 - (void)doneLoadingTableViewData;

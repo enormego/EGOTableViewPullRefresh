@@ -28,8 +28,10 @@
 
 @implementation RootViewController {
 	
-	NEETRefreshTableHeaderView *_refreshHeaderView;
+	NEETPullRefreshTableHeaderView *_refreshHeaderView;
 	
+    UILabel *_refreshStateLabel;
+    
 	//  Reloading var should really be your tableviews datasource
 	//  Putting it here for demo purposes
 	BOOL _reloading;
@@ -39,22 +41,39 @@
     [super viewDidLoad];
     
 	if (_refreshHeaderView == nil) {
-		NEETRefreshTableHeaderView *view = [[NEETRefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
-		view.delegate = self;
+		NEETPullRefreshTableHeaderView *view = [[NEETPullRefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+        
+        view.contentView.backgroundColor = [UIColor redColor];
+        
+        [view addTarget:self
+                 action:@selector(refreshHeaderViewValueChanged:)
+       forControlEvents:UIControlEventValueChanged];
+
 		[self.tableView addSubview:view];
 		_refreshHeaderView = view;
-		
-	}
-	
-	//  update the last update date
-	[_refreshHeaderView refreshLastUpdatedDate];
+    }
+    
+    {
+        // If you will customize its appearance more, you should create a subclass.
+        
+        _refreshStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _refreshHeaderView.frame.size.height - 60,
+                                                                       self.tableView.frame.size.width, 60)];
+        _refreshStateLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        _refreshStateLabel.backgroundColor = [UIColor clearColor];
+        _refreshStateLabel.textAlignment = NSTextAlignmentCenter;
+        _refreshStateLabel.textColor = [UIColor whiteColor];
+        
+        [_refreshHeaderView.contentView addSubview:_refreshStateLabel];
 
+	}
+
+    [self refreshHeaderViewValueChanged:_refreshHeaderView];
 }
 
 - (void)viewDidLayoutSubviews {
     
     if ([self respondsToSelector:@selector(topLayoutGuide)]) {
-        [_refreshHeaderView setTopLayoutOffset:self.topLayoutGuide.length scrollView:self.tableView];
+        [_refreshHeaderView scrollView:self.tableView didLayoutWithTopInset:self.topLayoutGuide.length];
     }
 
     [super viewDidLayoutSubviews];
@@ -65,8 +84,7 @@
 }
 
 
-#pragma mark -
-#pragma mark UITableViewDataSource
+#pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 10;
@@ -98,11 +116,9 @@
 	
 }
 
+#pragma mark - Data Source Loading / Reloading Methods
 
-#pragma mark -
-#pragma mark Data Source Loading / Reloading Methods
-
-- (void)reloadTableViewDataSource{
+- (void)reloadTableViewDataSource {
 	
 	//  should be calling your tableviews data source model to reload
 	//  put here just for demo
@@ -110,51 +126,51 @@
 	
 }
 
-- (void)doneLoadingTableViewData{
+- (void)doneLoadingTableViewData {
 	
 	//  model should call this when its done loading
 	_reloading = NO;
-	[_refreshHeaderView neetRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
-	
+    [_refreshHeaderView scrollViewDataSourceDidFinishedLoading:self.tableView];
 }
 
+#pragma mark -  UIScrollViewDelegate Methods
 
-#pragma mark -
-#pragma mark UIScrollViewDelegate Methods
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-	[_refreshHeaderView neetRefreshScrollViewDidScroll:scrollView];
+	[_refreshHeaderView scrollViewDidScroll:scrollView];
 		
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
 	
-	[_refreshHeaderView neetRefreshScrollViewDidEndDragging:scrollView];
+	[_refreshHeaderView scrollViewDidEndDragging:scrollView];
 	
 }
 
+#pragma mark - Pull Refresh Table Header View Methods
 
-#pragma mark -
-#pragma mark NEETRefreshTableHeaderDelegate Methods
-
-- (void)neetRefreshTableHeaderDidTriggerRefresh:(NEETRefreshTableHeaderView*)view{
-	
-	[self reloadTableViewDataSource];
-	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
-	
-}
-
-- (BOOL)neetRefreshTableHeaderDataSourceIsLoading:(NEETRefreshTableHeaderView*)view{
-	
-	return _reloading; // should return if data source model is reloading
-	
-}
-
-- (NSDate*)neetRefreshTableHeaderDataSourceLastUpdated:(NEETRefreshTableHeaderView*)view{
-	
-	return [NSDate date]; // should return date data source was last changed
-	
+- (void)refreshHeaderViewValueChanged:(id)sender {
+    
+    switch (_refreshHeaderView.pullRefreshState) {
+        case kNEETPullRefreshNormal:
+            _refreshStateLabel.text = NSLocalizedString(@"Pull to Refresh...", nil);
+            break;
+            
+        case kNEETPullRefreshPulling:
+            _refreshStateLabel.text = NSLocalizedString(@"Release to Refresh...", nil);
+            break;
+            
+        case kNEETPullRefreshLoading:
+            if (_reloading == NO) {
+                _refreshStateLabel.text = NSLocalizedString(@"Loading...", nil);
+                
+                [self reloadTableViewDataSource];
+                
+                [self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:2];
+                
+            }
+            break;
+    }
 }
 
 @end

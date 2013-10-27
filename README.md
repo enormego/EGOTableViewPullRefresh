@@ -1,7 +1,7 @@
 
-# NEETTableViewPullRefresh
+# NEETPullRefreshTableHeaderView
 
-NEETTableViewPullRefresh is an improved version of [EGOTableViewPullRefresh](https://github.com/enormego/EGOTableViewPullRefresh)
+NEETPullRefreshTableHeaderView is an improved version of [EGOTableViewPullRefresh](https://github.com/enormego/EGOTableViewPullRefresh)
 
 ## Known Issues on iOS 7
 

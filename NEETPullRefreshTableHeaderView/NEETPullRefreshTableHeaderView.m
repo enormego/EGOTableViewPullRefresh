@@ -15,9 +15,7 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
     return baseInsets;
 }
 
-@implementation NEETPullRefreshTableHeaderView {
-    CGFloat _topInset;
-}
+@implementation NEETPullRefreshTableHeaderView
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -61,26 +59,30 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 
 #pragma mark - ScrollView Methods
 
+- (void)scrollViewDidLayout:(UIScrollView *)scrollView {
+    [self updateTransparencyWithScrollView:scrollView];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
 	
 	if (_pullRefreshState == kNEETPullRefreshLoading) {
 		
 		CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
 		offset = MIN(offset, HEADER_HEIGHT);
-		scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, offset + _topInset);
+		scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, offset + self.topLayoutOffset);
 		
 	} else if (scrollView.isDragging) {
 		
 		if (_pullRefreshState == kNEETPullRefreshPulling
-            && -self.triggeredOffset < scrollView.contentOffset.y && scrollView.contentOffset.y < -_topInset) {
+            && -self.triggeredOffset < scrollView.contentOffset.y && scrollView.contentOffset.y < -self.topLayoutOffset) {
 			[self setPullRefreshState:kNEETPullRefreshNormal];
             
 		} else if (_pullRefreshState == kNEETPullRefreshNormal && scrollView.contentOffset.y < -self.triggeredOffset) {
 			[self setPullRefreshState:kNEETPullRefreshPulling];
 		}
 		
-		if (scrollView.contentInset.top != _topInset) {
-			scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, _topInset);
+		if (scrollView.contentInset.top != self.topLayoutOffset) {
+			scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, self.topLayoutOffset);
 		}
 	}
 	
@@ -94,7 +96,7 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 		[self setPullRefreshState:kNEETPullRefreshLoading];
         
         [UIView animateWithDuration:0.2 animations:^{
-            scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, HEADER_HEIGHT + _topInset);
+            scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, HEADER_HEIGHT + self.topLayoutOffset);
         }];
 	}
 	
@@ -105,25 +107,8 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
     [self setPullRefreshState:kNEETPullRefreshNormal];
     
     [UIView animateWithDuration:0.3 animations:^{
-        scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, _topInset);
+        scrollView.contentInset = NEETUIEdgeInsetsSetTop(scrollView.contentInset, self.topLayoutOffset);
     }];
-}
-
-- (void)scrollView:(UIScrollView *)scrollView didLayoutWithTopInset:(CGFloat)topInset {
-    
-    CGSize contentSize = scrollView.contentSize;
-
-    _topInset = topInset;
-    
-    [self updateTransparencyWithScrollView:scrollView];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        // なぜか iOS7 で contentSize が 0 になるので元に戻す
-        // iOS 7.0 ~ 7.03 でこの問題が発生することを確認.
-        if (CGSizeEqualToSize(scrollView.contentSize, CGSizeZero)) {
-            scrollView.contentSize = contentSize;
-        }
-    });
 }
 
 
@@ -131,7 +116,7 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 
 - (void)updateTransparencyWithScrollView:(UIScrollView *)scrollView {
     
-    CGFloat visibleHeight =  - scrollView.contentOffset.y - _topInset;
+    CGFloat visibleHeight =  - scrollView.contentOffset.y - self.topLayoutOffset;
     CGFloat alpha = 0;
     
     if (0 < visibleHeight) {
@@ -151,7 +136,14 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 #pragma mark - Layout
 
 - (CGFloat)triggeredOffset {
-    return _topInset + 65.0f;
+    return self.topLayoutOffset + 65.0f;
+}
+
+- (CGFloat)topLayoutOffset {
+    if ([_layoutViewController respondsToSelector:@selector(topLayoutGuide)]) {
+        return _layoutViewController.topLayoutGuide.length;
+    }
+    return 0;
 }
 
 @end

@@ -40,13 +40,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.toolbarHidden = NO;
+
+    {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds
+                                                  style:UITableViewStylePlain];
+        
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        
+        _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        [self.view addSubview:_tableView];
+    }
+    
 	if (_refreshHeaderView == nil) {
-		NEETPullRefreshTableHeaderView *view = [[NEETPullRefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		NEETPullRefreshTableHeaderView *view = [[NEETPullRefreshTableHeaderView alloc] initWithFrame:(CGRect){
+            0.0f, 0.0f - self.view.bounds.size.height, self.view.frame.size.width, self.view.bounds.size.height }];
         
         view.contentView.backgroundColor = [UIColor redColor];
         
+        view.layoutViewController = self;
+        
         [view addTarget:self
-                 action:@selector(refreshHeaderViewValueChanged:)
+                 action:@selector(refreshHeaderViewStateChanged:)
        forControlEvents:UIControlEventValueChanged];
 
 		[self.tableView addSubview:view];
@@ -56,8 +73,8 @@
     {
         // If you will customize its appearance more, you should create a subclass.
         
-        _refreshStateLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _refreshHeaderView.frame.size.height - 60,
-                                                                       self.tableView.frame.size.width, 60)];
+        _refreshStateLabel = [[UILabel alloc] initWithFrame:(CGRect){
+            0, _refreshHeaderView.frame.size.height - 60, self.view.frame.size.width, 60 }];
         _refreshStateLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         _refreshStateLabel.backgroundColor = [UIColor clearColor];
         _refreshStateLabel.textAlignment = NSTextAlignmentCenter;
@@ -67,15 +84,13 @@
 
 	}
 
-    [self refreshHeaderViewValueChanged:_refreshHeaderView];
+    [self refreshHeaderViewStateChanged:_refreshHeaderView];
 }
 
 - (void)viewDidLayoutSubviews {
     
-    if ([self respondsToSelector:@selector(topLayoutGuide)]) {
-        [_refreshHeaderView scrollView:self.tableView didLayoutWithTopInset:self.topLayoutGuide.length];
-    }
-
+    [_refreshHeaderView scrollViewDidLayout:_tableView];
+    
     [super viewDidLayoutSubviews];
 }
 
@@ -149,7 +164,7 @@
 
 #pragma mark - Pull Refresh Table Header View Methods
 
-- (void)refreshHeaderViewValueChanged:(id)sender {
+- (void)refreshHeaderViewStateChanged:(id)sender {
     
     switch (_refreshHeaderView.pullRefreshState) {
         case kNEETPullRefreshNormal:

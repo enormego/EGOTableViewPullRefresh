@@ -27,7 +27,14 @@
 #import <UIKit/UIKit.h>
 #import "NEETPullRefreshTableHeaderView.h"
 
-@interface RootViewController : UITableViewController  <UITableViewDelegate, UITableViewDataSource>
+/**
+ 
+ @warning Do not use UITableViewController.
+ 
+ */
+@interface RootViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) UITableView *tableView;
 
 - (void)reloadTableViewDataSource;
 - (void)doneLoadingTableViewData;

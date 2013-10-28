@@ -111,9 +111,19 @@ static UIEdgeInsets NEETUIEdgeInsetsSetTop(UIEdgeInsets baseInsets, CGFloat topI
 
 - (void)scrollView:(UIScrollView *)scrollView didLayoutWithTopInset:(CGFloat)topInset {
     
+    CGSize contentSize = scrollView.contentSize;
+
     _topInset = topInset;
     
     [self updateTransparencyWithScrollView:scrollView];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        // なぜか iOS7 で contentSize が 0 になるので元に戻す
+        // iOS 7.0 ~ 7.03 でこの問題が発生することを確認.
+        if (CGSizeEqualToSize(scrollView.contentSize, CGSizeZero)) {
+            scrollView.contentSize = contentSize;
+        }
+    });
 }
 
 

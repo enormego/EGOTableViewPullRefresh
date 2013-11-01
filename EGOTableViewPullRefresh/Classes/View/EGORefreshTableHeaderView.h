@@ -30,7 +30,8 @@
 typedef enum{
 	EGOOPullRefreshPulling = 0,
 	EGOOPullRefreshNormal,
-	EGOOPullRefreshLoading,	
+	EGOOPullRefreshLoading,
+    EGOOPullRefreshStreaming, 
 } EGOPullRefreshState;
 
 @protocol EGORefreshTableHeaderDelegate;
@@ -55,6 +56,8 @@ typedef enum{
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDidEndDragging:(UIScrollView *)scrollView;
 - (void)egoRefreshScrollViewDataSourceDidFinishedLoading:(UIScrollView *)scrollView;
+- (void)egoRefreshScrollViewDataSourceDidBeginStreaming:(UIScrollView *)scrollView;
+- (void)egoRefreshScrollViewDataSourceDidEndStreaming:(UIScrollView *)scrollView;
 
 @end
 @protocol EGORefreshTableHeaderDelegate
@@ -62,4 +65,5 @@ typedef enum{
 - (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view;
 @optional
 - (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view;
+- (BOOL)egoRefreshTableHeaderDataSourceIsStreaming:(EGORefreshTableHeaderView *)view;
 @end

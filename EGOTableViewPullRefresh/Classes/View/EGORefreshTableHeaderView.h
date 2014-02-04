@@ -48,6 +48,7 @@ typedef enum{
 }
 
 @property(nonatomic,assign) id <EGORefreshTableHeaderDelegate> delegate;
+@property (nonatomic, assign) float defaultOffset;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
 

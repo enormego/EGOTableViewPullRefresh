@@ -38,7 +38,7 @@
 @implementation EGORefreshTableHeaderView
 
 @synthesize delegate=_delegate;
-
+@synthesize defaultOffset=_defaultOffset;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor  {
     if((self = [super initWithFrame:frame])) {
@@ -110,6 +110,8 @@
 	
 	if ([_delegate respondsToSelector:@selector(egoRefreshTableHeaderDataSourceLastUpdated:)]) {
 		
+		NSString *label = NSLocalizedString(@"Last Updated", @"Last Updated label");
+
 		NSDate *date = [_delegate egoRefreshTableHeaderDataSourceLastUpdated:self];
 		
 		[NSDateFormatter setDefaultFormatterBehavior:NSDateFormatterBehaviorDefault];
@@ -117,7 +119,7 @@
 		[dateFormatter setDateStyle:NSDateFormatterShortStyle];
 		[dateFormatter setTimeStyle:NSDateFormatterShortStyle];
 
-		_lastUpdatedLabel.text = [NSString stringWithFormat:@"Last Updated: %@", [dateFormatter stringFromDate:date]];
+		_lastUpdatedLabel.text = [NSString stringWithFormat:@"%@: %@", label, [dateFormatter stringFromDate:date]];
 		[[NSUserDefaults standardUserDefaults] setObject:_lastUpdatedLabel.text forKey:@"EGORefreshTableView_LastRefresh"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
 		
@@ -182,13 +184,21 @@
 #pragma mark -
 #pragma mark ScrollView Methods
 
+- (void)setContentOffset:(float)offset
+           forScrollView:(UIScrollView *)scrollView {
+
+	UIEdgeInsets inset = scrollView.contentInset;
+	inset.top = offset;
+	scrollView.contentInset = inset;
+}
+
 - (void)egoRefreshScrollViewDidScroll:(UIScrollView *)scrollView {	
 	
 	if (_state == EGOOPullRefreshLoading) {
 		
 		CGFloat offset = MAX(scrollView.contentOffset.y * -1, 0);
 		offset = MIN(offset, 60);
-		scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0f, 0.0f, 0.0f);
+		[self setContentOffset: offset forScrollView: scrollView];
 		
 	} else if (scrollView.isDragging) {
 		
@@ -197,16 +207,15 @@
 			_loading = [_delegate egoRefreshTableHeaderDataSourceIsLoading:self];
 		}
 		
-		if (_state == EGOOPullRefreshPulling && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f && !_loading) {
+		if (_loading) {
+			[self setState:EGOOPullRefreshLoading];
+		} else if (_state == EGOOPullRefreshPulling && scrollView.contentOffset.y > -65.0f && scrollView.contentOffset.y < 0.0f) {
 			[self setState:EGOOPullRefreshNormal];
-		} else if (_state == EGOOPullRefreshNormal && scrollView.contentOffset.y < -65.0f && !_loading) {
+		} else if (_state == EGOOPullRefreshNormal && scrollView.contentOffset.y < -65.0f) {
 			[self setState:EGOOPullRefreshPulling];
 		}
 		
-		if (scrollView.contentInset.top != 0) {
-			scrollView.contentInset = UIEdgeInsetsZero;
-		}
-		
+		[self setContentOffset:self.defaultOffset forScrollView: scrollView];
 	}
 	
 }
@@ -227,7 +236,7 @@
 		[self setState:EGOOPullRefreshLoading];
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.2];
-		scrollView.contentInset = UIEdgeInsetsMake(60.0f, 0.0f, 0.0f, 0.0f);
+		[self setContentOffset: 60.0f forScrollView: scrollView];
 		[UIView commitAnimations];
 		
 	}
@@ -238,7 +247,7 @@
 	
 	[UIView beginAnimations:nil context:NULL];
 	[UIView setAnimationDuration:.3];
-	[scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f)];
+	[self setContentOffset:self.defaultOffset forScrollView: scrollView];
 	[UIView commitAnimations];
 	
 	[self setState:EGOOPullRefreshNormal];

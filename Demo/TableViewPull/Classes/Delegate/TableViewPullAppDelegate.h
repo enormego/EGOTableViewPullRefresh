@@ -25,7 +25,7 @@
 //
 
 @interface TableViewPullAppDelegate : NSObject <UIApplicationDelegate> {
-    
+
     UIWindow *window;
     UINavigationController *navigationController;
 }

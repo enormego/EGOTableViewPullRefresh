@@ -157,8 +157,9 @@
 			_arrowImage.hidden = NO;
 			_arrowImage.transform = CATransform3DIdentity;
 			[CATransaction commit];
-			
-			[self refreshLastUpdatedDate];
+
+			if (_state == EGOOPullRefreshLoading)
+                [self refreshLastUpdatedDate];
 			
 			break;
 		case EGOOPullRefreshLoading:

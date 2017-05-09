@@ -43,11 +43,13 @@ typedef enum{
 	UILabel *_statusLabel;
 	CALayer *_arrowImage;
 	UIActivityIndicatorView *_activityView;
+    NSDateFormatter *_dateFormatter;
 	
 
 }
 
-@property(nonatomic,assign) id <EGORefreshTableHeaderDelegate> delegate;
+@property(nonatomic, assign) id <EGORefreshTableHeaderDelegate> delegate;
+@property(nonatomic, retain) NSDateFormatter *dateFormatter;
 
 - (id)initWithFrame:(CGRect)frame arrowImageName:(NSString *)arrow textColor:(UIColor *)textColor;
 
